@@ -6,7 +6,7 @@ const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',
 /* wrap text into lines of at most n characters */
 function wrap(t,n){const w=String(t).split(' '),L=[];let l='';w.forEach(x=>{if((l+' '+x).trim().length>n&&l){L.push(l);l=x;}else l=(l+' '+x).trim();});if(l)L.push(l);return L;}
 function tl(x,y,t,n,cls,lh,anchor){const L=wrap(t,n||999);return `<text class="${cls||''}" x="${x}" y="${y}"${anchor?` text-anchor="${anchor}"`:''}>${L.map((l,i)=>`<tspan x="${x}" dy="${i?lh||14:0}">${esc(l)}</tspan>`).join('')}</text>`;}
-const mk=(id,col)=>`<marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${col}"/></marker>`;
+const mk=(id,col)=>`<marker id="${id}" viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="13" markerHeight="13" orient="auto-start-reverse"><path d="M0,0 L10,5 L0,10 z" fill="${col}"/></marker>`;
 const num=(x,y,n)=>`<g class="dnum"><circle cx="${x}" cy="${y}" r="10"/><text x="${x}" y="${y}">${n}</text></g>`;
 const svg=(vb,label,body)=>`<svg class="dg" viewBox="${vb}" role="img" aria-label="${esc(label)}">${body}</svg>`;
 
@@ -34,7 +34,7 @@ function heartflow(){
   <text class="sm" x="80" y="262" text-anchor="middle" transform="rotate(-90 80 262)">Superior + inferior venae cavae</text>
   <text class="sm" x="142" y="214" text-anchor="end">tricuspid</text>
   ${tl(328,160,'Pulmonary valve → pulmonary arteries (deoxygenated)',20,'sm',14)}
-  ${tl(448,100,'Pulmonary veins (oxygenated)',14,'sm',14)}
+  ${tl(432,98,'Pulmonary veins (oxygenated)',16,'sm',14,'end')}
   <text class="sm" x="618" y="214">mitral</text>
   ${tl(680,290,'Aortic valve → aorta',11,'sm',14)}
   <text class="b" x="526" y="34">Pulmonary circuit</text><text class="sm" x="526" y="52">low pressure, same flow</text>
@@ -48,7 +48,7 @@ function ecg(){
   for(let y=50;y<=245;y+=20) g+=`<line class="grid" x1="40" y1="${y}" x2="750" y2="${y}"/>`;
   const beat=o=>`M${80+o},200 C${92+o},182 ${118+o},182 ${130+o},200 L${160+o},200 L${166+o},212 L${178+o},70 L${190+o},232 L${200+o},200 L${250+o},200 C${268+o},158 ${312+o},158 ${330+o},200 L${480+o},200`;
   const br=(x1,x2,y,t)=>`<path class="brk" d="M${x1},${y-6} V${y} H${x2} V${y-6}"/><text class="sm" x="${(x1+x2)/2}" y="${y+16}" text-anchor="middle">${t}</text>`;
-  return svg('0 0 760 330','Labelled ECG trace showing P wave, QRS complex, T wave and intervals',`${g}
+  return svg('0 0 760 348','Labelled ECG trace showing P wave, QRS complex, T wave and intervals',`${g}
   <path d="${beat(0)}" fill="none" stroke="var(--artery)" stroke-width="2.6" stroke-linejoin="round"/>
   <path d="${beat(400).replace('L880,200','L740,200')}" fill="none" stroke="var(--artery)" stroke-width="2.6" stroke-linejoin="round"/>
   <text class="b" x="105" y="174" text-anchor="middle">P</text><text class="b" x="178" y="62" text-anchor="middle">R</text>
@@ -56,14 +56,14 @@ function ecg(){
   <text class="b" x="290" y="150" text-anchor="middle">T</text>
   <path class="brk" d="M178,40 V34 H578 V40"/><text class="sm" x="378" y="28" text-anchor="middle">RR interval 0.8 s → heart rate 75 / min</text>
   ${br(80,160,262,'PR 0.12–0.20 s')}${br(162,330,262,'QT ≈ 0.35–0.45 s')}${br(160,200,298,'QRS &lt; 0.12 s')}
-  ${tl(500,282,'P: atrial depolarisation · PR: AV-node delay · QRS: ventricular depolarisation (atrial repolarisation hidden) · T: ventricular repolarisation',58,'sm',14)}
-  <text class="sm" x="40" y="326">25 mm/s: small square 0.04 s, large square 0.2 s</text>`);
+  ${tl(470,276,'P: atrial depolarisation · PR: AV-node delay · QRS: ventricular depolarisation (atrial repolarisation hidden) · T: ventricular repolarisation',44,'sm',14)}
+  <text class="sm" x="40" y="342">25 mm/s: small square 0.04 s, large square 0.2 s</text>`);
 }
 
 /* ---------- 3. neuronal action potential ---------- */
 function ap(){
   const Y=mv=>30+(40-mv)*2.3;
-  const ticks=[30,0,-55,-70].map(v=>`<text class="sm" x="72" y="${Y(v)+4}" text-anchor="end">${v>0?'+':''}${v}</text><line class="grid" x1="80" y1="${Y(v)}" x2="720" y2="${Y(v)}" ${v===-55||v===0?'stroke-dasharray="4 4"':''}/>`).join('');
+  const ticks=[30,0,-55,-70].map(v=>`<text class="sm" x="72" y="${Y(v)+4}" text-anchor="end">${v>0?'+':''}${v}</text><line class="grid" x1="80" y1="${Y(v)}" x2="420" y2="${Y(v)}" ${v===-55||v===0?'stroke-dasharray="4 4"':''}/>`).join('');
   const items=[[125,Y(-70),'Resting potential −70 mV: K⁺ leak channels; Na⁺/K⁺-ATPase keeps the gradients'],
     [200,Y(-55),'A graded stimulus reaches threshold (about −55 mV)'],
     [209,150,'Voltage-gated Na⁺ channels open: Na⁺ rushes in (positive feedback)'],
@@ -72,16 +72,16 @@ function ap(){
     [276,Y(-80)-2,'After-hyperpolarisation: K⁺ channels are slow to close']];
   let legend='';
   items.forEach((it,i)=>{const y=48+i*46; legend+=num(445,y,i+1)+tl(462,y+4,it[2],40,'sm',14);});
-  return svg('0 0 760 360','Neuronal action potential with phases and refractory periods',`
+  return svg('0 0 760 380','Neuronal action potential with phases and refractory periods',`
   <rect x="200" y="30" width="62" height="305" fill="var(--clin)" opacity=".1"/><rect x="262" y="30" width="98" height="305" fill="var(--warn)" opacity=".1"/>
   ${ticks}<path class="ax" d="M80,26 V335 H420"/>
   <text class="sm" x="22" y="190" transform="rotate(-90 22 190)" text-anchor="middle">Membrane potential (mV)</text>
   <text class="sm" x="250" y="352" text-anchor="middle">time ≈ 3–4 ms</text>
   <text class="sm" x="231" y="326" text-anchor="middle">ARP</text><text class="sm" x="311" y="326" text-anchor="middle">RRP</text>
-  <text class="sm" x="740" y="${Y(-55)-6}" text-anchor="end">threshold</text>
+  <text class="sm" x="416" y="${Y(-55)-6}" text-anchor="end">threshold</text>
   <path d="M80,${Y(-70)} H170 C185,${Y(-70)} 190,${Y(-60)} 200,${Y(-55)} C206,200 210,80 218,${Y(30)} C226,60 238,150 250,250 C258,300 266,${Y(-80)} 280,${Y(-80)} C310,${Y(-80)} 340,${Y(-70)} 380,${Y(-70)} H420" fill="none" stroke="var(--nerve-ink)" stroke-width="3"/>
   ${items.map((it,i)=>num(it[0],it[1],i+1)).join('')}${legend}
-  ${tl(445,330,'ARP: absolute refractory period (Na⁺ channels inactivated, no second spike possible). RRP: relative refractory period (a stronger stimulus is needed).',48,'sm',13)}`);
+  ${tl(445,322,'ARP: absolute refractory period (Na⁺ channels inactivated, no second spike possible). RRP: relative refractory period (a stronger stimulus is needed).',48,'sm',13)}`);
 }
 
 /* ---------- 4. spinal cord pathways and where they cross ---------- */
@@ -144,7 +144,7 @@ function volumes(){
   <text class="sm" x="16" y="180" transform="rotate(-90 16 180)" text-anchor="middle">Volume in lungs (L)</text>
   <path d="${tr}" fill="none" stroke="var(--sys-resp)" stroke-width="2.6"/>
   <text class="sm" x="145" y="${Y(2.9)-10}" text-anchor="middle">quiet tidal breathing</text>
-  <text class="sm" x="300" y="${Y(6)+18}">maximal inspiration</text><text class="sm" x="378" y="${Y(1.2)+16}">maximal expiration</text>
+  <text class="sm" x="272" y="${Y(5.9)}" text-anchor="end">maximal inspiration</text><text class="sm" x="378" y="${Y(1.2)+16}">maximal expiration</text>
   ${bar(0,1.2,'RV','1.2 L','color-mix(in srgb,var(--sys-resp) 55%,var(--paper))')}${bar(1.2,2.4,'ERV','1.2 L','color-mix(in srgb,var(--sys-resp) 38%,var(--paper))')}
   ${bar(2.4,2.9,'','','color-mix(in srgb,var(--sys-resp) 70%,var(--paper))')}<text class="sm" x="590" y="${Y(2.65)+4}" style="font-size:10px">TV 0.5 L</text>
   ${bar(2.9,6,'IRV','3.1 L','color-mix(in srgb,var(--sys-resp) 22%,var(--paper))')}
@@ -158,7 +158,7 @@ function gutsupply(){
     [260,'L3','Hindgut · inferior mesenteric artery','Distal third of the transverse colon, descending and sigmoid colon,','rectum and the anal canal above the pectinate line.','Visceral pain: suprapubic · Parasympathetic: pelvic splanchnic nerves (S2–4)']];
   let r='';
   rows.forEach(([y,lvl,t,a,b,c],i)=>{const sh=[14,22,30][i];
-    r+=`<text class="b" x="48" y="${y+4}" text-anchor="end">${lvl}</text><path d="M84,${y} H146" stroke="var(--artery)" stroke-width="5" marker-end="url(#gs)"/>
+    r+=`<text class="b" x="48" y="${y+4}" text-anchor="end">${lvl}</text><path d="M84,${y} H144" stroke="var(--artery)" stroke-width="4" marker-end="url(#gs)"/>
     <rect x="150" y="${y-40}" width="600" height="82" rx="10" fill="color-mix(in srgb,var(--sys-gi) ${sh}%,var(--paper))" stroke="var(--sys-gi)"/>
     <text class="b" x="164" y="${y-18}">${t}</text><text class="sm" x="164" y="${y+1}">${a}</text><text class="sm" x="164" y="${y+17}">${b}</text><text class="sm" x="164" y="${y+34}" style="fill:var(--clin)">${c}</text>`;});
   return svg('0 0 760 320','Foregut, midgut and hindgut with their arteries, vertebral levels and pain referral',`<defs>${mk('gs','var(--artery)')}</defs>
@@ -177,11 +177,11 @@ function nephron(){
     ['Juxtaglomerular apparatus','Macula densa senses NaCl; JG cells in the afferent arteriole release renin.'],
     ['Distal convoluted tubule','NCC reabsorbs NaCl (thiazides act here); PTH increases Ca²⁺ reabsorption.'],
     ['Collecting duct','Aldosterone: ENaC Na⁺ in, K⁺ out. ADH inserts aquaporin-2 to concentrate urine.']];
-  let leg='';L.forEach(([t,d],i)=>{const y=34+i*55; leg+=num(470,y,i+1)+`<text class="b" x="488" y="${y+4}" style="font-size:12px">${t}</text>`+tl(488,y+20,d,46,'sm',13);});
-  return svg('0 0 760 470','Nephron segments and what each one does',`
+  let leg='';L.forEach(([t,d],i)=>{const y=28+i*58; leg+=num(470,y,i+1)+`<text class="b" x="488" y="${y+4}" style="font-size:12px">${t}</text>`+tl(488,y+19,d,48,'sm',13);});
+  return svg('0 0 760 480','Nephron segments and what each one does',`
   <rect x="20" y="20" width="420" height="150" fill="var(--sunk)"/><rect x="20" y="170" width="420" height="130" fill="color-mix(in srgb,var(--sys-renal) 9%,var(--paper))"/><rect x="20" y="300" width="420" height="150" fill="color-mix(in srgb,var(--sys-renal) 18%,var(--paper))"/>
-  <text class="hd" x="30" y="160">CORTEX</text><text class="hd" x="150" y="190">OUTER MEDULLA</text><text class="hd" x="150" y="320">INNER MEDULLA</text>
-  <text class="sm" x="432" y="160" text-anchor="end">≈ 300 mOsm/kg</text><text class="sm" x="432" y="190" text-anchor="end">≈ 600</text><text class="sm" x="432" y="444" text-anchor="end">up to ≈ 1200</text>
+  <text class="hd" x="150" y="160">CORTEX</text><text class="hd" x="150" y="190">OUTER MEDULLA</text><text class="hd" x="150" y="320">INNER MEDULLA</text>
+  <text class="sm" x="388" y="160" text-anchor="end">≈ 300 mOsm/kg</text><text class="sm" x="388" y="190" text-anchor="end">≈ 600</text><text class="sm" x="388" y="444" text-anchor="end">up to ≈ 1200</text>
   <path d="M250,45 L192,80 M192,92 L250,128" stroke="var(--artery)" stroke-width="5" fill="none"/>
   <text class="sm" x="254" y="44">afferent arteriole</text><text class="sm" x="254" y="140">efferent arteriole</text>
   <circle cx="160" cy="85" r="32" fill="var(--paper)" stroke="var(--ink-2)" stroke-width="2"/>

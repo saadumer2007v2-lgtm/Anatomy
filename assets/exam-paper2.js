@@ -266,7 +266,7 @@ window.MOCK_PAPERS.push({id:'p2',title:'Mock paper 2',sub:'A second full paper w
  a:['zona fasciculata','fasciculata','the zona fasciculata'],m:'Zona fasciculata',
  e:'Zona glomerulosa (outer): aldosterone. Zona fasciculata (middle, largest): cortisol under ACTH. Zona reticularis (inner): androgens.'},
 {t:'v',s:'endo',q:'Which cells of the pancreatic islets secrete glucagon?',
- a:['alpha cells','alpha','a cells','α cells','alpha cell','α'],m:'Alpha (α) cells',
+ a:['alpha cells','alpha','α cells','alpha cell','α','islet alpha cells'],m:'Alpha (α) cells',
  e:'α cells: glucagon; β cells: insulin; δ cells: somatostatin; PP cells: pancreatic polypeptide.'},
 /* ---- reproductive ---- */
 {t:'s',s:'repro',q:'In a 28-day cycle without pregnancy, what directly triggers menstruation?',

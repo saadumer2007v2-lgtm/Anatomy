@@ -3,9 +3,9 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Interactive Year 1 anatomy atlas: organ systems, upper and lower limb bones, muscles, nerve and vessel flowcharts, clinical regions and self-tests.">
+<meta name="description" content="Interactive Year 1 anatomy atlas: every organ system with labelled diagrams, organ structure and function, upper and lower limb in depth, and two timed 100-question mock exams.">
 <style>:root{color-scheme:light}html,body{margin:0}body{font:14px system-ui,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
-<title>Limb Anatomy Atlas</title>
+<title>Year 1 Anatomy Atlas</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400..700;1,6..72,400..600&family=Atkinson+Hyperlegible:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
@@ -352,6 +352,125 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
 @media (max-width:860px){.body-map svg{width:auto;height:min(24vh,190px)}}
 @media (max-width:560px){.brand{display:none}}
 @media (prefers-reduced-motion: reduce){*{transition:none!important;animation:none!important}}
+
+/* ---------- organ systems chapter ---------- */
+.sys-jump{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 6px}
+.sys-jump a{font-size:.86rem;padding:5px 11px 5px 9px;border-radius:999px;border:1px solid var(--line-2);background:var(--paper);color:var(--ink-2);text-decoration:none;border-left:4px solid var(--c)}
+.sys-jump a:hover{color:var(--ink);border-color:var(--c)}
+.sysdeep > header h2{display:flex;align-items:center;gap:10px}
+.sysdeep > header h2::before{content:"";width:12px;height:12px;border-radius:3px;background:var(--c);flex:none}
+.bigpic{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr) minmax(0,.9fr);gap:12px;align-items:start}
+@media (max-width:1000px){.bigpic{grid-template-columns:minmax(0,1fr)}}
+.bigpic .card{border-top:3px solid var(--c)}
+.bigpic dl{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:5px 12px;margin:0;font-size:.88rem}
+.bigpic dt{color:var(--muted)} .bigpic dd{margin:0;color:var(--ink);font-weight:700}
+.wgal{display:grid;grid-template-columns:repeat(auto-fill,minmax(min(100%,250px),1fr));gap:12px;align-items:start}
+.wfig{margin:0;background:var(--paper);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:grid}
+.wfig-img{appearance:none;border:0;padding:8px;margin:0;background:#fff;cursor:zoom-in;display:grid;place-items:center;min-height:180px;position:relative}
+.wfig-img img{width:100%;height:230px;object-fit:contain;display:block}
+.wfig-fail{display:none;font-size:.85rem;color:#3B4954;padding:20px;text-align:center}
+.wfig.img-fail img{display:none} .wfig.img-fail .wfig-fail{display:block}
+.wfig figcaption{padding:9px 12px 11px;font-size:.84rem;color:var(--ink-2);display:grid;gap:3px;border-top:1px solid var(--line)}
+.wfig figcaption b{color:var(--ink)}
+.credit{font-size:.74rem;color:var(--muted);font-family:var(--font-mono)}
+.organs{display:grid;gap:8px}
+.organ{background:var(--paper);border:1px solid var(--line);border-radius:12px;border-left:4px solid var(--c,var(--accent))}
+.organ > summary{cursor:pointer;padding:11px 14px;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;list-style:none}
+.organ > summary::-webkit-details-marker{display:none}
+.organ > summary::before{content:"+";font-family:var(--font-mono);font-weight:600;color:var(--muted);width:12px}
+.organ[open] > summary::before{content:"–"}
+.org-n{font-family:var(--font-display);font-weight:600;font-size:1.12rem;color:var(--ink)}
+.org-s{font-size:.88rem;color:var(--muted)}
+.org-body{padding:2px 16px 14px 16px;display:grid;gap:10px}
+.org-row{display:grid;grid-template-columns:96px minmax(0,1fr);gap:10px;font-size:.93rem;color:var(--ink-2)}
+.org-row ul{display:grid;gap:3px}
+.org-k{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding-top:4px}
+@media (max-width:600px){.org-row{grid-template-columns:minmax(0,1fr);gap:2px}}
+.dg-wrap{background:var(--paper);min-width:640px}
+.dg{width:100%;height:auto;display:block}
+.dg text{font-size:13px;fill:var(--ink);font-family:var(--font-body)}
+.dg .sm{font-size:11.5px;fill:var(--ink-2)}
+.dg .b{font-weight:700}
+.dg .hd{font-family:var(--font-mono);font-size:10.5px;letter-spacing:.1em;fill:var(--muted)}
+.dg .ax{stroke:var(--ink-2);stroke-width:1.4;fill:none}
+.dg .grid{stroke:var(--line);stroke-width:1}
+.dg .grid2{stroke:var(--line-2);stroke-width:1.2}
+.dg .brk{fill:none;stroke:var(--ink-2);stroke-width:1.3}
+.dg .dnum circle{fill:var(--accent);stroke:var(--paper);stroke-width:1.5}
+.dg .dnum text{fill:var(--paper);font-family:var(--font-mono);font-size:10.5px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+/* lightbox */
+.lightbox{position:fixed;inset:0;z-index:60;background:rgba(10,16,20,.86);display:grid;place-items:center;padding:16px}
+.lightbox[hidden]{display:none}
+.lb-inner{max-width:min(1200px,100%);max-height:100%;display:grid;gap:10px;justify-items:center;overflow:auto}
+.lb-inner img{max-width:100%;max-height:78vh;background:#fff;border-radius:8px;padding:8px}
+.lb-cap{color:#E4EBEE;font-size:.9rem;max-width:80ch;text-align:center}
+.lb-cap .credit,.lb-cap a{color:#BAC7CD}
+.lb-close{justify-self:end}
+body.lb-open{overflow:hidden}
+
+/* ---------- mock exams ---------- */
+.mx{display:grid;gap:16px}
+.mx-row{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.mx-set{border:1px solid var(--line);border-radius:12px;padding:12px 14px 14px;margin:0;display:grid;gap:8px;background:var(--paper)}
+.mx-set legend{font-family:var(--font-mono);font-size:.72rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);padding:0 6px}
+.mx-opt{display:grid;grid-template-columns:22px minmax(0,1fr);gap:8px;align-items:start;font-size:.95rem;color:var(--ink-2);cursor:pointer;padding:6px 8px;border-radius:8px}
+.mx-opt:hover{background:var(--sunk)} .mx-opt input{margin-top:5px}
+.mx-pill{display:inline-flex;gap:6px;align-items:center}
+.mx-pill input{position:absolute;opacity:0;pointer-events:none}
+.mx-pill:has(input:checked){background:var(--accent);border-color:var(--accent);color:var(--paper)}
+.mx-pill:has(input:focus-visible){outline:2px solid var(--accent);outline-offset:2px}
+.mx-papers{display:grid;grid-template-columns:repeat(auto-fit,minmax(min(100%,320px),1fr));gap:12px}
+.mx-paper h4{font-size:1.3rem}
+.mx-resume{display:flex;flex-wrap:wrap;gap:10px;justify-content:space-between;align-items:center;background:var(--accent-tint);border:1px solid color-mix(in srgb,var(--accent) 30%,transparent);border-radius:12px;padding:12px 14px}
+.mx-bar{position:sticky;top:calc(env(safe-area-inset-top,0px) + 61px);z-index:20;background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:10px 12px 0;display:flex;flex-wrap:wrap;gap:8px 14px;align-items:center;justify-content:space-between;box-shadow:var(--shadow)}
+.mx-bar-l,.mx-bar-r{display:flex;flex-wrap:wrap;gap:8px;align-items:center}
+.mx-clock{font-family:var(--font-mono);font-weight:600;font-size:1rem;padding:6px 10px;border-radius:8px;background:var(--sunk);color:var(--ink);min-width:9ch;text-align:center}
+.mx-clock.warn{background:var(--artery-tint);color:var(--artery)}
+.mx-progress{flex-basis:100%;height:4px;background:var(--sunk);border-radius:2px;margin:2px -12px 0;overflow:hidden}
+.mx-progress i{display:block;height:100%;background:var(--accent);width:0;transition:width .2s}
+.mx-body{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:16px;align-items:start}
+.mx-nav{position:sticky;top:calc(env(safe-area-inset-top,0px) + 140px);background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:12px;display:grid;gap:10px;max-height:calc(100vh - 170px);overflow:auto}
+.mx-navtoggle{display:none}
+@media (max-width:900px){.mx-body{grid-template-columns:minmax(0,1fr)}.mx-nav{display:none;position:static;max-height:none}.mx.nav-open .mx-nav{display:grid}.mx-navtoggle{display:inline-block}.mx-nav{order:-1}}
+.mx-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(34px,1fr));gap:4px}
+.mx-grid button{appearance:none;font:inherit;font-family:var(--font-mono);font-size:.78rem;height:32px;border-radius:6px;border:1px solid var(--line-2);background:var(--paper);color:var(--ink-2);cursor:pointer;position:relative}
+.mx-grid button.ans{background:var(--accent-tint);color:var(--ink);border-color:color-mix(in srgb,var(--accent) 40%,transparent)}
+.mx-grid button.ok{background:color-mix(in srgb,var(--ok) 22%,var(--paper));border-color:var(--ok)}
+.mx-grid button.no{background:var(--artery-tint);border-color:var(--artery)}
+.mx-grid button.flag::after{content:"";position:absolute;top:2px;right:2px;width:7px;height:7px;border-radius:50%;background:var(--warn)}
+.mx-grid button.cur{outline:2px solid var(--ink);outline-offset:1px;font-weight:700}
+.mx-legend{display:flex;flex-wrap:wrap;gap:4px 10px;color:var(--muted)}
+.mx-legend i{display:inline-block;width:10px;height:10px;border-radius:3px;margin-right:4px;vertical-align:-1px;border:1px solid var(--line-2)}
+.mx-legend .c-ans{background:var(--accent-tint)} .mx-legend .c-flag{background:var(--warn)} .mx-legend .c-ok{background:color-mix(in srgb,var(--ok) 30%,var(--paper))} .mx-legend .c-no{background:var(--artery-tint)}
+.mx-card{padding:20px;gap:14px}
+.mx-card .stem{font-size:1.06rem;line-height:1.6}
+.mx-flag{margin-left:auto}
+.opt.sel{border-color:var(--accent);background:var(--accent-tint);box-shadow:inset 0 0 0 1px var(--accent)}
+.opt.sel span.l{color:var(--accent-ink)}
+.mx-move{justify-content:space-between;border-top:1px solid var(--line);padding-top:12px}
+@media (max-width:700px){.mx-keys{display:none}}
+.mx-fb.ok{border-top-color:var(--ok)} .mx-fb.no{border-top-color:var(--artery)}
+.mx-modal{position:fixed;inset:0;z-index:55;background:rgba(10,16,20,.55);display:grid;place-items:center;padding:16px}
+.mx-modal[hidden]{display:none}
+.mx-dialog{background:var(--paper);border-radius:14px;padding:20px;max-width:460px;display:grid;gap:12px;box-shadow:var(--shadow)}
+.mx-score{display:grid;grid-template-columns:auto minmax(0,1fr);gap:20px;align-items:center;background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:18px}
+@media (max-width:600px){.mx-score{grid-template-columns:minmax(0,1fr)}}
+.mx-big{display:grid;justify-items:center;gap:2px;padding:6px 18px;border-right:1px solid var(--line)}
+@media (max-width:600px){.mx-big{border-right:0;border-bottom:1px solid var(--line);padding-bottom:12px}}
+.mx-pct{font-family:var(--font-display);font-size:3.2rem;font-weight:600;line-height:1;color:var(--accent-ink)}
+.mx-facts{display:grid;gap:4px;font-size:.93rem;color:var(--ink-2)}
+.mx-band{font-weight:700;color:var(--ink)}
+.mx-meter{height:10px;background:var(--sunk);border-radius:5px;overflow:hidden}
+.mx-meter i{display:block;height:100%;background:var(--ok)}
+.mx-meter.mid i{background:var(--nerve)} .mx-meter.low i{background:var(--artery)}
+.mx-topics td,.mx-topics th{vertical-align:middle}
+.mx-rev{border-left:4px solid var(--line-2)} .mx-rev.is-ok{border-left-color:var(--ok)} .mx-rev.is-no{border-left-color:var(--artery)}
+.mx-rev .verdict{margin-left:auto;font-weight:700;font-size:.88rem} .mx-rev .verdict.ok{color:var(--ok)} .mx-rev .verdict.no{color:var(--artery)}
+.mx-rev .opt{cursor:default}
+body.exam-on[data-tab="exams"] .rail{display:none}
+body.exam-on[data-tab="exams"] .layout{grid-template-columns:minmax(0,1fr)}
+body.exam-on[data-tab="exams"] .mobile-toc,body.exam-on #mock-guide,body.exam-on .mx-opener,body.exam-on #mock > header{display:none}
+body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 </style>
 </head>
 <body>
@@ -365,13 +484,15 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
 
 <div class="topbar">
   <div class="topbar-inner">
-    <a class="brand" href="#start"><b>Limb Anatomy Atlas</b><span>BMBS Year 1</span></a>
+    <a class="brand" href="#start"><b>Anatomy Atlas</b><span>BMBS Year 1</span></a>
     <nav class="tabs" role="tablist" aria-label="Chapters">
-      <button class="tab" role="tab" data-tab="systems" aria-selected="true">Body systems</button>
+      <button class="tab" role="tab" data-tab="systems" aria-selected="true">Big picture</button>
+      <button class="tab" role="tab" data-tab="organs" aria-selected="false">Organ systems</button>
       <button class="tab" role="tab" data-tab="upper" aria-selected="false">Upper limb</button>
       <button class="tab" role="tab" data-tab="lower" aria-selected="false">Lower limb</button>
-      <button class="tab" role="tab" data-tab="test" aria-selected="false">Self-test</button>
-      <button class="tab" role="tab" data-tab="sources" aria-selected="false">Sources &amp; slide checks</button>
+      <button class="tab" role="tab" data-tab="test" aria-selected="false">Quick quiz</button>
+      <button class="tab" role="tab" data-tab="exams" aria-selected="false">Mock exams</button>
+      <button class="tab" role="tab" data-tab="sources" aria-selected="false">Sources</button>
     </nav>
   </div>
 </div>
@@ -397,13 +518,13 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
 
   <div class="opener" id="start">
     <span class="eyebrow">Chapter 1 · The big picture</span>
-    <h1>Learn the body as one machine, then zoom into the limbs</h1>
-    <p class="lede">Anatomy sticks when you know where a structure sits in the bigger plan. This atlas starts with the body's organ systems, then gives the upper and lower limb in full: bones, joints, muscles, nerves, vessels, lymphatics, fascia and the clinical regions you will examine, cannulate and image as an FY1.</p>
+    <h1>Learn the body as one machine, then zoom into each system</h1>
+    <p class="lede">Anatomy sticks when you know where a structure sits in the bigger plan. Start here with the map of the organ systems and how they cooperate. The <a href="#organs">Organ systems</a> chapter then takes each system organ by organ (structure, function, supply and clinical links) with labelled diagrams. The limb chapters go deepest: bones, joints, muscles, nerves, vessels and the clinical regions you will examine as an FY1. Finish with two timed <a href="#exams">100-question mock exams</a>.</p>
     <div class="howto">
-      <div><b>Big picture</b>Skim the systems map and the language of anatomy below.</div>
-      <div><b>Blueprint</b>Learn the shared plan of both limbs. It halves the memory load.</div>
-      <div><b>Detail</b>Work through one limb chapter: bones, then nerves and vessels as flowcharts.</div>
-      <div><b>Test</b>Use the hide-labels mode on every bone and the exam-style questions.</div>
+      <div><b>Big picture</b>Skim the systems map, how the systems work together, and the language of anatomy below.</div>
+      <div><b>Organ systems</b>For each system: what it does, its numbers, its organs, a labelled diagram and how it links to the rest.</div>
+      <div><b>Detail</b>Work through a limb chapter: bones, then nerves and vessels as flowcharts.</div>
+      <div><b>Test</b>Quick quiz for retrieval practice, then a timed mock exam marked at the end or as you go.</div>
     </div>
     <div>
       <span class="eyebrow">Where this sits in your Year 1 (2026–27)</span>
@@ -428,7 +549,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
     <header>
       <span class="eyebrow">Body systems · Overview</span>
       <h2>The organ systems</h2>
-      <p>The eleven classic organ systems, plus blood. Each system is a team of organs with one main job. Tap a card to light up its organs on the figure. The tag on each card is the Exeter block where it is taught in depth.</p>
+      <p>The eleven classic organ systems, plus blood. Each system is a team of organs with one main job. Tap a card to light up its organs on the figure, then follow the link to that system's full chapter. The tag on each card is the Exeter block where it is taught in depth.</p>
     </header>
     <div class="sys-wrap">
       <div class="body-map" id="body-map">
@@ -757,10 +878,21 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
   </section>
 </section>
 
+<!-- ======================================================= ORGAN SYSTEMS ======================================================= -->
+<section class="panel" id="panel-organs" data-panel="organs" hidden>
+  <div class="opener" id="organs-top">
+    <span class="eyebrow">Chapter 2 · Organ systems in depth</span>
+    <h1>Organ systems, organ by organ</h1>
+    <p class="lede">Each system follows the same pattern so you can compare them: what it does and the numbers worth knowing, labelled illustrations, the organs one at a time (where each sits, its structure, its function, its blood and nerve supply and a clinical link), a key table, a step-by-step "how it works" sequence, and the links to other systems.</p>
+    <div class="chips"><span class="key">Tap any illustration to enlarge it</span><span class="key">Open an organ for its full card</span><span class="key">Original diagrams are drawn for this atlas; others are credited under each image</span></div>
+  </div>
+  <div id="organs-host"></div>
+</section>
+
 <!-- ======================================================= UPPER LIMB ======================================================= -->
 <section class="panel" id="panel-upper" data-panel="upper" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 2 · Upper limb</span>
+    <span class="eyebrow">Chapter 3 · Upper limb</span>
     <h1>Upper limb</h1>
     <p class="lede">The arm is built for reach and precision. A shallow shoulder gives a huge range of movement, the forearm turns the hand over, and the hand is run by five nerves that you can test in under a minute.</p>
     <div class="twocol">
@@ -784,6 +916,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
       <h2>Bones and their landmarks</h2>
       <p>Every bump, groove and fossa on a bone is there for a reason: a muscle pulls on it, a joint surface sits on it, or a nerve or vessel runs past it. Tap a number or a name to see what each landmark does. Use <b>Hide labels</b> to test yourself.</p>
     </header>
+    <div class="plate"><div class="plate-head"><h3>Reference illustrations</h3><span class="cap">Classic labelled plates of the upper limb skeleton. Tap to enlarge.</span></div><div data-figset="ul-bones"></div></div>
     <div class="bone-plate" data-bone="clavicle"></div>
     <div class="bone-plate" data-bone="scapula"></div>
     <div class="bone-plate" data-bone="humerus"></div>
@@ -881,6 +1014,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
       <h2>The brachial plexus</h2>
       <p>Five spinal nerve roots (<span class="rt">C5–T1</span>) mix and re-sort so that each terminal nerve carries fibres from several roots. Tap a terminal nerve to trace its fibres back to the roots and see what it supplies.</p>
     </header>
+    <div class="plate"><div class="plate-head"><h3>Reference illustrations</h3><span class="cap">A labelled reference diagram to compare with the interactive version below.</span></div><div data-figset="ul-plexus"></div></div>
     <div class="plate">
       <div class="plate-head"><h3>Roots → trunks → divisions → cords → branches</h3><span class="cap">"Real Teenagers Drink Cold Beer". Right plexus, schematic.</span></div>
       <div class="scroll-x"><div id="plexus-fig"></div></div>
@@ -1046,6 +1180,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
       <h2>Arterial supply</h2>
       <p>One continuous trunk that changes its name at landmarks, giving branches as it goes. Tap any vessel in the flowchart for what it supplies and why it matters.</p>
     </header>
+    <div class="plate"><div class="plate-head"><h3>Reference illustrations</h3><span class="cap">Gray's plate of the brachial artery and its branches.</span></div><div data-figset="ul-arteries"></div></div>
     <div class="plate">
       <div class="plate-head"><h3>Branching flowchart</h3><span class="cap">Scroll sideways on a phone. Tap a vessel for details.</span></div>
       <div class="tree" data-tree="ulArt"></div>
@@ -1404,7 +1539,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
 <!-- ======================================================= LOWER LIMB ======================================================= -->
 <section class="panel" id="panel-lower" data-panel="lower" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 3 · Lower limb</span>
+    <span class="eyebrow">Chapter 4 · Lower limb</span>
     <h1>Lower limb</h1>
     <p class="lede">The leg is built for weight-bearing and propulsion. A deep hip, a locking knee and a sprung foot carry your whole body weight with every step, and that load explains most of its anatomy and most of its injuries.</p>
     <div class="twocol">
@@ -1428,6 +1563,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
       <h2>Bones and their landmarks</h2>
       <p>Tap a number or name to see what attaches there and why it matters clinically. Use <b>Hide labels</b> to test yourself.</p>
     </header>
+    <div class="plate"><div class="plate-head"><h3>Reference illustrations</h3><span class="cap">Classic labelled plates of the lower limb skeleton. Tap to enlarge.</span></div><div data-figset="ll-bones"></div></div>
     <div class="bone-plate" data-bone="hipbone"></div>
     <div class="bone-plate" data-bone="femur"></div>
     <div class="bone-plate" data-bone="patella"></div>
@@ -1534,6 +1670,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
       <h2>The lumbosacral plexus</h2>
       <p>Two plexuses joined by the lumbosacral trunk. The lumbar plexus forms inside psoas major and supplies the front and inner thigh; the sacral plexus lies on piriformis and supplies the buttock, back of thigh, and everything below the knee except a strip of medial skin.</p>
     </header>
+    <div class="plate"><div class="plate-head"><h3>Reference illustrations</h3><span class="cap">Gray's plan of the lumbar plexus, to set beside the flowchart.</span></div><div data-figset="ll-plexus"></div></div>
     <div class="plate">
       <div class="plate-head"><h3>Branching flowchart</h3><span class="cap">Tap a nerve for its roots, supply and what an injury looks like.</span></div>
       <div class="tree" data-tree="llPlexus"></div>
@@ -1697,6 +1834,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
       <h2>Arterial supply</h2>
       <p>One trunk that changes name at the inguinal ligament and the adductor hiatus, then splits into three below the knee. Tap any vessel for details.</p>
     </header>
+    <div class="plate"><div class="plate-head"><h3>Reference illustrations</h3><span class="cap">Gray's plate of the femoral artery in the thigh.</span></div><div data-figset="ll-arteries"></div></div>
     <div class="plate">
       <div class="plate-head"><h3>Branching flowchart</h3><span class="cap">Scroll sideways on a phone.</span></div>
       <div class="tree" data-tree="llArt"></div>
@@ -2059,13 +2197,14 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
 <!-- ======================================================= SELF-TEST ======================================================= -->
 <section class="panel" id="panel-test" data-panel="test" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 4 · Self-test</span>
-    <h1>Test yourself</h1>
-    <p class="lede">Questions in the two formats of the Mid-Year and End of Year 1 exams: single best answer with a clinical vignette, and very short answer (one to three words). Type your answer before you look; retrieval is what makes it stick.</p>
+    <span class="eyebrow">Chapter 5 · Quick quiz</span>
+    <h1>Quick quiz</h1>
+    <p class="lede">Short, untimed questions in the two formats of the Mid-Year and End of Year 1 exams: single best answer with a clinical vignette, and very short answer (one to three words). Type your answer before you look; retrieval is what makes it stick.</p>
+    <div class="note exam"><span class="tag">Ready for a full paper?</span><p>Two timed 100-question mock exams covering every system are in <a href="#exams">Mock exams</a>. Choose to be marked at the end or to see the answer after every question.</p></div>
   </div>
   <section class="sec" id="quiz">
     <header>
-      <span class="eyebrow">Self-test · Questions</span>
+      <span class="eyebrow">Quick quiz · Questions</span>
       <h2>Exam-style questions</h2>
       <p>Your score is kept on this device only. Wrong answers are worth revisiting tomorrow, then in three days, then in a week.</p>
     </header>
@@ -2086,7 +2225,7 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
   </section>
   <section class="sec" id="anki">
     <header>
-      <span class="eyebrow">Self-test · Anki</span>
+      <span class="eyebrow">Quick quiz · Anki</span>
       <h2>Take the questions into Anki</h2>
       <p>Copies every question here plus every bone landmark as tab-separated front/back text. In Anki, choose File → Import, paste into a .txt file first if your version needs one, and set the separator to Tab.</p>
     </header>
@@ -2095,10 +2234,39 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
   </section>
 </section>
 
+<!-- ======================================================= MOCK EXAMS ======================================================= -->
+<section class="panel" id="panel-exams" data-panel="exams" hidden>
+  <div class="opener mx-opener">
+    <span class="eyebrow">Chapter 6 · Mock exams</span>
+    <h1>Timed mock exams</h1>
+    <p class="lede">Two full papers of 100 questions each, written at end-of-Year-1 standard in the AMK style: 75 single best answer questions built on clinical vignettes and 25 very short answer questions (type one to three words). Every system is covered, with the emphasis on applying anatomy and physiology to a patient.</p>
+  </div>
+  <section class="sec" id="mock">
+    <header>
+      <span class="eyebrow">Mock exams · Set up and sit</span>
+      <h2>Choose a paper</h2>
+      <p>Pick exam mode to be marked at the end, or tutor mode to see whether you were right, with an explanation, the moment you answer. Attempts save on this device, so you can close the page and resume.</p>
+    </header>
+    <div id="mock-host" class="mx"></div>
+  </section>
+  <section class="sec" id="mock-guide">
+    <header>
+      <span class="eyebrow">Mock exams · Using them well</span>
+      <h2>How to get the most from a mock</h2>
+    </header>
+    <div class="twocol">
+      <div class="card"><h4>Sit it like the real thing</h4><ul><li>Use exam mode with the 2-hour limit (about 72 seconds a question).</li><li>Answer every question: there is no negative marking.</li><li>Flag anything you are unsure of and come back at the end.</li></ul></div>
+      <div class="card"><h4>Single best answer technique</h4><ul><li>Read the last line (the actual question) first, then the vignette.</li><li>Try to answer before you look at the options.</li><li>More than one option may be true: pick the one that best answers the question asked.</li></ul></div>
+      <div class="card"><h4>Very short answers</h4><ul><li>Give the specific term, not a description ("trigone", not "the triangle in the bladder").</li><li>Spelling is marked leniently. Review the automatic marking and overrule it where a synonym was fair.</li></ul></div>
+      <div class="card"><h4>After the paper</h4><ul><li>Start with the score-by-system table and revise your two weakest systems in the atlas.</li><li>Use "Practise the ones I got wrong" a day later, then retake the full paper in a week.</li></ul></div>
+    </div>
+  </section>
+</section>
+
 <!-- ======================================================= SOURCES ======================================================= -->
 <section class="panel" id="panel-sources" data-panel="sources" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 5 · Sources and slide checks</span>
+    <span class="eyebrow">Chapter 7 · Sources and slide checks</span>
     <h1>Sources and slide checks</h1>
     <p class="lede">Built from your peer-teaching slides and BMBS handbooks, checked against standard anatomy references, and extended with current UK guidance. Where a slide disagreed with the references, the correction is listed below so you can fix your notes.</p>
   </div>
@@ -2174,13 +2342,18 @@ footer.foot{margin-top:50px;padding-top:18px;border-top:1px solid var(--line);fo
         </ul>
       </div>
     </div>
-    <p class="small muted">Diagrams on this page are original schematics drawn for learning. They simplify shapes and proportions, so check fine detail against Netter or the LSRC specimens. This page is a study aid and not a substitute for your course teaching or clinical guidance.</p>
+    <p class="small muted">Interactive diagrams on this page are original schematics drawn for learning. Photographic-style and textbook illustrations are loaded from Wikimedia Commons under their stated free licences (public domain, CC BY or CC BY-SA), with the author and licence printed under each image. Schematics simplify shapes and proportions, so check fine detail against Netter or the LSRC specimens. This page is a study aid and not a substitute for your course teaching or clinical guidance.</p>
   </section>
 </section>
 
-<footer class="foot">Limb Anatomy Atlas · built for BMBS Year 1, October 2026. Colour code follows the anatomical atlas convention: arteries red, veins blue, nerves yellow, lymphatics green.</footer>
+<footer class="foot">Year 1 Anatomy Atlas · built for BMBS Year 1, October 2026. Colour code follows the anatomical atlas convention: arteries red, veins blue, nerves yellow, lymphatics green.</footer>
   </main>
 </div>
+<script src="assets/diagrams.js"></script>
+<script src="assets/organs.js"></script>
+<script src="assets/exam-paper1.js"></script>
+<script src="assets/exam-paper2.js"></script>
+<script src="assets/mock-exam.js"></script>
 <script>
 /* ================= DATA ================= */
 const MUSCLES = {
@@ -3013,8 +3186,8 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
 
 /* ---------- tabs, rail, routing ---------- */
-const PANELS=['systems','upper','lower','test','sources'];
-const NAMES={systems:'Body systems',upper:'Upper limb',lower:'Lower limb',test:'Self-test',sources:'Sources'};
+const PANELS=['systems','organs','upper','lower','test','exams','sources'];
+const NAMES={systems:'Big picture',organs:'Organ systems',upper:'Upper limb',lower:'Lower limb',test:'Quick quiz',exams:'Mock exams',sources:'Sources'};
 let io=null, current=null;
 function buildRail(tab){
   const panel=$('#panel-'+tab), secs=$$('.sec',panel).filter(s=>s.id);
@@ -3036,7 +3209,7 @@ function showTab(tab,anchor){
   if(current!==tab){
     $$('.tab').forEach(b=>b.setAttribute('aria-selected',String(b.dataset.tab===tab)));
     $$('.panel').forEach(p=>{p.hidden=(p.dataset.panel!==tab);});
-    buildRail(tab); current=tab; LS.set('atlas-tab',tab);
+    buildRail(tab); current=tab; LS.set('atlas-tab',tab); document.body.dataset.tab=tab;
   }
   if(anchor){const el=document.getElementById(anchor); if(el) requestAnimationFrame(()=>el.scrollIntoView());}
   else window.scrollTo(0,0);
@@ -3067,7 +3240,8 @@ $('#toc-select').addEventListener('change',e=>{const el=document.getElementById(
     if(turnOn){
       b.classList.add('on'); map.classList.add('focus');
       $$('.org',map).forEach(g=>g.classList.toggle('on',g.dataset.sys===b.dataset.sys));
-      cap.textContent=b.querySelector('h3').firstChild.textContent.trim()+' system shown. Tap the card again to clear.';
+      const nm=b.querySelector('h3').firstChild.textContent.trim(), deep={msk:'msk',musc:'musc',nerv:'nerv',endo:'endo',cvs:'cvs',lymph:'lymph',blood:'blood',resp:'resp',gi:'gi',renal:'renal',repro:'repro',skin:'skin'}[b.dataset.sys];
+      cap.innerHTML=esc(nm)+' system shown. '+(deep?`<a href="#sys-${deep}">Open the full ${esc(nm.toLowerCase())} chapter →</a>`:'Tap the card again to clear.');
     } else {
       map.classList.remove('focus'); $$('.org',map).forEach(g=>g.classList.remove('on'));
       cap.textContent='Tap a system to highlight its organs';

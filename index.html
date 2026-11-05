@@ -471,6 +471,89 @@ body.exam-on[data-tab="exams"] .rail{display:none}
 body.exam-on[data-tab="exams"] .layout{grid-template-columns:minmax(0,1fr)}
 body.exam-on[data-tab="exams"] .mobile-toc,body.exam-on #mock-guide,body.exam-on .mx-opener,body.exam-on #mock > header{display:none}
 body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
+
+/* ---------- nervous system chapter ---------- */
+#panel-neuro .pbtn{min-height:44px;padding:8px 14px}
+.nchain{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:8px 6px;align-items:center}
+.nchain li{margin:0;display:flex;align-items:center;gap:6px}
+.nchain li+li::before{content:"→";color:var(--muted);font-weight:700}
+.nchain .nk{display:grid;gap:1px;padding:7px 11px;border-radius:10px;border:1px solid var(--line-2);background:var(--paper);font-size:.9rem;line-height:1.25}
+.nchain .nk small{color:var(--muted);font-size:.76rem}
+.nchain .s .nk{background:var(--nerve-tint);border-color:color-mix(in srgb,var(--nerve) 55%,transparent)}
+.nchain .c .nk{background:var(--accent-tint);border-color:color-mix(in srgb,var(--accent) 45%,transparent)}
+.nchain .m .nk{background:var(--muscle-tint);border-color:color-mix(in srgb,var(--muscle) 45%,transparent)}
+.nchain-csf .nk{background:var(--accent-tint);border-color:color-mix(in srgb,var(--accent) 35%,transparent)}
+.nx-fig{background:var(--bone-art);border-radius:10px;padding:6px;display:flex;justify-content:center}
+.nx-fig svg{width:100%;height:auto;display:block;max-height:680px}
+.nx text{font-family:var(--font-body);font-size:13px;fill:var(--ink)}
+.nx .sm{font-size:11.5px;fill:var(--ink-2)}
+.nx .xs{font-size:10.5px;fill:var(--ink-2)}
+.nx .b{font-weight:700;fill:var(--ink)}
+.nx .hd{font-family:var(--font-mono);font-size:10px;letter-spacing:.1em;fill:var(--muted)}
+.nx .ldr{stroke:var(--ink-2);stroke-width:1;fill:none;opacity:.65}
+.nx .nx-t{cursor:pointer;outline:none}
+.nx .nx-t .hit{fill:transparent;stroke:none}
+.nx .nx-t:hover .nx-s,.nx .nx-t:focus-visible .nx-s{stroke:var(--accent);stroke-width:3}
+.nx .nx-t.on .nx-s{stroke:var(--clin);stroke-width:3.5}
+.nx-detail{display:grid;gap:6px;min-height:120px}
+.nx-detail dl{display:grid;grid-template-columns:max-content minmax(0,1fr);gap:5px 12px;margin:4px 0 0}
+.nx-detail dt{font-family:var(--font-mono);font-size:.68rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);padding-top:3px}
+.nx-detail dd{margin:0}
+.nx-detail ul,.nx-detail ol{margin:0}
+@media (max-width:520px){.nx-detail dl{grid-template-columns:minmax(0,1fr)}.nx-detail dt{padding-top:6px}}
+.nx-legend{display:flex;flex-wrap:wrap;gap:6px}
+.nx-chip{display:inline-flex;align-items:center;gap:7px}
+.nx-chip i{width:14px;height:8px;border-radius:3px;display:inline-block}
+.nx-key{display:grid;gap:4px;font-size:.92rem;padding-left:1.7em;color:var(--ink-2)}
+.nx-key li+li{margin-top:0}
+.nx .nx-num circle{fill:var(--accent);stroke:var(--paper);stroke-width:1.5}
+.nx .nx-num text{fill:var(--paper);font-family:var(--font-mono);font-size:10.5px;font-weight:700;text-anchor:middle;dominant-baseline:central}
+.r4{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:6px}
+.r4 > div{background:var(--paper);border:1px solid var(--line);border-radius:10px;padding:8px 10px;display:grid;gap:2px}
+.r4 b{font-family:var(--font-mono);font-size:.95rem}
+@media (max-width:560px){.r4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+/* skull */
+.nx .fossa .nx-s{fill:color-mix(in srgb,var(--bone) 70%,var(--paper));stroke:var(--bone-line);stroke-width:1.6}
+.nx .fossa.on .nx-s{fill:var(--accent-tint)}
+.nx .sk-hole{fill:var(--bone-art);stroke:var(--bone-line);stroke-width:1.2}
+.nx .sk-lbl{display:none}
+.nx[data-sel="ant"] .sk-lbl[data-f="ant"],.nx[data-sel="mid"] .sk-lbl[data-f="mid"],.nx[data-sel="post"] .sk-lbl[data-f="post"]{display:inline}
+.nx[data-sel="ant"] .sk-hole[data-f="ant"],.nx[data-sel="mid"] .sk-hole[data-f="mid"],.nx[data-sel="post"] .sk-hole[data-f="post"]{fill:var(--clin-tint);stroke:var(--clin);stroke-width:1.8}
+/* brain modes */
+.nx .only-fn,.nx .only-bs,.nx .only-hom{display:none}
+.nx.m-fn .only-fn,.nx.m-bs .only-bs,.nx.m-hom .only-hom{display:inline}
+.nx .lobe .nx-s{fill:color-mix(in srgb,var(--lc) 30%,var(--paper));stroke:var(--lc);stroke-width:1.5}
+.nx .lobe.on .nx-s{fill:color-mix(in srgb,var(--lc) 62%,var(--paper))}
+.nx.m-bs .lobe,.nx.m-hom .lobe{pointer-events:none}
+.nx.m-bs .lobe .nx-s,.nx.m-hom .lobe .nx-s{fill:var(--sunk);stroke:var(--line-2)}
+.nx .terr .nx-s{fill:color-mix(in srgb,var(--lc) 45%,var(--paper));stroke:var(--lc);stroke-width:1.5}
+.nx .terr.on .nx-s{fill:color-mix(in srgb,var(--lc) 75%,var(--paper))}
+/* circle of Willis */
+.nx .ves{fill:none;stroke:var(--artery);stroke-width:4.5;stroke-linecap:round;stroke-linejoin:round;transition:opacity .15s}
+.nx .ves.dim{opacity:.16}
+.nx .ves.lit{stroke-width:6.5}
+.nx .vhit{fill:none;stroke:transparent;stroke-width:24;stroke-linecap:round;pointer-events:stroke}
+.nx .vhit-g:focus-visible .vhit{stroke:color-mix(in srgb,var(--accent) 35%,transparent)}
+/* brainstem and cranial nerves */
+.nx .cn-stub{fill:none;stroke:var(--nerve);stroke-width:4;stroke-linecap:round}
+.nx .cn-stub.on{stroke:var(--clin);stroke-width:6.5}
+.nx .cn-ld{stroke:var(--line-2);stroke-width:1.2;stroke-dasharray:3 3;fill:none}
+.nx .cn-ld.on{stroke:var(--clin);stroke-width:2;stroke-dasharray:none}
+.nx .cnb .nx-s{fill:var(--nerve-tint);stroke:var(--nerve);stroke-width:2}
+.nx .cnb.on .nx-s{fill:var(--nerve)}
+.nx .cnb text{font-family:var(--font-mono);font-size:12px;font-weight:700;text-anchor:middle;dominant-baseline:central;fill:var(--nerve-ink);pointer-events:none}
+.nx .cnb.on text{fill:var(--paper)}
+/* spinal cord */
+.nx .trk{stroke:var(--paper);stroke-width:1.2;opacity:.85}
+.nx .trk-x{fill:none;stroke:var(--artery);stroke-width:2;stroke-dasharray:4 3;opacity:.55}
+.nx .trk-g.dim{opacity:.22}
+.nx .trk-g.lit .trk{opacity:1;stroke:var(--ink);stroke-width:2}
+.nx .trk-g.lit .trk-x{opacity:1;stroke-width:3;stroke-dasharray:none}
+.nx .trk-g.hit .trk{stroke:var(--clin);stroke-width:3.5;opacity:1}
+.nx .trk-g.hit .trk-x{stroke:var(--clin);stroke-width:3;opacity:1}
+.nx .les{display:none}
+.nx .les.on{display:inline}
+.nx-trace-plate{padding:10px}
 </style>
 </head>
 <body>
@@ -490,6 +573,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
       <button class="tab" role="tab" data-tab="organs" aria-selected="false">Organ systems</button>
       <button class="tab" role="tab" data-tab="upper" aria-selected="false">Upper limb</button>
       <button class="tab" role="tab" data-tab="lower" aria-selected="false">Lower limb</button>
+      <button class="tab" role="tab" data-tab="neuro" aria-selected="false">Nervous system</button>
       <button class="tab" role="tab" data-tab="test" aria-selected="false">Quick quiz</button>
       <button class="tab" role="tab" data-tab="exams" aria-selected="false">Mock exams</button>
       <button class="tab" role="tab" data-tab="sources" aria-selected="false">Sources</button>
@@ -519,7 +603,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
   <div class="opener" id="start">
     <span class="eyebrow">Chapter 1 · The big picture</span>
     <h1>Learn the body as one machine, then zoom into each system</h1>
-    <p class="lede">Anatomy sticks when you know where a structure sits in the bigger plan. Start here with the map of the organ systems and how they cooperate. The <a href="#organs">Organ systems</a> chapter then takes each system organ by organ (structure, function, supply and clinical links) with labelled diagrams. The limb chapters go deepest: bones, joints, muscles, nerves, vessels and the clinical regions you will examine as an FY1. Finish with two timed <a href="#exams">100-question mock exams</a>.</p>
+    <p class="lede">Anatomy sticks when you know where a structure sits in the bigger plan. Start here with the map of the organ systems and how they cooperate. The <a href="#organs">Organ systems</a> chapter then takes each system organ by organ (structure, function, supply and clinical links) with labelled diagrams. The limb chapters go deepest: bones, joints, muscles, nerves, vessels and the clinical regions you will examine as an FY1. <a href="#neuro">Nervous system</a> covers the brain, brainstem, cranial nerves and spinal pathways. Finish with two timed <a href="#exams">100-question mock exams</a>.</p>
     <div class="howto">
       <div><b>Big picture</b>Skim the systems map, how the systems work together, and the language of anatomy below.</div>
       <div><b>Organ systems</b>For each system: what it does, its numbers, its organs, a labelled diagram and how it links to the rest.</div>
@@ -2194,10 +2278,382 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
   </section>
 </section>
 
+<!-- ======================================================= NERVOUS SYSTEM ======================================================= -->
+<section class="panel" id="panel-neuro" data-panel="neuro" hidden>
+  <div class="opener">
+    <span class="eyebrow">Chapter 5 · Nervous system</span>
+    <h1>Nervous system: brain, brainstem and cranial nerves</h1>
+    <p class="lede">Everything above the roots and plexuses of the limb chapters: the skull that houses the brain, its coverings and fluid, what each region does, where its blood comes from, the brainstem and its twelve cranial nerves, and the spinal cord pathways that link them. Every figure is interactive: tap or tab to a part and press Enter.</p>
+    <div class="twocol">
+      <div class="card">
+        <h4>The whole system on one card</h4>
+        <ul>
+          <li><b>CNS:</b> cerebrum (four lobes on each side), diencephalon (thalamus, hypothalamus), brainstem (midbrain, pons, medulla), cerebellum, spinal cord.</li>
+          <li><b>Coverings:</b> skull → dura (two layers, sinuses between) → arachnoid → CSF in the subarachnoid space → pia.</li>
+          <li><b>Arteries:</b> two internal carotids (front ~80%) and two vertebrals joining as the basilar (back), linked by the circle of Willis.</li>
+          <li><b>Veins:</b> valveless cerebral veins → dural venous sinuses → internal jugular veins.</li>
+          <li><b>Nerves out:</b> 12 pairs of cranial nerves (III–XII from the brainstem) and 31 pairs of spinal nerves.</li>
+        </ul>
+      </div>
+      <div class="note think"><span class="tag">Think of it as</span><p>A telephone exchange. Wires come in from the body (sensory tracts), are switched at the thalamus, answered in the cortex, and replies go back out down the corticospinal "trunk line" to the anterior horn. Each wire crosses the midline at its own fixed point, which is why the side of a lesion tells you where it is.</p></div>
+    </div>
+  </div>
+
+  <section class="sec" id="neuro-chain">
+    <header>
+      <span class="eyebrow">Nervous system · Big picture</span>
+      <h2>The chain from receptor to muscle</h2>
+      <p>One loop runs through almost every neurological problem: a sensation comes in, is relayed and perceived, and a movement goes out. Learn it as a single chain and each lesion becomes a broken link.</p>
+    </header>
+    <ol class="nchain" aria-label="Sensory and motor chain">
+      <li class="s"><span class="nk"><b>Receptor</b><small>skin, joint, muscle spindle</small></span></li>
+      <li class="s"><span class="nk"><b>Sensory neurone</b><small>cell body in the dorsal root ganglion</small></span></li>
+      <li class="s"><span class="nk"><b>Tract</b><small>dorsal columns or spinothalamic</small></span></li>
+      <li class="c"><span class="nk"><b>Thalamus</b><small>relay (VPL nucleus)</small></span></li>
+      <li class="c"><span class="nk"><b>Cortex</b><small>postcentral gyrus, then association areas</small></span></li>
+      <li class="m"><span class="nk"><b>Motor cortex (UMN)</b><small>precentral gyrus</small></span></li>
+      <li class="m"><span class="nk"><b>Corticospinal tract</b><small>internal capsule → pyramids</small></span></li>
+      <li class="m"><span class="nk"><b>Anterior horn (LMN)</b><small>out in the ventral root</small></span></li>
+      <li class="m"><span class="nk"><b>Muscle</b><small>across the neuromuscular junction</small></span></li>
+    </ol>
+    <div class="chips"><span class="key k-nerve"><i></i>Sensory limb</span><span class="key"><i style="background:var(--accent)"></i>Relay and perception</span><span class="key k-musc"><i></i>Motor limb</span></div>
+    <div class="note think"><span class="tag">The one question</span><p>Every neuro question is: where has the chain broken?</p></div>
+    <div class="flow">
+      <div><b>Where is the lesion?</b>Cortex, internal capsule, brainstem, cord, root, plexus, nerve, neuromuscular junction or muscle.</div>
+      <div><b>UMN or LMN?</b>Spastic, brisk and upgoing (brain or cord) versus floppy, wasted and areflexic (anterior horn outwards).</div>
+      <div><b>Which side?</b>Each pathway crosses at a fixed level, so the side of the signs places the lesion.</div>
+      <div><b>Which vessel or root?</b>A pattern that fits one artery's territory points to stroke; one dermatome and myotome point to a root.</div>
+      <div><b>What does it mean for the person?</b>Walking, swallowing, speaking, driving, working, capacity to decide, and safety at home.</div>
+    </div>
+    <h3>Where the chain breaks, and what you see</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Level</th><th>Typical signs</th><th>Example</th></tr></thead>
+      <tbody>
+        <tr><th>Cerebral cortex</th><td>Contralateral weakness in a cortical pattern (face and arm, or leg), cortical sensory loss, aphasia or neglect, visual field defect</td><td>Middle cerebral artery stroke</td></tr>
+        <tr><th>Internal capsule</th><td>Dense contralateral face, arm and leg weakness with no cortical signs</td><td>Lacunar stroke</td></tr>
+        <tr><th>Brainstem</th><td>Crossed signs: cranial nerve palsy on the same side, limb weakness or sensory loss on the opposite side; reduced consciousness</td><td>Lateral medullary syndrome</td></tr>
+        <tr><th>Spinal cord</th><td>Sensory level, UMN signs below, LMN signs at the level, bladder and bowel change</td><td>Cord compression</td></tr>
+        <tr><th>Root</th><td>Pain and numbness in a dermatome, weakness in a myotome, one reflex reduced</td><td>L5 radiculopathy</td></tr>
+        <tr><th>Peripheral nerve</th><td>Only that nerve's muscles and skin</td><td>Carpal tunnel syndrome</td></tr>
+        <tr><th>Neuromuscular junction</th><td>Fatigable weakness, no sensory loss</td><td>Myasthenia gravis</td></tr>
+        <tr><th>Muscle</th><td>Proximal weakness, no sensory loss, reflexes kept until late</td><td>Polymyositis</td></tr>
+      </tbody>
+    </table></div>
+    <p class="small muted">Roots, plexuses and peripheral nerves of the limbs are covered in <a href="#upper">Upper limb</a> and <a href="#lower">Lower limb</a>.</p>
+  </section>
+
+  <section class="sec" id="neuro-skull">
+    <header>
+      <span class="eyebrow">Nervous system · Skull</span>
+      <h2>Skull and cranial fossae</h2>
+      <p>Looking down into the skull with the brain removed, the floor steps down in three levels from front to back: anterior, middle and posterior fossae. Tap a fossa to see its bones, contents and openings.</p>
+    </header>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Internal skull base, viewed from above</h3><span class="cap">Front at the top. Schematic.</span></div>
+        <div class="pill-btns" role="group" aria-label="Choose a fossa"><button class="pbtn" data-fossa="ant" aria-pressed="false">Anterior</button><button class="pbtn" data-fossa="mid" aria-pressed="false">Middle</button><button class="pbtn" data-fossa="post" aria-pressed="false">Posterior</button></div>
+        <div class="nx-fig" id="nx-skull"></div>
+      </div>
+      <div class="sub">
+        <div class="tdetail nx-detail" id="nx-skull-detail" aria-live="polite">Tap a fossa on the drawing, or use the buttons above it.</div>
+        <div class="card">
+          <h4>Skull in brief</h4>
+          <ul>
+            <li><b>22 bones.</b> Neurocranium (8): frontal, 2 parietal, 2 temporal, occipital, sphenoid, ethmoid. Viscerocranium (14): 2 nasal, 2 maxillae, 2 zygomatic, mandible, 2 palatine, 2 lacrimal, 2 inferior conchae, vomer.</li>
+            <li><b>Sutures</b> are fibrous joints: coronal (frontal–parietal), sagittal (parietal–parietal), lambdoid (parietal–occipital), squamous (parietal–temporal). The temporomandibular joint is the only synovial joint.</li>
+            <li><b>Fontanelles:</b> anterior (diamond, closes about 18 months) and posterior (triangle, about 2–3 months). Bulging suggests raised pressure; sunken suggests dehydration.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3>Openings in the cranial floor</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Opening</th><th>Bone</th><th>Fossa</th><th>Transmits</th></tr></thead>
+      <tbody>
+        <tr><th>Cribriform plate</th><td>Ethmoid</td><td>Anterior</td><td><span class="tn">Olfactory nerve fibres (I)</span></td></tr>
+        <tr><th>Optic canal</th><td>Sphenoid (lesser wing)</td><td>Middle</td><td><span class="tn">Optic nerve (II)</span>, <span class="ta">ophthalmic artery</span></td></tr>
+        <tr><th>Superior orbital fissure</th><td>Sphenoid (between lesser and greater wings)</td><td>Middle</td><td><span class="tn">III, IV, V1, VI</span>; <span class="tv">superior ophthalmic vein</span></td></tr>
+        <tr><th>Foramen rotundum</th><td>Sphenoid (greater wing)</td><td>Middle</td><td><span class="tn">Maxillary nerve (V2)</span></td></tr>
+        <tr><th>Foramen ovale</th><td>Sphenoid (greater wing)</td><td>Middle</td><td><span class="tn">Mandibular nerve (V3)</span></td></tr>
+        <tr><th>Foramen spinosum</th><td>Sphenoid (greater wing)</td><td>Middle</td><td><span class="ta">Middle meningeal artery</span> and vein</td></tr>
+        <tr><th>Carotid canal</th><td>Temporal (petrous part)</td><td>Middle</td><td><span class="ta">Internal carotid artery</span> with its sympathetic plexus</td></tr>
+        <tr><th>Internal acoustic meatus</th><td>Temporal (petrous part)</td><td>Posterior</td><td><span class="tn">Facial (VII) and vestibulocochlear (VIII)</span>; labyrinthine artery</td></tr>
+        <tr><th>Jugular foramen</th><td>Between temporal and occipital</td><td>Posterior</td><td><span class="tn">IX, X, XI</span>; <span class="tv">internal jugular vein</span> (from the sigmoid and inferior petrosal sinuses)</td></tr>
+        <tr><th>Hypoglossal canal</th><td>Occipital</td><td>Posterior</td><td><span class="tn">Hypoglossal nerve (XII)</span></td></tr>
+        <tr><th>Foramen magnum</th><td>Occipital</td><td>Posterior</td><td>Medulla joining the spinal cord, <span class="ta">vertebral arteries</span>, spinal roots of XI, meninges</td></tr>
+      </tbody>
+    </table></div>
+    <div class="notes">
+      <div class="note exam"><span class="tag">Sphenoid mnemonic: ROS</span><p>Along each greater wing, front to back: foramen <b>R</b>otundum (V2), foramen <b>O</b>vale (V3), foramen <b>S</b>pinosum (middle meningeal artery). The three trigeminal divisions leave by "<b>S</b>tanding <b>R</b>oom <b>O</b>nly": Superior orbital fissure (V1), Rotundum (V2), Ovale (V3).</p></div>
+      <div class="note clin"><span class="tag">Clinical link · pterion and extradural haematoma</span><p>The pterion is the H-shaped meeting point of the frontal, parietal, squamous temporal and greater wing of the sphenoid, about two fingers' breadth above the zygomatic arch. It is the thinnest part of the skull, and the anterior branch of the middle meningeal artery runs just inside it. A blow to the side of the head fractures it, the artery bleeds between bone and dura, and an extradural haematoma forms: often a lucid interval, then rapid decline with a fixed dilated pupil on the same side as the bleed.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · base of skull fracture</span><p>Anterior fossa: CSF rhinorrhoea, anosmia and bilateral periorbital bruising ("raccoon eyes"). Middle fossa (petrous temporal): CSF otorrhoea, blood behind the eardrum, bruising over the mastoid (Battle's sign) and facial or vestibulocochlear nerve palsy.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="neuro-meninges">
+    <header>
+      <span class="eyebrow">Nervous system · Coverings</span>
+      <h2>Meninges, CSF and bleeds</h2>
+      <p>Three membranes wrap the brain: tough dura, delicate arachnoid and the pia that clings to every gyrus. Where a bleed sits between these layers decides its shape on CT and how fast the patient deteriorates.</p>
+    </header>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Coronal section at the vertex</h3><span class="cap">Through the superior sagittal sinus. EDH, SDH, SAH mark where each bleed collects.</span></div>
+        <div class="nx-fig" id="nx-meninges"></div>
+      </div>
+      <div class="sub">
+        <div class="card">
+          <h4>The layers</h4>
+          <ul>
+            <li><b>Dura mater:</b> outer periosteal layer (lines the skull, ends at the foramen magnum) and inner meningeal layer. They separate to enclose the dural venous sinuses, and the meningeal layer folds inwards as the falx cerebri, tentorium cerebelli, falx cerebelli and diaphragma sellae. In the spine only the meningeal layer continues, leaving a true epidural space.</li>
+            <li><b>Arachnoid mater:</b> avascular; separated from the dura by a potential subdural space. Arachnoid granulations push into the sinuses and return CSF to the blood.</li>
+            <li><b>Pia mater:</b> clings to the brain and follows every sulcus; it ends as the filum terminale.</li>
+            <li><b>Nerve supply:</b> dura mainly from the trigeminal nerve; dura of the posterior fossa floor from C2–C3 (travelling with X and XII). The arachnoid has none. Dural stretch is felt as headache.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3>Intracranial bleeds</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Bleed</th><th>Space</th><th>Vessel</th><th>Typical cause</th><th>CT shape</th><th>Course</th></tr></thead>
+      <tbody>
+        <tr><th>Extradural (epidural) haematoma</th><td>Between skull and periosteal dura</td><td class="ta">Middle meningeal artery</td><td>Blow to the temple fracturing the pterion, often a young adult</td><td>Biconvex (lens); stops at sutures, where the dura is tightly attached</td><td>Lucid interval, then rapid decline: arterial pressure. Neurosurgical emergency</td></tr>
+        <tr><th>Subdural haematoma</th><td>Between dura and arachnoid</td><td class="tv">Bridging veins</td><td>Older people, falls, alcohol, anticoagulants; brain shrinkage stretches the veins</td><td>Crescent; crosses sutures, not the midline</td><td>Acute after major trauma, or chronic over days to weeks with confusion and drowsiness</td></tr>
+        <tr><th>Subarachnoid haemorrhage</th><td>Subarachnoid space (CSF and arteries)</td><td class="ta">Ruptured berry aneurysm on the circle of Willis</td><td>Spontaneous, or trauma</td><td>Blood in the sulci and basal cisterns</td><td>Thunderclap headache peaking within minutes, neck stiffness, photophobia; vasospasm can cause delayed ischaemia</td></tr>
+        <tr><th>Intracerebral haemorrhage</th><td>Within the brain tissue</td><td class="ta">Small perforating arteries</td><td>Hypertension, amyloid angiopathy, anticoagulants</td><td>Bright mass within the brain</td><td>A haemorrhagic stroke: sudden focal deficit</td></tr>
+      </tbody>
+    </table></div>
+    <h3>CSF: made, moved, absorbed</h3>
+    <ol class="nchain nchain-csf" aria-label="Flow of cerebrospinal fluid">
+      <li><span class="nk"><b>Choroid plexus</b><small>makes ~500 mL a day</small></span></li>
+      <li><span class="nk"><b>Lateral ventricles</b></span></li>
+      <li><span class="nk"><b>Interventricular foramina</b><small>of Monro</small></span></li>
+      <li><span class="nk"><b>Third ventricle</b></span></li>
+      <li><span class="nk"><b>Cerebral aqueduct</b><small>of Sylvius</small></span></li>
+      <li><span class="nk"><b>Fourth ventricle</b><small>out via the median and lateral apertures</small></span></li>
+      <li><span class="nk"><b>Subarachnoid space</b><small>round brain and cord</small></span></li>
+      <li><span class="nk"><b>Arachnoid granulations</b></span></li>
+      <li><span class="nk"><b>Dural venous sinuses</b><small>mainly superior sagittal</small></span></li>
+    </ol>
+    <div class="twocol">
+      <div class="card">
+        <h4>Numbers and pressure</h4>
+        <ul>
+          <li>About 150 mL of CSF at any time, replaced three or four times a day. It cushions and buoys the brain and clears waste.</li>
+          <li><b>Monro–Kellie doctrine:</b> the skull is a fixed box of brain, blood and CSF. If one grows, another must shrink, or pressure rises.</li>
+          <li>Normal intracranial pressure about 5–15 mmHg. Cerebral perfusion pressure = mean arterial pressure − ICP.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <h4>Hydrocephalus</h4>
+        <ul>
+          <li><b>Obstructive (non-communicating):</b> a block inside the ventricles, e.g. aqueduct stenosis dilates the lateral and third ventricles but not the fourth.</li>
+          <li><b>Communicating:</b> CSF leaves the ventricles but is not absorbed, e.g. scarred arachnoid granulations after meningitis or subarachnoid haemorrhage.</li>
+          <li>In infants the head enlarges because the sutures are open. Treated with a shunt (ventriculoperitoneal) or endoscopic ventriculostomy.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Emergency · raised intracranial pressure</span><p>Headache that is worse lying down and in the morning, vomiting, papilloedema and a falling GCS. <b>Cushing's triad</b> (rising blood pressure with a wide pulse pressure, bradycardia and irregular breathing) is a late sign that the brainstem is being compressed towards the foramen magnum (coning). Call for senior and neurosurgical help, protect the airway and nurse head-up. <b>Do not do a lumbar puncture</b> when raised pressure or a mass is suspected: draining CSF from below can pull the brain down through the foramen magnum. Get a CT first.</p></div>
+      <div class="note clin"><span class="tag">FY1 link · lumbar puncture</span><p>The adult cord ends at L1/L2 but the dural sac continues to S2, so CSF is sampled at L3/4 or L4/5 (the line joining the tops of the iliac crests crosses about L4). The needle passes skin, supraspinous and interspinous ligaments, ligamentum flavum, epidural space, dura and arachnoid. In meningitis, bacterial CSF shows neutrophils and low glucose; viral shows lymphocytes.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="neuro-lobes">
+    <header>
+      <span class="eyebrow">Nervous system · Brain regions</span>
+      <h2>Lobes and what each region does</h2>
+      <p>The same drawing three ways. <b>Function</b> shows what each region does and what a lesion looks like; <b>Blood supply</b> recolours it by arterial territory; <b>Homunculus</b> shows how the body is mapped along the motor and sensory strips.</p>
+    </header>
+    <div class="pill-btns" role="group" aria-label="Brain view mode" id="nx-brain-modes"><button class="pbtn" data-mode="fn" aria-pressed="true">Function</button><button class="pbtn" data-mode="bs" aria-pressed="false">Blood supply</button><button class="pbtn" data-mode="hom" aria-pressed="false">Homunculus</button></div>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Left hemisphere, lateral view</h3><span class="cap">Front to the left. Tap a region.</span></div>
+        <div class="nx-fig" id="nx-brain"></div>
+        <div class="nx-legend" id="nx-brain-legend"></div>
+      </div>
+      <div class="sub">
+        <div class="tdetail nx-detail" id="nx-brain-detail" aria-live="polite">Tap a lobe, the cerebellum or the brainstem.</div>
+        <div class="note exam"><span class="tag">Speech words that get mixed up</span><p><b>Aphasia</b> (dysphasia) is a language problem from cortex: Broca's is non-fluent but understood; Wernicke's is fluent nonsense with poor understanding. <b>Dysarthria</b> is slurred articulation from weak or uncoordinated muscles, with normal language. <b>Dysphonia</b> is altered voice quality, e.g. a hoarse voice from a recurrent laryngeal nerve palsy.</p></div>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Region</th><th>Function</th><th>Lesion picture</th><th>Supply</th></tr></thead>
+      <tbody>
+        <tr><th>Frontal lobe</th><td>Personality, planning, primary motor cortex, Broca's area (dominant side)</td><td>Personality change, contralateral weakness, expressive aphasia</td><td>ACA, MCA</td></tr>
+        <tr><th>Parietal lobe</th><td>Somatosensory cortex, spatial awareness</td><td>Contralateral sensory loss, astereognosis, neglect (non-dominant)</td><td>MCA, ACA</td></tr>
+        <tr><th>Temporal lobe</th><td>Hearing, memory (hippocampus), Wernicke's area (dominant)</td><td>Receptive aphasia, memory loss</td><td>MCA, PCA</td></tr>
+        <tr><th>Occipital lobe</th><td>Vision</td><td>Contralateral homonymous hemianopia (macular sparing in PCA stroke)</td><td>PCA</td></tr>
+        <tr><th>Cerebellum</th><td>Coordination, balance, tone</td><td>Ipsilateral DANISH</td><td>PICA, AICA, SCA</td></tr>
+        <tr><th>Brainstem</th><td>Tracts, cranial nerve nuclei, vital centres</td><td>Crossed signs, coma</td><td>Vertebrobasilar</td></tr>
+      </tbody>
+    </table></div>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Midline structures</h3><span class="cap">Mid-sagittal section, front to the left. Numbers match the list.</span></div>
+        <div class="nx-fig" id="nx-sagittal"></div>
+      </div>
+      <div class="sub">
+        <ol class="nx-key" id="nx-sagittal-key"></ol>
+        <p class="small muted">The basal ganglia (caudate, putamen, globus pallidus) sit lateral to the thalamus, and the hippocampus and amygdala in the medial temporal lobe, so none lies in this midline plane. Basal ganglia start and smooth movement: loss of dopamine from the substantia nigra causes Parkinson's disease (tremor, rigidity, bradykinesia).</p>
+      </div>
+    </div>
+    <div class="note exam"><span class="tag">DANISH: cerebellar signs</span><p><b>D</b>ysdiadochokinesia, <b>A</b>taxia (broad-based gait), <b>N</b>ystagmus, <b>I</b>ntention tremor (past-pointing on finger–nose), <b>S</b>lurred, scanning speech, <b>H</b>ypotonia and heel–shin ataxia. A cerebellar hemisphere controls the same side of the body; a midline (vermis) lesion, as in alcohol misuse, gives truncal ataxia.</p></div>
+  </section>
+
+  <section class="sec" id="neuro-blood">
+    <header>
+      <span class="eyebrow">Nervous system · Blood supply</span>
+      <h2>Arteries, stroke territories and venous drainage</h2>
+      <p>Two internal carotids feed the front of the brain and two vertebral arteries the back; the circle of Willis joins them. Tap a source vessel to trace where its blood goes.</p>
+    </header>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Circle of Willis, viewed from below</h3><span class="cap">Front at the top. Tap a source vessel or any branch.</span></div>
+        <div class="pill-btns" role="group" aria-label="Trace a source vessel" id="nx-willis-btns"><button class="pbtn" data-trace="icaL" aria-pressed="false">Left ICA</button><button class="pbtn" data-trace="icaR" aria-pressed="false">Right ICA</button><button class="pbtn" data-trace="vert" aria-pressed="false">Vertebral arteries</button><button class="pbtn" data-trace="basilar" aria-pressed="false">Basilar</button><button class="pbtn" data-trace="" aria-pressed="false">Clear</button></div>
+        <div class="nx-fig" id="nx-willis"></div>
+      </div>
+      <div class="sub">
+        <div class="tdetail nx-detail" id="nx-willis-detail" aria-live="polite">Tap an internal carotid, a vertebral or the basilar artery to light up everything downstream.</div>
+        <div class="card">
+          <h4>Where each artery comes from</h4>
+          <ul>
+            <li><b class="ta">Internal carotid:</b> common carotid bifurcation at C4 → no branches in the neck → carotid canal (petrous temporal) → through the cavernous sinus → ophthalmic artery → posterior communicating artery → ends as the ACA and MCA.</li>
+            <li><b class="ta">Vertebral:</b> first branch of the subclavian → up through the transverse foramina of C6–C1 → foramen magnum → PICA (and anterior spinal) → the two join at the pontomedullary junction as the basilar → AICA, pontine branches, superior cerebellar arteries → ends as the two PCAs.</li>
+            <li><b>Circle of Willis:</b> anterior communicating, two ACAs, two ICAs, two posterior communicating arteries and two PCAs. It is complete in under half of people. Berry aneurysms form at its junctions, most often the anterior communicating artery.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    <h3>Stroke territories</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Artery</th><th>Territory</th><th>Stroke picture (contralateral unless stated)</th></tr></thead>
+      <tbody>
+        <tr><th class="ta">ACA</th><td>Medial frontal and parietal lobes: leg and foot area</td><td>Leg &gt; arm weakness and sensory loss; behaviour change, urinary incontinence</td></tr>
+        <tr><th class="ta">MCA (commonest)</th><td>Most of the lateral surface: face and arm area, Broca's and Wernicke's areas; lenticulostriate branches to the internal capsule</td><td>Face and arm &gt; leg weakness and sensory loss; aphasia if dominant (usually left), neglect if non-dominant; homonymous hemianopia</td></tr>
+        <tr><th class="ta">PCA</th><td>Occipital lobe, inferior temporal lobe, thalamus</td><td>Homonymous hemianopia with macular sparing</td></tr>
+        <tr><th class="ta">Lenticulostriate (lacunar)</th><td>Internal capsule, basal ganglia</td><td>Pure motor or pure sensory stroke; no cortical signs</td></tr>
+        <tr><th class="ta">PICA</th><td>Lateral medulla, inferior cerebellum</td><td>Lateral medullary (Wallenberg) syndrome: vertigo, dysphagia, hoarseness; <b>same-side</b> facial pain and temperature loss, Horner's and ataxia; <b>opposite-side</b> body pain and temperature loss</td></tr>
+        <tr><th class="ta">Basilar</th><td>Pons, midbrain, both PCAs</td><td>Locked-in syndrome (conscious, only vertical eye movements), coma, or death</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note clin"><span class="tag">Emergency · stroke: think FAST</span><p><b>F</b>ace drooping, <b>A</b>rm weakness, <b>S</b>peech difficulty, <b>T</b>ime to call 999. A stroke is a sudden focal deficit of vascular cause lasting over 24 hours or with infarction on imaging; about 85% are ischaemic and 15% haemorrhagic. A <b>TIA resolves within 24 hours (usually within an hour) with no infarction</b>, and is a warning of stroke. Urgent CT first to exclude bleeding, then thrombolysis or thrombectomy within the time windows in NICE NG128. Give aspirin only once haemorrhage is excluded.</p></div>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Venous drainage</h3><span class="cap">Blood flows right to left into the internal jugular vein. Tap a sinus.</span></div>
+        <div class="tree" data-tree="neuroVenous"></div>
+      </div>
+      <div class="plate">
+        <div class="plate-head"><h3>Cavernous sinus, coronal section</h3><span class="cap">Either side of the pituitary. Labelled on the right side.</span></div>
+        <div class="nx-fig" id="nx-cavernous"></div>
+      </div>
+    </div>
+    <div class="notes">
+      <div class="note exam"><span class="tag">Get the sinuses right</span><p>Superior sagittal → confluence ← straight sinus, which is formed by the <b>inferior sagittal sinus plus the great cerebral vein</b> (of Galen). Confluence → transverse → sigmoid → internal jugular vein at the jugular foramen. The <b>cavernous sinus drains through the superior and inferior petrosal sinuses</b>, not straight into the sigmoid. Cerebral veins and sinuses have no valves.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · the danger triangle of the face</span><p>Skin from the bridge of the nose to the corners of the mouth drains through the facial and ophthalmic veins, which have no valves, into the cavernous sinus. A squeezed spot or boil there can seed <b>cavernous sinus thrombosis</b>: headache, fever, proptosis, swollen conjunctiva and eye movement palsies. The abducens nerve, floating free inside the sinus, is often the first affected; then III, IV, and numbness in V1 and V2. It can cross to the other side through the intercavernous sinuses.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="neuro-cn">
+    <header>
+      <span class="eyebrow">Nervous system · Brainstem</span>
+      <h2>Brainstem and cranial nerves</h2>
+      <p>The brainstem carries every long tract and houses the nuclei of cranial nerves III–XII; I and II are outgrowths of the forebrain. Tap a numbered nerve to see its type, exit, job, bedside test and lesion sign.</p>
+    </header>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Brainstem, anterior view</h3><span class="cap">Tap a number. The nerve on that side lights up.</span></div>
+        <div class="nx-fig" id="nx-brainstem"></div>
+      </div>
+      <div class="sub">
+        <div class="tdetail nx-detail" id="nx-cn-detail" aria-live="polite">Tap a cranial nerve number.</div>
+        <div class="r4" aria-label="Rule of four">
+          <div><span class="eyebrow">Above the brainstem</span><b>I, II</b></div>
+          <div><span class="eyebrow">Midbrain</span><b>III, IV</b></div>
+          <div><span class="eyebrow">Pons</span><b>V, VI, VII, VIII</b></div>
+          <div><span class="eyebrow">Medulla</span><b>IX, X, XI, XII</b></div>
+        </div>
+        <p class="small muted">Rule of four: two above the brainstem plus two in the midbrain, four in the pons, four in the medulla.</p>
+      </div>
+    </div>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Nerve</th><th>Type</th><th>Exit</th><th>Function</th><th>Bedside test</th><th>Lesion sign</th></tr></thead>
+      <tbody id="nx-cn-table"></tbody>
+    </table></div>
+    <div class="notes">
+      <div class="note exam"><span class="tag">Mnemonics</span>
+        <ul>
+          <li><b>Type:</b> "Some Say Marry Money But My Brother Says Big Brains Matter More": sensory, sensory, motor, motor, both, motor, both, sensory, both, both, motor, motor.</li>
+          <li><b>Eye muscles:</b> LR6 SO4, the rest are 3. Lateral rectus = abducens (VI); superior oblique = trochlear (IV); everything else, including levator palpebrae, = oculomotor (III).</li>
+          <li><b>Parasympathetic fibres</b> travel in III, VII, IX and X: "1973" read backwards.</li>
+        </ul>
+      </div>
+      <div class="note clin"><span class="tag">Clinical links</span>
+        <ul>
+          <li><b>Facial palsy:</b> an upper motor neuron lesion (stroke) spares the forehead, because the upper face gets cortical input from both hemispheres. A lower motor neuron lesion (Bell's palsy) paralyses the whole side, forehead included. This rule is about the <b>facial nerve (VII)</b>, not the trigeminal.</li>
+          <li><b>Tongue</b> deviates <b>towards</b> the side of a hypoglossal (XII) lesion: the healthy genioglossus pushes it over.</li>
+          <li><b>Uvula</b> deviates <b>away</b> from the side of a vagus (X) lesion: the healthy side pulls it.</li>
+          <li><b>Oculomotor (III) palsy:</b> eye "down and out" (unopposed lateral rectus and superior oblique), ptosis and a dilated pupil (lost parasympathetic supply). A painful III palsy with a blown pupil suggests a posterior communicating artery aneurysm.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec" id="neuro-cord">
+    <header>
+      <span class="eyebrow">Nervous system · Spinal cord</span>
+      <h2>Spinal cord and pathways</h2>
+      <p>Three tracts explain most cord lesions. Trace each from receptor to cortex to see where it crosses, then use the simulator to see which tracts a lesion cuts and what the patient has on each side.</p>
+    </header>
+    <div class="fig-grid">
+      <div class="plate">
+        <div class="plate-head"><h3>Cervical cord in cross-section</h3><span class="cap">Dorsal at the top; patient's left on the left.</span></div>
+        <div class="nx-fig" id="nx-cord"></div>
+        <div class="chips"><span class="key"><i style="background:var(--accent)"></i>Dorsal columns (DCML)</span><span class="key k-art"><i></i>Lateral spinothalamic</span><span class="key k-lymph"><i></i>Lateral corticospinal</span></div>
+        <span class="eyebrow">Trace a tract</span>
+        <div class="pill-btns" role="group" aria-label="Trace a tract" id="nx-trace-btns"><button class="pbtn" data-tract="dcml" aria-pressed="false">Dorsal columns</button><button class="pbtn" data-tract="stt" aria-pressed="false">Spinothalamic</button><button class="pbtn" data-tract="cst" aria-pressed="false">Corticospinal</button></div>
+        <span class="eyebrow">Lesion simulator</span>
+        <div class="pill-btns" role="group" aria-label="Simulate a lesion" id="nx-lesion-btns"><button class="pbtn" data-lesion="hemi" aria-pressed="false">Left hemisection</button><button class="pbtn" data-lesion="ant" aria-pressed="false">Anterior cord</button><button class="pbtn" data-lesion="central" aria-pressed="false">Central cord</button><button class="pbtn" data-lesion="" aria-pressed="false">Clear</button></div>
+      </div>
+      <div class="sub">
+        <div class="tdetail nx-detail" id="nx-cord-detail" aria-live="polite">Choose a tract to trace, or a lesion to simulate.</div>
+        <div class="plate nx-trace-plate"><div class="nx-fig" id="nx-trace"></div></div>
+      </div>
+    </div>
+    <h3>Upper versus lower motor neuron</h3>
+    <div class="tbl-wrap"><table>
+      <thead><tr><th>Sign</th><th>Upper motor neuron (brain, cord)</th><th>Lower motor neuron (anterior horn, root, nerve)</th></tr></thead>
+      <tbody>
+        <tr><th>Tone</th><td>Increased: spastic, clasp-knife</td><td>Reduced: flaccid</td></tr>
+        <tr><th>Reflexes</th><td>Brisk, with clonus</td><td>Reduced or absent</td></tr>
+        <tr><th>Plantar response</th><td>Upgoing (Babinski)</td><td>Downgoing or absent</td></tr>
+        <tr><th>Wasting and fasciculation</th><td>Little wasting (late disuse only); no fasciculation</td><td>Marked wasting; fasciculation</td></tr>
+        <tr><th>Pattern of weakness</th><td>Pyramidal: arm extensors and leg flexors weakest</td><td>In the distribution of a root, plexus or nerve</td></tr>
+      </tbody>
+    </table></div>
+    <div class="notes">
+      <div class="note think"><span class="tag">Cord facts</span><p>The cord runs from the foramen magnum to the conus medullaris at L1/L2 in adults (L3 at birth), with cervical and lumbar enlargements for the limbs. 31 pairs of spinal nerves: 8 cervical, 12 thoracic, 5 lumbar, 5 sacral, 1 coccygeal. Grey matter is inside (the reverse of the cerebrum). One anterior spinal artery supplies the front two-thirds; two posterior spinal arteries supply the dorsal columns.</p></div>
+      <div class="note clin"><span class="tag">Emergency · cord and cauda equina compression</span><p>Back pain with leg weakness, a sensory level or new bladder or bowel symptoms needs emergency MRI. Below L1/L2 the roots form the cauda equina: see the red flags in <a href="#ll-nerve-injury">Lower limb</a>.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="neuro-quiz">
+    <header>
+      <span class="eyebrow">Nervous system · Quick quiz</span>
+      <h2>Quick quiz: neuro</h2>
+      <p>Fifteen retrieval questions: lesion localisation, arteries, foramina and cranial nerves. Answers are saved with the rest of the <a href="#quiz">Quick quiz</a>.</p>
+    </header>
+    <div class="qz">
+      <div class="qz-bar"><span class="small muted">Answer before you look: retrieval is what makes it stick.</span><div class="qz-score" id="nqz-score">0 answered</div></div>
+      <div id="nqz-list" class="qz"></div>
+    </div>
+  </section>
+</section>
+
 <!-- ======================================================= SELF-TEST ======================================================= -->
 <section class="panel" id="panel-test" data-panel="test" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 5 · Quick quiz</span>
+    <span class="eyebrow">Chapter 6 · Quick quiz</span>
     <h1>Quick quiz</h1>
     <p class="lede">Short, untimed questions in the two formats of the Mid-Year and End of Year 1 exams: single best answer with a clinical vignette, and very short answer (one to three words). Type your answer before you look; retrieval is what makes it stick.</p>
     <div class="note exam"><span class="tag">Ready for a full paper?</span><p>Two timed 100-question mock exams covering every system are in <a href="#exams">Mock exams</a>. Choose to be marked at the end or to see the answer after every question.</p></div>
@@ -2215,6 +2671,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
           <button class="pbtn" data-f="upper" aria-pressed="false">Upper limb</button>
           <button class="pbtn" data-f="lower" aria-pressed="false">Lower limb</button>
           <button class="pbtn" data-f="systems" aria-pressed="false">Body systems</button>
+          <button class="pbtn" data-f="neuro" aria-pressed="false">Nervous system</button>
           <button class="pbtn" data-f="wrong" aria-pressed="false">Got wrong</button>
         </div>
         <div class="qz-score" id="qz-score">0 answered</div>
@@ -2237,7 +2694,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= MOCK EXAMS ======================================================= -->
 <section class="panel" id="panel-exams" data-panel="exams" hidden>
   <div class="opener mx-opener">
-    <span class="eyebrow">Chapter 6 · Mock exams</span>
+    <span class="eyebrow">Chapter 7 · Mock exams</span>
     <h1>Timed mock exams</h1>
     <p class="lede">Two full papers of 100 questions each, written at end-of-Year-1 standard in the AMK style: 75 single best answer questions built on clinical vignettes and 25 very short answer questions (type one to three words). Every system is covered, with the emphasis on applying anatomy and physiology to a patient.</p>
   </div>
@@ -2266,7 +2723,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= SOURCES ======================================================= -->
 <section class="panel" id="panel-sources" data-panel="sources" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 7 · Sources and slide checks</span>
+    <span class="eyebrow">Chapter 8 · Sources and slide checks</span>
     <h1>Sources and slide checks</h1>
     <p class="lede">Built from your peer-teaching slides and BMBS handbooks, checked against standard anatomy references, and extended with current UK guidance. Where a slide disagreed with the references, the correction is listed below so you can fix your notes.</p>
   </div>
@@ -2278,6 +2735,11 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
       <p>Peer slides are a good summary but contain errors that can cost marks. These are the ones worth correcting in your own notes and Anki cards.</p>
     </header>
     <div class="fixes">
+      <div class="note fix"><span class="tag">Nervous system decks · venous sinuses</span><p>The straight sinus is formed by the <b>inferior</b> sagittal sinus and the great cerebral vein, not the superior sagittal sinus. The cavernous sinus drains through the <b>superior and inferior petrosal sinuses</b>, not directly into the sigmoid sinus.</p></div>
+      <div class="note fix"><span class="tag">Nervous system decks · stroke</span><p>A TIA resolves <b>within 24 hours</b> (usually within an hour) with no infarction; it is not defined as "under 5 minutes". A PCA stroke causes a <b>contralateral homonymous hemianopia</b>, not a "slight disturbance". An MCA stroke affects face and arm more than leg.</p></div>
+      <div class="note fix"><span class="tag">Nervous system decks · cranial nerves</span><p>The oculomotor nerve (III) is motor <b>and parasympathetic</b> (pupil constriction, accommodation); one slide also titles CN I "oculomotor" (it is olfactory). The forehead-sparing rule applies to the <b>facial nerve (VII)</b>, not the trigeminal. The acoustic reflex is motor (stapedius), not parasympathetic. A glossopharyngeal lesion reduces the carotid sinus and gag reflexes rather than making them hypersensitive. Cranial nerves III–XII leave the brainstem; I and II are outgrowths of the forebrain.</p></div>
+      <div class="note fix"><span class="tag">Nervous system decks · pathways and spinal cord</span><p>The dorsal column–medial lemniscus pathway synapses in the <b>gracile and cuneate nuclei</b> and ends in the cortex <b>contralateral</b> to the body. There are <b>31</b> pairs of spinal nerves, including one coccygeal pair (one deck says 30).</p></div>
+      <div class="note fix"><span class="tag">Nervous system teaching PDF · assorted</span><p>The posterior communicating artery joins the <b>internal carotid to the PCA</b> (none of the quiz options was correct). CSF is made by the <b>choroid plexus</b>; ependymal cells line the ventricles. Vitamin K reverses warfarin, not antiplatelets. Stapedius is a motor branch of VII, not sensory. A subdural haematoma comes from <b>bridging veins</b>, not the sinuses themselves.</p></div>
       <div class="note fix"><span class="tag">Upper limb deck · cubital fossa</span><p>The slide is titled "cubital tunnel" but lists the contents of the <b>cubital fossa</b> (radial nerve, biceps tendon, brachial artery, median nerve; "brachial tendon" should read <b>biceps</b> tendon). The cubital tunnel is the ulnar nerve's passage behind the medial epicondyle.</p></div>
       <div class="note fix"><span class="tag">Upper limb deck · shoulder ligaments</span><p>"Coracohumeral: conoid and trapezoid" is wrong. Conoid and trapezoid are the two parts of the <b>coracoclavicular</b> ligament. The coracohumeral ligament runs from the coracoid to the greater tubercle.</p></div>
       <div class="note fix"><span class="tag">Upper limb deck · Colles' fracture</span><p>Colles' is classically an <b>extra-articular</b> fracture of the distal radius (within about 2.5 cm of the wrist) with dorsal displacement. An intra-articular fracture with carpal subluxation is a Barton's fracture.</p></div>
@@ -2302,6 +2764,16 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
       <p>Free UK-relevant resources first. For depth, the anatomists' recommendations in your Year 1 handbook are Moore &amp; Dalley's <i>Clinically Oriented Anatomy</i> or <i>Gray's Anatomy for Students</i>, with Netter's Atlas for pictures (many exam images are drawn from Netter).</p>
     </header>
     <div class="twocol">
+      <div class="card">
+        <h4>Nervous system references</h4>
+        <ul class="srcs">
+          <li>Moore, Dalley and Agur, <i>Clinically Oriented Anatomy</i>: Head (cranium, meninges, brain) and Cranial Nerves chapters.</li>
+          <li>TeachMeAnatomy: <a href="https://teachmeanatomy.info/head/areas/cranial-fossa/" target="_blank" rel="noopener">cranial fossae</a>, <a href="https://teachmeanatomy.info/neuroanatomy/structures/meninges/" target="_blank" rel="noopener">meninges</a>, <a href="https://teachmeanatomy.info/neuroanatomy/ventricles/" target="_blank" rel="noopener">ventricles</a>, <a href="https://teachmeanatomy.info/neuroanatomy/structures/cerebrum/" target="_blank" rel="noopener">cerebrum</a>, <a href="https://teachmeanatomy.info/neuroanatomy/vessels/arterial-supply/" target="_blank" rel="noopener">arterial supply</a>, <a href="https://teachmeanatomy.info/neuroanatomy/vessels/dural-venous-sinuses/" target="_blank" rel="noopener">dural venous sinuses</a>, <a href="https://teachmeanatomy.info/neuroanatomy/vessels/cavernous-sinus/" target="_blank" rel="noopener">cavernous sinus</a>, <a href="https://teachmeanatomy.info/head/cranial-nerves/" target="_blank" rel="noopener">cranial nerves</a>, <a href="https://teachmeanatomy.info/neuroanatomy/pathways/ascending-tracts-sensory/" target="_blank" rel="noopener">ascending tracts</a>, <a href="https://teachmeanatomy.info/neuroanatomy/pathways/descending-tracts-motor/" target="_blank" rel="noopener">descending tracts</a></li>
+          <li><a href="https://geekymedics.com/cranial-nerve-exam/" target="_blank" rel="noopener">Geeky Medics: Cranial nerve examination</a></li>
+          <li><a href="https://www.nice.org.uk/guidance/ng128" target="_blank" rel="noopener">NICE NG128: Stroke and transient ischaemic attack in over 16s</a>; <a href="https://www.nice.org.uk/guidance/ng232" target="_blank" rel="noopener">NICE NG232: Head injury</a></li>
+          <li>Exeter Neuro block slides: Structure and Function of the CNS 1 and 2, Skull osteology part A; peer decks "6 – Nervous System Anatomy" and "Nervous system teach".</li>
+        </ul>
+      </div>
       <div class="card">
         <h4>Your course documents</h4>
         <ul class="srcs">
@@ -2354,6 +2826,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <script src="assets/exam-paper1.js"></script>
 <script src="assets/exam-paper2.js"></script>
 <script src="assets/mock-exam.js"></script>
+<script src="assets/neuro.js"></script>
 <script>
 /* ================= DATA ================= */
 const MUSCLES = {
@@ -2644,6 +3117,7 @@ llLymph: {kind:'lymph', dir:'rtl', root:
      {t:'Deep thigh vessels', d:'Follow the femoral vein.'}]}]}]}
  ]}}
 };
+if(window.NEURO_TREES) Object.assign(TREES, window.NEURO_TREES);
 
 const PLEXUS_INFO = {
  mc:{t:'Musculocutaneous nerve', r:'C5–7 · lateral cord', m:'Coracobrachialis, biceps brachii, brachialis.', s:'Lateral forearm (lateral cutaneous nerve of the forearm).', i:'Rarely injured alone. Weak elbow flexion and supination.'},
@@ -2694,6 +3168,7 @@ const QUIZ = [
  {id:'s4',c:'systems',type:'vsaq',q:'Starting from the anatomical position, what is the movement that turns the palm to face backwards?',a:['pronation','pronate','pronating'],e:'Pronation, at the proximal and distal radioulnar joints.'},
  {id:'s5',c:'systems',type:'sba',q:'Which lower limb bone is the developmental equivalent of the radius?',o:['Femur','Fibula','Patella','Talus','Tibia'],a:4,e:'Radius and tibia are both preaxial bones, on the thumb and big-toe side.'}
 ];
+if(window.NEURO_QUIZ) QUIZ.push(...window.NEURO_QUIZ);
 /* ================= GEOMETRY HELPERS ================= */
 const f1 = n => Math.round(n*10)/10;
 function capsule(x1,y1,x2,y2,r){
@@ -3186,8 +3661,8 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
 
 /* ---------- tabs, rail, routing ---------- */
-const PANELS=['systems','organs','upper','lower','test','exams','sources'];
-const NAMES={systems:'Big picture',organs:'Organ systems',upper:'Upper limb',lower:'Lower limb',test:'Quick quiz',exams:'Mock exams',sources:'Sources'};
+const PANELS=['systems','organs','upper','lower','neuro','test','exams','sources'];
+const NAMES={systems:'Big picture',organs:'Organ systems',upper:'Upper limb',lower:'Lower limb',neuro:'Nervous system',test:'Quick quiz',exams:'Mock exams',sources:'Sources'};
 let io=null, current=null;
 function buildRail(tab){
   const panel=$('#panel-'+tab), secs=$$('.sec',panel).filter(s=>s.id);
@@ -3278,9 +3753,9 @@ function renderTree(host){
   const [stroke,fill]=KIND[def.kind], rtl=def.dir==='rtl';
   const F1='700 13px "Atkinson Hyperlegible", system-ui, sans-serif', F2='500 10.5px "IBM Plex Mono", ui-monospace, monospace';
   const nodes=[];
-  (function prep(n,d,p){n._d=d; n._p=p; n._w=Math.ceil(Math.max(tw(n.t,F1),n.s?tw(n.s,F2):0))+26; n._h=n.s?38:28; nodes.push(n); (n.c||[]).forEach(c=>prep(c,d+1,n));})(def.root,0,null);
+  (function prep(n,d,p){n._d=d; n._p=p; n._w=Math.ceil(Math.max(tw(n.t,F1),n.s?tw(n.s,F2):0))+26; n._h=def.tall?(n.s?46:44):(n.s?38:28); nodes.push(n); (n.c||[]).forEach(c=>prep(c,d+1,n));})(def.root,0,null);
   const colW=[]; nodes.forEach(n=>{colW[n._d]=Math.max(colW[n._d]||0,n._w);});
-  const GX=30, SLOT=42, colX=[0];
+  const GX=30, SLOT=def.tall?52:42, colX=[0];
   for(let i=1;i<colW.length;i++) colX[i]=colX[i-1]+colW[i-1]+GX;
   const W=colX[colW.length-1]+colW[colW.length-1]+6;
   let y=6; (function lay(n){ if(!n.c||!n.c.length){n._y=y+SLOT/2; y+=SLOT;} else {n.c.forEach(lay); n._y=(n.c[0]._y+n.c[n.c.length-1]._y)/2;} })(def.root);
@@ -3386,17 +3861,16 @@ function renderBones(){
 /* ---------- quiz ---------- */
 const MODEL={u3:'Radial nerve',u5:'Long thoracic nerve',u7:'Median cubital vein',u10:'Supraspinatus',u12:'C5–C6',u13:'Profunda brachii artery',u14:'Erb\'s palsy',
   l3:'Anterior talofibular ligament (ATFL)',l5:'Femoral nerve',l7:'L3–L4',l8:'ACL, MCL and medial meniscus',l9:'Anterior to the medial malleolus',l12:'Achilles (calcaneal) tendon',l14:'Popliteal nodes',l15:'Saphenous nerve',s1:'Thymus',s4:'Pronation'};
+if(window.NEURO_MODEL) Object.assign(MODEL, window.NEURO_MODEL);
 const norm=s=>String(s).toLowerCase().replace(/[^a-z0-9]/g,'');
 function checkV(q,ans){const n=norm(ans); if(!n) return false; if(q.req) return q.req.every(g=>g.split('|').some(a=>n.includes(norm(a)))); return q.a.some(a=>n===norm(a));}
 function renderQuiz(){
-  const list=$('#qz-list'); if(!list) return;
-  let st=LS.get('atlas-quiz',{}), filter='all';
-  const L='ABCDE';
-  function score(){const v=Object.values(st), n=v.length, c=v.filter(x=>x.ok).length; $('#qz-score').textContent=n?`${n} answered · ${c} correct (${Math.round(c/n*100)}%)`:'0 answered';}
+  let st=LS.get('atlas-quiz',{});
+  const L='ABCDE', CAT={upper:'Upper limb',lower:'Lower limb',systems:'Body systems',neuro:'Nervous system'}, insts=[];
   function expl(q,ok){const ans=q.type==='sba'?`${L[q.a]}. ${q.o[q.a]}`:MODEL[q.id]||'';
     return `<div class="expl"><span class="verdict ${ok?'ok':'no'}">${ok?'Correct.':'Not quite.'}</span><span><b>Answer:</b> ${esc(ans)}</span><span>${esc(q.e)}</span></div>`;}
   function card(q){
-    const s=st[q.id], tag=q.type==='sba'?'Single best answer':'Very short answer', cat={upper:'Upper limb',lower:'Lower limb',systems:'Body systems'}[q.c];
+    const s=st[q.id], tag=q.type==='sba'?'Single best answer':'Very short answer', cat=CAT[q.c];
     let body='';
     if(q.type==='sba'){
       body=`<div class="opts">${q.o.map((o,i)=>{let cls=''; if(s){ if(i===q.a) cls='right'; else if(i===s.a) cls='wrong'; }
@@ -3406,26 +3880,37 @@ function renderQuiz(){
     }
     return `<div class="q" data-id="${q.id}"><div class="qhead"><span class="qtype">${tag}</span><span class="qtype">${cat}</span></div><p class="stem">${esc(q.q)}</p>${body}${s?expl(q,s.ok):''}</div>`;
   }
-  function draw(){
-    const qs=QUIZ.filter(q=>filter==='all'||q.c===filter||(filter==='wrong'&&st[q.id]&&!st[q.id].ok));
-    list.innerHTML=qs.length?qs.map(card).join(''):`<p class="muted">${filter==='wrong'?'No wrong answers saved yet. Answer some questions first.':'No questions here.'}</p>`;
-    score();
+  /* cfg: list and score selectors; filters = pill group selector; only = fixed category */
+  function make(cfg){
+    const list=$(cfg.list); if(!list) return;
+    let filter=cfg.only||'all';
+    const inst={};
+    inst.score=()=>{const v=QUIZ.filter(q=>!cfg.only||q.c===cfg.only).map(q=>st[q.id]).filter(Boolean), n=v.length, c=v.filter(x=>x.ok).length;
+      $(cfg.score).textContent=n?`${n} answered · ${c} correct (${Math.round(c/n*100)}%)`:'0 answered';};
+    inst.draw=()=>{
+      const qs=QUIZ.filter(q=>filter==='all'||q.c===filter||(filter==='wrong'&&st[q.id]&&!st[q.id].ok));
+      list.innerHTML=qs.length?qs.map(card).join(''):`<p class="muted">${filter==='wrong'?'No wrong answers saved yet. Answer some questions first.':'No questions here.'}</p>`;
+      inst.score();
+    };
+    list.addEventListener('click',e=>{
+      const qEl=e.target.closest('.q'); if(!qEl) return; const q=QUIZ.find(x=>x.id===qEl.dataset.id); if(st[q.id]) return;
+      const opt=e.target.closest('.opt'), act=e.target.closest('[data-act]');
+      if(opt){const i=+opt.dataset.i; st[q.id]={a:i,ok:i===q.a};}
+      else if(act){const v=$('input',qEl).value; if(act.dataset.act==='check'&&!v.trim()){ $('input',qEl).focus(); return; }
+        st[q.id]={a:v,ok:act.dataset.act==='check'&&checkV(q,v)};}
+      else return;
+      LS.set('atlas-quiz',st); qEl.outerHTML=card(q); inst.score();
+      insts.forEach(o=>{if(o!==inst) o.draw();});
+    });
+    list.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.vsaq input')){const b=e.target.parentElement.querySelector('[data-act="check"]'); if(b) b.click();}});
+    if(cfg.filters) $$(cfg.filters+' .pbtn').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f; $$(cfg.filters+' .pbtn').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); inst.draw();}));
+    insts.push(inst); inst.draw();
   }
-  list.addEventListener('click',e=>{
-    const qEl=e.target.closest('.q'); if(!qEl) return; const q=QUIZ.find(x=>x.id===qEl.dataset.id); if(st[q.id]) return;
-    const opt=e.target.closest('.opt'), act=e.target.closest('[data-act]');
-    if(opt){const i=+opt.dataset.i; st[q.id]={a:i,ok:i===q.a};}
-    else if(act){const v=$('input',qEl).value; if(act.dataset.act==='check'&&!v.trim()){ $('input',qEl).focus(); return; }
-      st[q.id]={a:v,ok:act.dataset.act==='check'&&checkV(q,v)};}
-    else return;
-    LS.set('atlas-quiz',st); qEl.outerHTML=card(q); score();
-  });
-  list.addEventListener('keydown',e=>{if(e.key==='Enter'&&e.target.matches('.vsaq input')){const b=e.target.parentElement.querySelector('[data-act="check"]'); if(b) b.click();}});
-  $$('#qz-filter .pbtn').forEach(b=>b.addEventListener('click',()=>{filter=b.dataset.f; $$('#qz-filter .pbtn').forEach(x=>x.setAttribute('aria-pressed',String(x===b))); draw();}));
+  make({list:'#qz-list',score:'#qz-score',filters:'#qz-filter'});
+  make({list:'#nqz-list',score:'#nqz-score',only:'neuro'});
   const rb=$('#qz-reset'), rm=$('#qz-reset-msg'); let armed=false;
-  rb.addEventListener('click',()=>{ if(!armed){armed=true; rb.textContent='Click again to clear'; rm.textContent=''; setTimeout(()=>{armed=false; rb.textContent='Clear my answers';},4000); return;}
-    armed=false; st={}; LS.set('atlas-quiz',st); rb.textContent='Clear my answers'; rm.textContent='Answers cleared.'; draw(); });
-  draw();
+  if(rb) rb.addEventListener('click',()=>{ if(!armed){armed=true; rb.textContent='Click again to clear'; rm.textContent=''; setTimeout(()=>{armed=false; rb.textContent='Clear my answers';},4000); return;}
+    armed=false; st={}; LS.set('atlas-quiz',st); rb.textContent='Clear my answers'; rm.textContent='Answers cleared.'; insts.forEach(o=>o.draw()); });
 }
 
 /* ---------- Anki export ---------- */

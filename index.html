@@ -554,6 +554,81 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 .nx .les{display:none}
 .nx .les.on{display:inline}
 .nx-trace-plate{padding:10px}
+
+/* ---------- regional chapters, widgets, spec, search (added for the whole-anatomy expansion) ---------- */
+.wg-btns{margin-bottom:12px}
+[data-widget] .pbtn,#spec-map-btns .pbtn,#spec-filter .pbtn,#qz-filter .pbtn,.qz .opt,.bone-plate .pbtn{min-height:44px}
+[data-widget] .pbtn,#spec-map-btns .pbtn,#spec-filter .pbtn{padding:8px 14px}
+.wg-fig svg{max-height:560px}
+.nx-detail .spec-bar{margin:8px 0 4px}
+.chap-nav{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:40px 0 8px}
+.chap-nav a{display:grid;gap:2px;padding:12px 16px;min-height:44px;border:1px solid var(--line-2);border-radius:12px;background:var(--paper);text-decoration:none;color:var(--ink)}
+.chap-nav a:hover,.chap-nav a:focus-visible{border-color:var(--accent)}
+.chap-nav small{color:var(--muted);font-size:.76rem}
+.chap-nav .chap-next{text-align:right;grid-column:2}
+.srch-btn{flex:0 0 auto;min-height:40px;min-width:44px;display:inline-flex;align-items:center;gap:6px;padding:6px 12px;border:1px solid var(--line-2);border-radius:999px;background:var(--paper);color:var(--ink);font:inherit;font-size:.86rem;cursor:pointer}
+.srch-btn:hover,.srch-btn:focus-visible{border-color:var(--accent)}
+.srch-btn kbd{font-family:var(--font-mono);font-size:.7rem;color:var(--muted);border:1px solid var(--line-2);border-radius:4px;padding:0 4px}
+@media (max-width:640px){.srch-btn kbd,.srch-btn .srch-l{display:none}}
+#srch{border:none;padding:0;background:transparent;width:min(760px,calc(100vw - 32px));max-height:calc(100vh - 64px);margin:32px auto auto}
+#srch::backdrop{background:rgba(10,14,20,.55)}
+.srch-box{background:var(--paper);color:var(--ink);border:1px solid var(--line-2);border-radius:14px;padding:16px;display:grid;gap:8px;max-height:calc(100vh - 80px);overflow:auto;box-shadow:var(--shadow)}
+.srch-top{display:flex;gap:8px}
+.srch-top input{flex:1;min-width:0;min-height:44px;font:inherit;font-size:1rem;padding:8px 12px;border:1px solid var(--line-2);border-radius:10px;background:var(--bg,var(--paper));color:var(--ink)}
+.srch-hits{list-style:none;padding:0;margin:0;display:grid;gap:6px}
+.srch-hits a{display:grid;gap:2px;padding:10px 12px;border:1px solid var(--line);border-radius:10px;text-decoration:none;color:var(--ink)}
+.srch-hits a:hover,.srch-hits a:focus-visible{border-color:var(--accent);background:var(--accent-tint)}
+.srch-hits small{color:var(--muted);font-family:var(--font-mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.06em}
+.srch-hits span{color:var(--ink-2);font-size:.86rem}
+.srch-hits mark{background:var(--nerve-tint);color:inherit}
+#srch-out{display:grid;gap:10px}
+.srch-chap{border-top:1px solid var(--line);padding-top:8px}
+.srch-c{font-weight:700;display:inline-block;padding:6px 0}
+.srch-chap ul{margin:2px 0 0;padding-left:18px;columns:2;column-gap:24px}
+.srch-chap li{break-inside:avoid;padding:3px 0}
+@media (max-width:640px){.srch-chap ul{columns:1}}
+.sr{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+/* spec */
+.spec-bar{display:flex;height:10px;border-radius:999px;overflow:hidden;background:var(--sunk);border:1px solid var(--line)}
+.spec-bar .g{background:var(--sys-lymph)}.spec-bar .a{background:var(--nerve)}.spec-bar .r{background:var(--clin)}
+.spec-total{margin-bottom:8px}
+.spec-areas{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:10px;margin-top:14px}
+.spec-area{display:grid;gap:4px;padding:10px 12px;border:1px solid var(--line);border-left:4px solid var(--c);border-radius:10px;background:var(--paper);text-decoration:none;color:var(--ink);min-height:44px}
+.spec-area:hover,.spec-area:focus-visible{border-color:var(--accent);border-left-color:var(--c)}
+.spec-an{font-weight:700}
+.spec-sec{border:1px solid var(--line);border-left:4px solid var(--c);border-radius:12px;background:var(--paper);margin:0 0 10px}
+.spec-sec>summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:4px 12px;align-items:baseline;justify-content:space-between;padding:12px 16px;min-height:44px}
+.spec-h{font-weight:700;font-size:1.08rem}
+.spec-sum{padding:0 16px;margin:0 0 6px}
+.spec-ol{list-style:none;margin:0;padding:0 8px 8px}
+.spec-obj{display:grid;grid-template-columns:auto minmax(0,1fr) auto;gap:6px 12px;align-items:center;padding:8px;border-top:1px solid var(--line)}
+.spec-n{font-family:var(--font-mono);font-size:.7rem;color:var(--muted)}
+.spec-t{line-height:1.4}
+.spec-go{white-space:nowrap;font-size:.84rem}
+.spec-rag{display:flex;gap:4px}
+.rag{width:44px;height:44px;border-radius:10px;border:2px solid var(--line-2);background:var(--paper);cursor:pointer;position:relative}
+.rag::after{content:"";position:absolute;inset:12px;border-radius:50%;background:var(--rc);opacity:.35}
+.rag[aria-pressed="true"]{border-color:var(--rc);background:color-mix(in srgb,var(--rc) 18%,var(--paper))}
+.rag[aria-pressed="true"]::after{opacity:1}
+.rag:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+.rag-r{--rc:var(--clin)}.rag-a{--rc:var(--nerve)}.rag-g{--rc:var(--sys-lymph)}
+.spec-obj[data-v="g"] .spec-t{color:var(--ink-2)}
+@media (max-width:620px){.spec-obj{grid-template-columns:minmax(0,1fr)}.spec-n{display:none}}
+.spec-legend{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center}
+.spec-legend span{display:inline-flex;align-items:center;gap:6px}
+.spec-legend i{width:12px;height:12px;border-radius:50%;display:inline-block}
+.chap-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:10px}
+.chap-card{display:grid;gap:4px;padding:12px 14px;border:1px solid var(--line);border-top:4px solid var(--c);border-radius:12px;background:var(--paper);color:var(--ink);text-decoration:none;min-height:44px}
+.chap-card:hover,.chap-card:focus-visible{border-color:var(--accent);border-top-color:var(--c)}
+.chap-card small{color:var(--muted)}
+.dg-host .dg-wrap{min-width:640px}
+@media print{
+  .topbar,.rail,.mobile-toc,.chap-nav,.foot,#spec-map,#spec-flow,.fig-tools,#spec-filter,.spec-rag,.spec-go{display:none!important}
+  .layout{display:block!important}
+  .spec-sec{break-inside:auto;border:1px solid #999}
+  .spec-obj{grid-template-columns:auto 1fr;break-inside:avoid}
+  .spec-obj[data-v="g"] .spec-t::after{content:"  [green]"}.spec-obj[data-v="a"] .spec-t::after{content:"  [amber]"}.spec-obj[data-v="r"] .spec-t::after{content:"  [red]"}
+}
 </style>
 </head>
 <body>
@@ -569,8 +644,13 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
   <div class="topbar-inner">
     <a class="brand" href="#start"><b>Anatomy Atlas</b><span>BMBS Year 1</span></a>
     <nav class="tabs" role="tablist" aria-label="Chapters">
+      <button class="tab" role="tab" data-tab="spec" aria-selected="false">Spec</button>
       <button class="tab" role="tab" data-tab="systems" aria-selected="true">Big picture</button>
       <button class="tab" role="tab" data-tab="organs" aria-selected="false">Organ systems</button>
+      <button class="tab" role="tab" data-tab="headneck" aria-selected="false">Head &amp; neck</button>
+      <button class="tab" role="tab" data-tab="thorax" aria-selected="false">Thorax</button>
+      <button class="tab" role="tab" data-tab="abdomen" aria-selected="false">Abdomen</button>
+      <button class="tab" role="tab" data-tab="pelvis" aria-selected="false">Pelvis</button>
       <button class="tab" role="tab" data-tab="upper" aria-selected="false">Upper limb</button>
       <button class="tab" role="tab" data-tab="lower" aria-selected="false">Lower limb</button>
       <button class="tab" role="tab" data-tab="neuro" aria-selected="false">Nervous system</button>
@@ -578,6 +658,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
       <button class="tab" role="tab" data-tab="exams" aria-selected="false">Mock exams</button>
       <button class="tab" role="tab" data-tab="sources" aria-selected="false">Sources</button>
     </nav>
+    <button class="srch-btn" id="srch-open" type="button" aria-label="Contents and search"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span class="srch-l">Search</span><kbd>/</kbd></button>
   </div>
 </div>
 
@@ -597,13 +678,91 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
   <main id="main">
     <div class="mobile-toc"><label class="eyebrow" for="toc-select">Jump to section</label><select id="toc-select"></select></div>
 
+<!-- ======================================================= UNOFFICIAL SPEC ======================================================= -->
+<section class="panel" id="panel-spec" data-panel="spec" hidden>
+  <div class="opener">
+    <span class="eyebrow">Start here · Unofficial spec</span>
+    <h1>The unofficial Year 1 anatomy spec</h1>
+    <p class="lede">Everything you need to know for Year 1 anatomy, written as <b><span id="spec-count">160</span> learning objectives</b> grouped by region. Each one links to the section that teaches it. Rate yourself red, amber or green as you go and the bars show where to spend your next hour. Built from your peer-teaching decks and checked against standard references; where your school's own learning outcomes say something different, they win.</p>
+    <div class="twocol">
+      <div class="card"><h4>How the atlas is organised</h4><ul>
+        <li><b>Foundations:</b> <a href="#systems">Big picture</a> (language, systems map) and <a href="#organs">Organ systems</a> (each system organ by organ).</li>
+        <li><b>Regions, head to toe:</b> <a href="#headneck">Head &amp; neck</a>, <a href="#thorax">Thorax</a>, <a href="#abdomen">Abdomen</a>, <a href="#pelvis">Pelvis</a>, <a href="#upper">Upper limb</a>, <a href="#lower">Lower limb</a>.</li>
+        <li><b>Nervous system:</b> brain, cranial nerves, spinal cord and <a href="#neuro-spine">vertebral column</a>.</li>
+        <li><b>Testing:</b> a quiz at the end of every chapter, the <a href="#test">Quick quiz</a> bank and two timed <a href="#exams">mock exams</a>.</li>
+        <li><b>Search:</b> press <kbd>/</kbd> or the search button to find any structure.</li>
+      </ul></div>
+      <div class="note think"><span class="tag">Think of it as</span><p>A checklist you mark yourself against, not a textbook. Read an objective, try to answer it out loud without looking, then press <b>Study →</b> to check. Green means you could teach it to a friend.</p></div>
+    </div>
+  </div>
+
+  <section class="sec" id="spec-map">
+    <header><span class="eyebrow">Spec · Map</span><h2>Map of the course</h2><p>Tap a region of the body. Shading deepens as you rate more of that region green.</p></header>
+    <div class="plate">
+      <div class="pill-btns" id="spec-map-btns" role="group" aria-label="Regions"></div>
+      <div class="fig-grid"><div class="nx-fig" id="spec-map-fig" style="max-width:340px;justify-self:center;width:100%"></div><div class="tdetail nx-detail" id="spec-map-det" aria-live="polite"></div></div>
+    </div>
+    <div class="chap-grid" style="margin-top:14px">
+      <a class="chap-card" href="#systems" style="--c:var(--sys-msk)"><b>1 · Big picture</b><small>Systems map, anatomical language, the body plan</small></a>
+      <a class="chap-card" href="#organs" style="--c:var(--sys-blood)"><b>2 · Organ systems</b><small>All twelve systems, organ by organ</small></a>
+      <a class="chap-card" href="#headneck" style="--c:var(--sys-endo)"><b>3 · Head and neck</b><small>Scalp, face, neck, airway, mouth</small></a>
+      <a class="chap-card" href="#thorax" style="--c:var(--sys-cvs)"><b>4 · Thorax</b><small>Wall, lungs, diaphragm, mediastinum, heart</small></a>
+      <a class="chap-card" href="#abdomen" style="--c:var(--sys-gi)"><b>5 · Abdomen</b><small>Wall, peritoneum, gut, liver, kidneys</small></a>
+      <a class="chap-card" href="#pelvis" style="--c:var(--sys-repro)"><b>6 · Pelvis</b><small>Pelvic floor, perineum, reproductive organs, breast</small></a>
+      <a class="chap-card" href="#upper" style="--c:var(--sys-musc)"><b>7 · Upper limb</b><small>Bones, brachial plexus, vessels, regions</small></a>
+      <a class="chap-card" href="#lower" style="--c:var(--sys-skin)"><b>8 · Lower limb</b><small>Bones, lumbosacral plexus, vessels, regions</small></a>
+      <a class="chap-card" href="#neuro" style="--c:var(--sys-nerv)"><b>9 · Nervous system</b><small>Skull, brain, cranial nerves, cord, spine</small></a>
+    </div>
+  </section>
+
+  <section class="sec" id="spec-flow">
+    <header><span class="eyebrow">Spec · Method</span><h2>How to revise a region</h2><p>The same loop works for every chapter. Testing comes before re-reading.</p></header>
+    <div class="plate"><div class="scroll-x"><div class="nx-fig" id="spec-flow-fig" style="min-width:560px"></div></div></div>
+    <h3>Answering a clinical anatomy question</h3>
+    <ol class="nchain" aria-label="Steps for a clinical anatomy question">
+      <li class="c"><span class="nk"><b>Read the last line</b><small>what are they asking?</small></span></li>
+      <li class="c"><span class="nk"><b>Find the clue</b><small>site, mechanism, deficit</small></span></li>
+      <li class="s"><span class="nk"><b>Name the structure</b><small>nerve, root, artery, level</small></span></li>
+      <li class="s"><span class="nk"><b>Recall what it supplies</b><small>muscles, skin, organ</small></span></li>
+      <li class="m"><span class="nk"><b>Predict the finding</b><small>before reading options</small></span></li>
+      <li class="m"><span class="nk"><b>Pick and check</b><small>does it explain every clue?</small></span></li>
+    </ol>
+    <div class="note exam"><span class="tag">Same three questions for every structure</span><p>Where is it (relations, level, surface marking)? What supplies it (artery, vein, nerve, lymph)? What happens when it goes wrong (injury, compression, referred pain)? Every objective below is a version of one of these.</p></div>
+  </section>
+
+  <section class="sec" id="spec-levels">
+    <header><span class="eyebrow">Spec · Numbers</span><h2>Vertebral levels to know by heart</h2><p>These levels join the neck, thorax and abdomen. Choose one.</p></header>
+    <div class="plate"><div data-widget="levels"></div></div>
+  </section>
+
+  <section class="sec" id="spec-progress">
+    <header><span class="eyebrow">Spec · Progress</span><h2>Your progress</h2><p>Saved on this device only. Tap an area to jump to its objectives.</p></header>
+    <div class="plate"><div id="spec-progress-out"></div>
+      <div class="spec-legend small muted"><span><i style="background:var(--sys-lymph)"></i>Green: could teach it</span><span><i style="background:var(--nerve)"></i>Amber: shaky</span><span><i style="background:var(--clin)"></i>Red: not yet</span></div></div>
+  </section>
+
+  <section class="sec" id="spec-objectives">
+    <header><span class="eyebrow">Spec · Objectives</span><h2>Learning objectives</h2><p>"Describe" means: say where it is, what it is made of, what supplies it and why it matters clinically. Tap the same colour again to clear a rating.</p></header>
+    <div class="fig-tools" style="flex-wrap:wrap;gap:8px">
+      <div class="pill-btns" id="spec-filter" role="group" aria-label="Show objectives">
+        <button class="pbtn" data-f="all" aria-pressed="true">All</button><button class="pbtn" data-f="u" aria-pressed="false">Not rated</button>
+        <button class="pbtn" data-f="r" aria-pressed="false">Red</button><button class="pbtn" data-f="a" aria-pressed="false">Amber</button><button class="pbtn" data-f="g" aria-pressed="false">Green</button>
+      </div>
+      <button class="btn ghost" id="spec-expand" type="button">Expand all</button>
+      <button class="btn ghost" id="spec-print" type="button">Print the spec</button>
+    </div>
+    <div id="spec-list-out"></div>
+    <div class="fig-tools"><button class="btn ghost" id="spec-reset" type="button">Clear my ratings</button><span class="small muted" id="spec-reset-msg"></span></div>
+  </section>
+</section>
+
 <!-- ======================================================= SYSTEMS ======================================================= -->
 <section class="panel" id="panel-systems" data-panel="systems">
 
   <div class="opener" id="start">
     <span class="eyebrow">Chapter 1 · The big picture</span>
     <h1>Learn the body as one machine, then zoom into each system</h1>
-    <p class="lede">Anatomy sticks when you know where a structure sits in the bigger plan. Start here with the map of the organ systems and how they cooperate. The <a href="#organs">Organ systems</a> chapter then takes each system organ by organ (structure, function, supply and clinical links) with labelled diagrams. The limb chapters go deepest: bones, joints, muscles, nerves, vessels and the clinical regions you will examine as an FY1. <a href="#neuro">Nervous system</a> covers the brain, brainstem, cranial nerves and spinal pathways. Finish with two timed <a href="#exams">100-question mock exams</a>.</p>
+    <p class="lede">Anatomy sticks when you know where a structure sits in the bigger plan. Start here with the map of the organ systems and how they cooperate. The <a href="#organs">Organ systems</a> chapter then takes each system organ by organ (structure, function, supply and clinical links) with labelled diagrams. The limb chapters go deepest: bones, joints, muscles, nerves, vessels and the clinical regions you will examine as an FY1. The regional chapters (<a href="#headneck">Head &amp; neck</a>, <a href="#thorax">Thorax</a>, <a href="#abdomen">Abdomen</a>, <a href="#pelvis">Pelvis</a>) cover the trunk and head region by region. <a href="#neuro">Nervous system</a> covers the brain, brainstem, cranial nerves, spinal pathways and vertebral column. The <a href="#spec">Unofficial spec</a> lists every learning objective so you can track what you know. Finish with two timed <a href="#exams">100-question mock exams</a>.</p>
     <div class="howto">
       <div><b>Big picture</b>Skim the systems map, how the systems work together, and the language of anatomy below.</div>
       <div><b>Organ systems</b>For each system: what it does, its numbers, its organs, a labelled diagram and how it links to the rest.</div>
@@ -976,7 +1135,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= UPPER LIMB ======================================================= -->
 <section class="panel" id="panel-upper" data-panel="upper" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 3 · Upper limb</span>
+    <span class="eyebrow">Chapter 7 · Upper limb</span>
     <h1>Upper limb</h1>
     <p class="lede">The arm is built for reach and precision. A shallow shoulder gives a huge range of movement, the forearm turns the hand over, and the hand is run by five nerves that you can test in under a minute.</p>
     <div class="twocol">
@@ -1623,7 +1782,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= LOWER LIMB ======================================================= -->
 <section class="panel" id="panel-lower" data-panel="lower" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 4 · Lower limb</span>
+    <span class="eyebrow">Chapter 8 · Lower limb</span>
     <h1>Lower limb</h1>
     <p class="lede">The leg is built for weight-bearing and propulsion. A deep hip, a locking knee and a sprung foot carry your whole body weight with every step, and that load explains most of its anatomy and most of its injuries.</p>
     <div class="twocol">
@@ -2281,7 +2440,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= NERVOUS SYSTEM ======================================================= -->
 <section class="panel" id="panel-neuro" data-panel="neuro" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 5 · Nervous system</span>
+    <span class="eyebrow">Chapter 9 · Nervous system</span>
     <h1>Nervous system: brain, brainstem and cranial nerves</h1>
     <p class="lede">Everything above the roots and plexuses of the limb chapters: the skull that houses the brain, its coverings and fluid, what each region does, where its blood comes from, the brainstem and its twelve cranial nerves, and the spinal cord pathways that link them. Every figure is interactive: tap or tab to a part and press Enter.</p>
     <div class="twocol">
@@ -2637,6 +2796,40 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
     </div>
   </section>
 
+  <section class="sec" id="neuro-spine">
+    <header>
+      <span class="eyebrow">Nervous system · Vertebral column</span>
+      <h2>Vertebral column and intervertebral discs</h2>
+      <p>The bony case for the spinal cord. Learn the three typical vertebrae by their giveaway features, then the disc and which root it compresses.</p>
+    </header>
+    <div class="bone-plate" data-bone="vertebrae"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Region</th><th>Vertebrae</th><th>Curve</th></tr></thead><tbody>
+        <tr><th>Cervical</th><td>7 (C1 atlas: no body; C2 axis: dens)</td><td>Lordosis (secondary, as the baby holds up its head)</td></tr>
+        <tr><th>Thoracic</th><td>12, each with ribs</td><td>Kyphosis (primary, present at birth)</td></tr>
+        <tr><th>Lumbar</th><td>5, the largest bodies</td><td>Lordosis (secondary, with walking)</td></tr>
+        <tr><th>Sacrum</th><td>5 fused</td><td>Kyphosis (primary)</td></tr>
+        <tr><th>Coccyx</th><td>3–5 fused</td><td>—</td></tr>
+      </tbody></table></div>
+      <div class="card"><h4>Joints and ligaments</h4><ul>
+        <li><b>Intervertebral disc:</b> outer annulus fibrosus (fibrocartilage rings) round a gel nucleus pulposus (notochord remnant). A secondary cartilaginous joint.</li>
+        <li><b>Facet joints:</b> synovial joints between articular processes; their orientation decides which movement each region allows.</li>
+        <li><b>Ligaments:</b> anterior longitudinal (resists extension), posterior longitudinal (narrow, so discs bulge posterolaterally), ligamentum flavum, interspinous, supraspinous, nuchal ligament in the neck.</li>
+      </ul></div>
+    </div>
+    <h3>Which root does a disc compress?</h3>
+    <ol class="nchain" aria-label="Disc prolapse logic">
+      <li class="c"><span class="nk"><b>Posterolateral prolapse</b><small>beside the posterior longitudinal ligament</small></span></li>
+      <li class="s"><span class="nk"><b>Misses the root exiting at that level</b><small>it leaves high in the foramen</small></span></li>
+      <li class="s"><span class="nk"><b>Hits the root passing down</b><small>L4/5 disc → L5 root; L5/S1 → S1</small></span></li>
+      <li class="m"><span class="nk"><b>Dermatome, myotome, reflex</b><small>L5: big toe extension; S1: ankle jerk</small></span></li>
+    </ol>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Emergency · cauda equina syndrome</span><p>A large central disc at L4/5 or L5/S1 compresses many roots: bilateral sciatica, saddle numbness, bladder (retention or painless overflow), bowel or sexual dysfunction. Needs an emergency MRI and decompression; outcome depends on how early the bladder is saved.</p></div>
+      <div class="note exam"><span class="tag">Counting the nerves</span><p>Eight cervical nerves, seven cervical vertebrae: C1–C7 leave <b>above</b> their vertebra, C8 between C7 and T1, and every nerve below leaves <b>below</b> its own vertebra. In the cervical spine a C5/6 disc compresses C6.</p></div>
+    </div>
+  </section>
+
   <section class="sec" id="neuro-quiz">
     <header>
       <span class="eyebrow">Nervous system · Quick quiz</span>
@@ -2650,10 +2843,584 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
   </section>
 </section>
 
+<!-- ======================================================= HEAD AND NECK ======================================================= -->
+<section class="panel" id="panel-headneck" data-panel="headneck" hidden>
+  <div class="opener">
+    <span class="eyebrow">Chapter 3 · Head and neck</span>
+    <h1>Head and neck</h1>
+    <p class="lede">A crowded region: airway, food passage, major vessels to the brain, the thyroid and twelve cranial nerves pass through a neck the width of your hand. Learn it by levels (C3 hyoid, C4 carotid fork, C6 cricoid), by triangles and by fascial layers, and the rest falls into place. The skull, brain and cranial nerves are in <a href="#neuro">Nervous system</a>.</p>
+    <div class="twocol">
+      <div class="card"><h4>The whole region on one card</h4><ul>
+        <li><b>Layers:</b> scalp (SCALP) → skull → meninges; neck: investing, pretracheal and prevertebral fascia, plus the carotid sheath.</li>
+        <li><b>Airway:</b> nose → pharynx (naso-, oro-, laryngo-) → larynx (C3–C6) → trachea from C6.</li>
+        <li><b>Arteries:</b> common carotid → internal (brain, no neck branches) and external (8 branches to face and neck); subclavian → vertebral.</li>
+        <li><b>Veins:</b> internal jugular in the carotid sheath; external jugular over sternocleidomastoid.</li>
+        <li><b>Nerves:</b> trigeminal for facial sensation, facial for expression, vagus for larynx and pharynx, accessory for SCM and trapezius, cervical plexus for neck skin.</li>
+      </ul></div>
+      <div class="note think"><span class="tag">Think of it as</span><p>A cable duct between head and body. The fascial layers are sleeves inside the duct: one around the muscles, one around the airway and food pipe, one around the spine, and a separate sheath for the main pipes to the brain. Infection or air leaks along the sleeves rather than across them.</p></div>
+    </div>
+  </div>
+
+  <section class="sec" id="hn-scalp">
+    <header><span class="eyebrow">Head and neck · Scalp and face</span><h2>Scalp, face and facial muscles</h2><p>Five layers of scalp over the skull, the trigeminal map of facial skin, and the two nerves that move the face and jaw.</p></header>
+    <div class="bone-plate" data-bone="scalp"></div>
+    <div class="bone-plate" data-bone="facesensory"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Facial nerve branch</th><th>Main muscles</th></tr></thead><tbody>
+        <tr><th>Temporal</th><td>Frontalis (raise eyebrows), upper orbicularis oculi</td></tr>
+        <tr><th>Zygomatic</th><td>Orbicularis oculi (close eyes tightly)</td></tr>
+        <tr><th>Buccal</th><td>Buccinator, upper lip muscles (puff cheeks)</td></tr>
+        <tr><th>Marginal mandibular</th><td>Lower lip depressors (at risk in submandibular surgery)</td></tr>
+        <tr><th>Cervical</th><td>Platysma</td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Muscle of mastication (V3)</th><th>Action</th></tr></thead><tbody>
+        <tr><th>Masseter</th><td>Closes the jaw; palpable when clenching</td></tr>
+        <tr><th>Temporalis</th><td>Closes and retracts the jaw</td></tr>
+        <tr><th>Medial pterygoid</th><td>Closes the jaw; side-to-side grinding</td></tr>
+        <tr><th>Lateral pterygoid</th><td><b>Opens</b> the jaw and protrudes it: a V3 lesion makes the jaw deviate towards the weak side on opening</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="notes">
+      <div class="note exam"><span class="tag">Mnemonics</span><ul><li>Scalp layers: <b>S</b>kin, <b>C</b>onnective tissue, <b>A</b>poneurosis, <b>L</b>oose areolar tissue, <b>P</b>ericranium.</li><li>Facial nerve branches from top: "<b>T</b>o <b>Z</b>anzibar <b>B</b>y <b>M</b>otor <b>C</b>ar".</li></ul></div>
+      <div class="note clin"><span class="tag">Clinical link · parotid and facial nerve</span><p>The facial nerve leaves the skull through the stylomastoid foramen and splits into its five branches inside the parotid gland. Parotid tumours or surgery can cause a lower motor neuron facial palsy affecting the whole side of the face, forehead included. Compare the forehead-sparing upper motor neuron palsy of stroke in <a href="#neuro-cn">Nervous system</a>.</p></div>
+      <div class="note clin"><span class="tag">FY1 link · scalp lacerations</span><p>Apply firm pressure first: the dense connective tissue holds vessels open. Check for a step in the skull, look for a gaping aponeurosis and close it in layers if needed. A boggy swelling after trauma may be blood in the loose areolar layer; bruising can track to both eyelids without an orbital injury.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="hn-neck">
+    <header><span class="eyebrow">Head and neck · Neck</span><h2>Neck: levels, triangles and fascia</h2><p>Sternocleidomastoid divides each side of the neck into an anterior and a posterior triangle. Tap a triangle to see what lies inside it.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Triangles of the neck</h3><span class="cap">Right side, face to the right. Tap a triangle or use the buttons.</span></div><div data-widget="neck"></div></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Level</th><th>Landmark</th><th>What happens there</th></tr></thead><tbody>
+      <tr><th><span class="rt">C3</span></th><td>Hyoid bone</td><td>Top of the larynx</td></tr>
+      <tr><th><span class="rt">C4</span></th><td>Upper border of the thyroid cartilage</td><td>Common carotid bifurcation, carotid sinus and body</td></tr>
+      <tr><th><span class="rt">C6</span></th><td>Cricoid cartilage</td><td>Larynx → trachea; pharynx → oesophagus; vertebral artery enters the transverse foramen; inferior thyroid artery crosses</td></tr>
+      <tr><th><span class="rt">C7</span></th><td>Vertebra prominens</td><td>Most prominent spinous process</td></tr>
+      <tr><th><span class="rt">T2/3</span></th><td>Jugular notch</td><td>Trachea palpable above it</td></tr>
+    </tbody></table></div>
+    <div class="bone-plate" data-bone="neckfascia"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Layer</th><th>Encloses</th><th>Why it matters</th></tr></thead><tbody>
+      <tr><th>Investing layer</th><td>The whole neck; splits around sternocleidomastoid, trapezius and the parotid and submandibular glands</td><td>Forms the roof of the posterior triangle</td></tr>
+      <tr><th>Pretracheal layer</th><td>Thyroid, trachea, oesophagus (visceral part) and the infrahyoid muscles (muscular part); fuses with the pericardium below</td><td>Thyroid moves on swallowing; infection can track into the mediastinum</td></tr>
+      <tr><th>Prevertebral layer</th><td>Vertebral column, prevertebral and scalene muscles, deep back muscles; floor of the posterior triangle</td><td>Extends into the axilla as the axillary sheath around the brachial plexus: site for brachial plexus blocks</td></tr>
+      <tr><th>Carotid sheath</th><td>Common and internal carotid artery, internal jugular vein, vagus nerve, deep cervical nodes</td><td>Central line and carotid surgery landmarks</td></tr>
+    </tbody></table></div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Clinical link · subcutaneous emphysema</span><p>Air from a pneumothorax, a chest drain problem or airway injury tracks up the fascial planes into the neck and face: swelling that crackles under the fingers. It usually resolves, but think about the cause and the airway.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · branchial cyst and Erb's point</span><p>A branchial cyst is an embryological remnant appearing as a smooth swelling at the anterior border of sternocleidomastoid, often noticed in young adults. Erb's point (junction of the upper and middle thirds of the posterior border of sternocleidomastoid) is where cervical plexus skin nerves emerge: the site for a superficial cervical plexus block.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="hn-vessels">
+    <header><span class="eyebrow">Head and neck · Vessels and lymph</span><h2>Vessels and lymph nodes of the neck</h2><p>Tap any vessel in the flowcharts for what it supplies and why it matters.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Carotid arteries</h3><span class="cap">Tap a branch.</span></div><div class="tree" data-tree="hnCarotid"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Subclavian artery</h3><span class="cap">"VIT C and D".</span></div><div class="tree" data-tree="hnSubclavian"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Veins of the neck</h3><span class="cap">Blood flows right to left.</span></div><div class="tree" data-tree="hnVeins"></div></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Node level</th><th>Location</th></tr></thead><tbody>
+      <tr><th>I</th><td>Ia submental, Ib submandibular</td></tr><tr><th>II</th><td>Upper internal jugular chain (skull base to hyoid); includes the jugulodigastric node, enlarged in tonsillitis</td></tr>
+      <tr><th>III</th><td>Middle jugular chain (hyoid to cricoid)</td></tr><tr><th>IV</th><td>Lower jugular chain (cricoid to clavicle)</td></tr>
+      <tr><th>V</th><td>Posterior triangle</td></tr><tr><th>VI</th><td>Central compartment (around trachea and thyroid)</td></tr><tr><th>VII</th><td>Upper mediastinum (below the jugular notch)</td></tr>
+    </tbody></table></div>
+    <div class="note clin"><span class="tag">Clinical link · neck lumps</span><p>Examine from behind, level by level. A hard, painless, fixed node is malignant until proven otherwise; the left supraclavicular (Virchow's) node receives the thoracic duct and can signal gastric or pelvic cancer (Troisier's sign). The jugular venous pressure is read from the internal jugular vein, between the heads of sternocleidomastoid.</p></div>
+  </section>
+
+  <section class="sec" id="hn-airway">
+    <header><span class="eyebrow">Head and neck · Airway</span><h2>Nose, pharynx and larynx</h2><p>The upper airway conditions air, shares the pharynx with food, and protects the lungs with the larynx.</p></header>
+    <div class="bone-plate" data-bone="airway"></div>
+    <div class="bone-plate" data-bone="larynx"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Part of the pharynx</th><th>Extent</th><th>Lining</th><th>Contains</th></tr></thead><tbody>
+      <tr><th>Nasopharynx</th><td>Skull base to soft palate</td><td>Respiratory (pseudostratified ciliated columnar)</td><td>Adenoid, openings of the pharyngotympanic tubes</td></tr>
+      <tr><th>Oropharynx</th><td>Soft palate to the tip of the epiglottis</td><td>Non-keratinised stratified squamous</td><td>Palatine and lingual tonsils</td></tr>
+      <tr><th>Laryngopharynx</th><td>Epiglottis to the lower border of the cricoid (C6)</td><td>Non-keratinised stratified squamous</td><td>Laryngeal inlet in front; piriform fossae either side (fish bones lodge here)</td></tr>
+    </tbody></table></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Nerve (all from the vagus)</th><th>Motor</th><th>Sensory</th></tr></thead><tbody>
+      <tr><th>Recurrent laryngeal</th><td>All intrinsic laryngeal muscles except cricothyroid (including posterior cricoarytenoid, the only abductor)</td><td>Below the vocal folds</td></tr>
+      <tr><th>External laryngeal</th><td>Cricothyroid only (tenses the folds: pitch)</td><td>—</td></tr>
+      <tr><th>Internal laryngeal</th><td>—</td><td>Above the vocal folds (cough reflex)</td></tr>
+    </tbody></table></div>
+    <div class="twocol">
+      <div class="card"><h4>Nasal cavity</h4><ul><li>Three regions: vestibule (skin, hairs), respiratory region (conchae, warm and humidify) and olfactory region (roof, CN I).</li><li>Sinus drainage: frontal, maxillary and anterior ethmoid → middle meatus; posterior ethmoid → superior meatus; sphenoid → sphenoethmoidal recess; nasolacrimal duct → inferior meatus.</li><li>Blood: ophthalmic (ethmoidal aa., from the internal carotid) and maxillary (sphenopalatine, greater palatine) and facial (superior labial) arteries meet at Kiesselbach's plexus.</li><li>Sensation: V1 (nasociliary) and V2 (nasopalatine).</li></ul></div>
+      <div class="card"><h4>Larynx in brief</h4><ul><li>C3–C6, from the hyoid to the cricoid. Cartilages: thyroid, cricoid, epiglottis, paired arytenoids.</li><li>Supraglottis, glottis (vocal folds, stratified squamous), subglottis.</li><li>Lymph: above the folds to upper deep cervical nodes; below to lower deep cervical and pre- and paratracheal nodes. The folds themselves have almost none, so early glottic cancer spreads late.</li><li>Arteries: superior laryngeal (from superior thyroid) and inferior laryngeal (from inferior thyroid).</li></ul></div>
+    </div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Emergency · can't intubate, can't oxygenate</span><p>Front-of-neck access through the cricothyroid membrane: palpate the laryngeal prominence, run down to the dip above the cricoid ring, stabilise the larynx and incise transversely. It is above the thyroid isthmus and below the vocal folds.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · epistaxis and hoarseness</span><p>Most nosebleeds come from Kiesselbach's plexus: pinch the soft part of the nose and lean forward for 10–15 minutes. Persistent hoarseness over 3 weeks needs laryngoscopy: recurrent laryngeal nerve palsy can come from thyroid surgery, lung or oesophageal cancer, or an aortic arch aneurysm (left side).</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="hn-mouth">
+    <header><span class="eyebrow">Head and neck · Mouth</span><h2>Mouth, tongue, salivary glands and swallowing</h2><p>The tongue is the classic innervation question: five nerves for one organ.</p></header>
+    <div class="tbl-wrap"><table><thead><tr><th>Tongue</th><th>Anterior two-thirds</th><th>Posterior third</th></tr></thead><tbody>
+      <tr><th>Motor</th><td colspan="2">Hypoglossal (XII) for all intrinsic and extrinsic muscles, except palatoglossus (vagus, X)</td></tr>
+      <tr><th>General sensation</th><td>Lingual nerve (V3)</td><td>Glossopharyngeal (IX)</td></tr>
+      <tr><th>Taste</th><td>Chorda tympani (VII), carried with the lingual nerve</td><td>Glossopharyngeal (IX); epiglottis region: vagus (X)</td></tr>
+    </tbody></table></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Salivary gland</th><th>Secretion</th><th>Duct opens</th><th>Parasympathetic supply</th></tr></thead><tbody>
+      <tr><th>Parotid</th><td>Serous</td><td>Opposite the upper 2nd molar (parotid duct)</td><td>IX via the otic ganglion; the facial nerve passes through the gland but does not supply it</td></tr>
+      <tr><th>Submandibular</th><td>Mixed (most resting saliva)</td><td>Floor of the mouth beside the frenulum; stones are commonest here</td><td>VII (chorda tympani) via the submandibular ganglion</td></tr>
+      <tr><th>Sublingual</th><td>Mainly mucous</td><td>Many small ducts in the floor of the mouth</td><td>VII via the submandibular ganglion</td></tr>
+    </tbody></table></div>
+    <h3>Swallowing</h3>
+    <ol class="nchain" aria-label="Phases of swallowing">
+      <li class="m"><span class="nk"><b>Oral (voluntary)</b><small>tongue pushes the bolus back</small></span></li>
+      <li class="c"><span class="nk"><b>Pharyngeal (reflex)</b><small>soft palate seals nasopharynx, larynx rises, epiglottis tips, breathing stops</small></span></li>
+      <li class="s"><span class="nk"><b>Oesophageal</b><small>cricopharyngeus relaxes; peristalsis; lower sphincter opens</small></span></li>
+    </ol>
+    <div class="note clin"><span class="tag">Clinical link · Waldeyer's ring and stroke</span><p>The pharyngeal (adenoid), tubal, palatine and lingual tonsils form a ring of lymphoid tissue guarding the airway and gut entrance. Tonsillectomy can stretch the glossopharyngeal nerve: earache afterwards is referred pain. After a stroke, a weak pharyngeal phase means food can enter the larynx: a bedside swallow screen comes before any food or drink.</p></div>
+  </section>
+
+  <section class="sec" id="hn-quiz">
+    <header><span class="eyebrow">Head and neck · Quiz</span><h2>Quick quiz: head and neck</h2><p>Saved with the rest of the <a href="#quiz">Quick quiz</a>. Use <b>Hide labels</b> on each plate above for picture recall.</p></header>
+    <div class="qz"><div class="qz-bar"><span class="small muted">Answer before you look.</span><div class="qz-score" id="qzs-headneck">0 answered</div></div><div id="qz-headneck" class="qz" data-quiz-cat="headneck" data-score="#qzs-headneck"></div></div>
+  </section>
+</section>
+
+<!-- ======================================================= THORAX ======================================================= -->
+<section class="panel" id="panel-thorax" data-panel="thorax" hidden>
+  <div class="opener">
+    <span class="eyebrow">Chapter 4 · Thorax</span>
+    <h1>Thorax</h1>
+    <p class="lede">A cage of ribs and muscle around two lungs in their pleural sacs, with the heart and great vessels in the mediastinum between them. Surface markings, vertebral levels and the order of structures at each hilum are the heart of exam questions and of every chest drain, cannula and X-ray you will read.</p>
+    <div class="twocol">
+      <div class="card"><h4>The whole region on one card</h4><ul>
+        <li><b>Wall:</b> 12 pairs of ribs, sternum, thoracic vertebrae, three layers of intercostal muscle, neurovascular bundle under each rib.</li>
+        <li><b>Floor:</b> diaphragm (C3–5) with openings at T8, T10, T12.</li>
+        <li><b>Lungs:</b> right 3 lobes, left 2; pleura extends two ribs lower than lung.</li>
+        <li><b>Mediastinum:</b> superior (above T4/5) and inferior (anterior, middle with the heart, posterior).</li>
+        <li><b>Key level:</b> the sternal angle (T4/5): carina, arch of aorta, azygos into SVC.</li>
+      </ul></div>
+      <div class="note think"><span class="tag">Think of it as</span><p>A pair of bellows (lungs in pleural sacs) on either side of a pump (heart) in a central service corridor (mediastinum), all inside a ribbed cage whose floor (diaphragm) moves down to draw air in.</p></div>
+    </div>
+  </div>
+
+  <section class="sec" id="th-wall">
+    <header><span class="eyebrow">Thorax · Wall</span><h2>Thoracic wall and breathing</h2><p>Every procedure through the chest wall depends on where the neurovascular bundle runs.</p></header>
+    <div class="bone-plate" data-bone="intercostal"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Ribs</th><th>Features</th></tr></thead><tbody>
+        <tr><th>1–7 true</th><td>Own costal cartilage to the sternum</td></tr>
+        <tr><th>8–10 false</th><td>Cartilage joins the cartilage above; together form the costal margin</td></tr>
+        <tr><th>11–12 floating</th><td>No anterior attachment; one facet, no neck or tubercle</td></tr>
+        <tr><th>Typical rib</th><td>Head with two facets, neck, tubercle, angle, shaft with costal groove</td></tr>
+        <tr><th>1st rib</th><td>Short, flat, broad; scalene tubercle; grooves for subclavian vein (in front) and artery (behind); no costal groove</td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Breathing</th><th>Muscles</th></tr></thead><tbody>
+        <tr><th>Quiet inspiration</th><td>Diaphragm (main), external intercostals</td></tr>
+        <tr><th>Forced inspiration</th><td>Plus sternocleidomastoid, scalenes, pectoralis minor, and pectoralis major and serratus anterior with arms braced (tripod position)</td></tr>
+        <tr><th>Quiet expiration</th><td>Passive elastic recoil</td></tr>
+        <tr><th>Forced expiration</th><td>Internal intercostals, abdominal wall muscles</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">FY1 link · getting into the chest</span><ul><li><b>Chest drain:</b> the triangle of safety: anterior border of latissimus dorsi, lateral border of pectoralis major, a line at the level of the nipple (5th intercostal space), apex below the axilla. Go over the top of the rib below.</li><li><b>Tension pneumothorax:</b> immediate needle decompression. Current adult trauma guidance favours the 4th/5th intercostal space just anterior to the mid-axillary line; the 2nd space in the mid-clavicular line is still taught and used in children.</li><li><b>Pericardiocentesis:</b> subxiphoid approach, aiming for the left shoulder.</li></ul></div>
+      <div class="note clin"><span class="tag">Clinical link · thoracic inlet and outlet syndrome</span><p>The thoracic inlet (superior aperture) is bounded by T1, the first ribs and the manubrium. "Thoracic outlet syndrome" is compression over the first rib as structures leave for the arm, usually in the scalene triangle between scalenus anterior and medius: a cervical rib, fibrous band or callus compresses the lower trunk of the brachial plexus (C8–T1, ulnar-side pain and hand weakness), the subclavian artery (cold, pale arm) or the subclavian vein (swelling).</p></div>
+      <div class="note clin"><span class="tag">Clinical link · rib fractures</span><p>Usually at the angle (weakest point). Children's ribs bend rather than break. Ribs 1–2 are protected by the clavicle: fractures there mean major force, so look for vascular and plexus injury. Lower rib fractures can lacerate the liver or spleen. Two or more fractures in two or more places make a flail segment that moves paradoxically.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="th-levels">
+    <header><span class="eyebrow">Thorax · Levels</span><h2>Vertebral levels from neck to sacrum</h2><p>One ladder of landmarks that ties the neck, thorax and abdomen together. Choose a level.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Key vertebral levels</h3><span class="cap">Dermatome landmarks are different: nipple T4, xiphoid T6, umbilicus T10, groin L1.</span></div><div data-widget="levels"></div></div>
+  </section>
+
+  <section class="sec" id="th-lungs">
+    <header><span class="eyebrow">Thorax · Lungs</span><h2>Pleura and lungs</h2><p>Lobes, fissures and borders on the surface, and what goes in and out at each hilum.</p></header>
+    <div class="bone-plate" data-bone="lungsurface"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Line</th><th>Lung lower border</th><th>Pleura lower border</th></tr></thead><tbody>
+      <tr><th>Mid-clavicular</th><td>6th rib</td><td>8th rib</td></tr><tr><th>Mid-axillary</th><td>8th rib</td><td>10th rib</td></tr><tr><th>Paravertebral (scapular)</th><td>10th rib</td><td>12th rib</td></tr>
+    </tbody></table></div>
+    <div class="bone-plate" data-bone="hila"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th></th><th>Right lung</th><th>Left lung</th></tr></thead><tbody>
+        <tr><th>Lobes</th><td>3 (upper, middle, lower)</td><td>2 (upper with lingula, lower)</td></tr>
+        <tr><th>Fissures</th><td>Oblique and horizontal</td><td>Oblique only</td></tr>
+        <tr><th>Segments</th><td>10</td><td>8–10 (some fused)</td></tr>
+        <tr><th>Main bronchus</th><td>Wider, shorter, more vertical</td><td>Narrower, longer, more horizontal (passes under the arch)</td></tr>
+        <tr><th>Impressions</th><td>SVC, azygos, oesophagus, right atrium</td><td>Aortic arch and descending aorta, left ventricle (cardiac notch)</td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Pleura</th><th>Supply</th><th>Pain</th></tr></thead><tbody>
+        <tr><th>Parietal</th><td>Intercostal nerves (costal); phrenic nerve (mediastinal and central diaphragmatic)</td><td>Sharp, localised, worse on breathing; central diaphragm refers to the shoulder tip</td></tr>
+        <tr><th>Visceral</th><td>Autonomic (vagus and sympathetic)</td><td>Insensitive to pain</td></tr>
+      </tbody></table></div>
+    </div>
+    <h3>Down the bronchial tree</h3>
+    <ol class="nchain" aria-label="Bronchial tree">
+      <li class="c"><span class="nk"><b>Trachea</b><small>C6–T4/5, C-shaped rings</small></span></li><li class="c"><span class="nk"><b>Main bronchi</b><small>one per lung</small></span></li>
+      <li class="c"><span class="nk"><b>Lobar bronchi</b><small>3 right, 2 left</small></span></li><li class="c"><span class="nk"><b>Segmental bronchi</b><small>one per bronchopulmonary segment</small></span></li>
+      <li class="c"><span class="nk"><b>Bronchioles</b><small>no cartilage; smooth muscle</small></span></li><li class="c"><span class="nk"><b>Terminal bronchioles</b><small>end of the conducting zone (dead space)</small></span></li>
+      <li class="s"><span class="nk"><b>Respiratory bronchioles</b><small>first alveoli</small></span></li><li class="s"><span class="nk"><b>Alveolar ducts and sacs</b><small>type I and II pneumocytes</small></span></li>
+    </ol>
+    <div class="twocol">
+      <div class="card"><h4>Blood, nerves and lymph</h4><ul><li><b>Pulmonary arteries and veins:</b> gas exchange. <b>Bronchial arteries</b> (from the aorta) nourish the airways; bronchial veins drain to the azygos and hemiazygos.</li><li><b>Nerves:</b> vagus (bronchoconstriction, secretion) and sympathetic T2–T4 (bronchodilation) via the pulmonary plexus.</li><li><b>Lymph:</b> superficial and deep plexuses → bronchopulmonary (hilar) nodes → tracheobronchial nodes → bronchomediastinal trunks.</li></ul></div>
+      <div class="card"><h4>Lining as you go down</h4><ul><li>Trachea and bronchi: pseudostratified ciliated columnar with goblet cells and cartilage.</li><li>Bronchioles: ciliated cuboidal, club cells, no cartilage or glands.</li><li>Alveoli: type I pneumocytes (gas exchange, ~95% of surface), type II (surfactant), macrophages.</li></ul></div>
+    </div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Emergency · tension pneumothorax</span><p>Air enters the pleural space but cannot leave: rising pressure collapses the lung, pushes the mediastinum away and kinks the great veins. Severe breathlessness, hypotension, tracheal deviation away from the affected side, absent breath sounds and a hyper-resonant chest. Decompress immediately on clinical grounds; do not wait for an X-ray.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · effusion and aspiration</span><p>Fluid collects first in the costodiaphragmatic recess (blunted costophrenic angle). Aspiration while lying flat enters the superior segment of the right lower lobe or posterior segment of the right upper lobe.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="th-diaphragm">
+    <header><span class="eyebrow">Thorax · Diaphragm</span><h2>Diaphragm and phrenic nerve</h2><p>The main muscle of breathing, with three openings at three levels.</p></header>
+    <div class="bone-plate" data-bone="diaphragm"></div>
+    <div class="note exam"><span class="tag">Openings: "I 8 10 Eggs At 12"</span><p><b>I</b>VC at <b>T8</b> (with the right phrenic nerve), o<b>E</b>sophagus at <b>T10</b> (with the vagal trunks), <b>A</b>orta at <b>T12</b> (with the thoracic duct and azygos). "Vena cava" has 8 letters, "oesophagus" 10, "aortic hiatus" 12.</p></div>
+    <div class="note clin"><span class="tag">Clinical link · phrenic nerve</span><p>C3–C5: a spinal cord injury above C3 stops breathing. A unilateral palsy (often from a lung or mediastinal tumour) shows as a raised hemidiaphragm on X-ray. Irritation of the central diaphragm (blood or pus under it, gallbladder disease) refers pain to the shoulder tip through C4.</p></div>
+  </section>
+
+  <section class="sec" id="th-mediastinum">
+    <header><span class="eyebrow">Thorax · Mediastinum</span><h2>Mediastinum</h2><p>The central compartment between the pleural sacs, divided at the sternal angle.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Divisions of the mediastinum</h3><span class="cap">Sagittal section, front to the left. Tap a division.</span></div><div data-widget="mediastinum"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Azygos system</h3><span class="cap">The collateral route between IVC and SVC.</span></div><div class="tree" data-tree="thAzygos"></div></div>
+    <div class="note clin"><span class="tag">Clinical link · widened mediastinum</span><p>On a chest X-ray a mediastinum wider than about 8 cm (PA film) suggests aortic dissection or traumatic rupture, lymphadenopathy, a retrosternal thyroid or a thymic mass. In trauma it needs urgent CT.</p></div>
+  </section>
+
+  <section class="sec" id="th-heart">
+    <header><span class="eyebrow">Thorax · Heart</span><h2>Heart: surfaces, chambers, valves and coronary vessels</h2><p>Learn the heart from the front first: that is how it sits behind the sternum, how it shows on X-ray, and where you listen.</p></header>
+    <div class="bone-plate" data-bone="heartant"></div>
+    <div class="plate"><div class="plate-head"><h3>Where to listen</h3><span class="cap">Tap an auscultation area.</span></div><div data-widget="ausc"></div></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Chamber</th><th>Internal features</th></tr></thead><tbody>
+      <tr><th>Right atrium</th><td>Smooth part (sinus venarum) receives SVC, IVC and coronary sinus; rough part with pectinate muscles; crista terminalis (SA node at its top); fossa ovalis (remnant of the foramen ovale)</td></tr>
+      <tr><th>Right ventricle</th><td>Crescent-shaped in section; trabeculae carneae; moderator band (carries the right bundle branch); three papillary muscles; smooth infundibulum to the pulmonary valve</td></tr>
+      <tr><th>Left atrium</th><td>Mostly smooth; four pulmonary veins; left auricle (where clots form in atrial fibrillation); lies directly in front of the oesophagus</td></tr>
+      <tr><th>Left ventricle</th><td>Circular in section, wall about three times thicker; two papillary muscles; mitral valve; aortic vestibule to the aortic valve</td></tr>
+    </tbody></table></div>
+    <div class="plate"><div class="plate-head"><h3>Coronary arteries</h3><span class="cap">Tap a branch for its territory and ECG leads.</span></div><div class="tree" data-tree="thCoronary"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Cardiac veins</h3><span class="cap">Blood flows right to left into the right atrium.</span></div><div class="tree" data-tree="thCardiacVeins"></div></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Layer</th><th>Notes</th></tr></thead><tbody>
+        <tr><th>Fibrous pericardium</th><td>Tough outer sac fused with the central tendon of the diaphragm; prevents over-distension</td></tr>
+        <tr><th>Serous pericardium: parietal</th><td>Lines the fibrous layer</td></tr>
+        <tr><th>Pericardial cavity</th><td>Thin film of fluid; transverse sinus (behind aorta and pulmonary trunk) and oblique sinus (behind the left atrium)</td></tr>
+        <tr><th>Serous pericardium: visceral (epicardium)</th><td>On the heart surface, with fat and the coronary vessels</td></tr>
+        <tr><th>Myocardium</th><td>Cardiac muscle</td></tr>
+        <tr><th>Endocardium</th><td>Endothelium lining chambers and valves; Purkinje fibres beneath it</td></tr>
+      </tbody></table></div>
+      <div class="card"><h4>Skeleton, conduction and nerves</h4><ul><li><b>Fibrous skeleton:</b> four collagen rings round the valves; anchors muscle and electrically insulates atria from ventricles, so impulses must pass through the AV node.</li><li><b>Sympathetic</b> (T1–T4/5, cardiac nerves): ↑ rate and force (β1). <b>Parasympathetic</b> (vagus): ↓ rate (M2).</li><li><b>Referred pain:</b> cardiac afferents enter T1–T4, so ischaemic pain is felt in the chest, inner left arm, neck and jaw.</li></ul></div>
+    </div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Emergency · cardiac tamponade</span><p>Blood or fluid in the pericardial cavity squeezes the heart and stops it filling. Beck's triad: hypotension, raised JVP, muffled heart sounds; often pulsus paradoxus. Needs urgent pericardiocentesis or surgery.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · pericarditis, myocarditis, endocarditis</span><p>Pericarditis: sharp chest pain better sitting forward, worse lying flat, with a friction rub. Myocarditis: cardiac-type pain, palpitations, fatigue after a viral illness. Infective endocarditis: fever with a new murmur; tricuspid valve in people who inject drugs.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="th-vessels">
+    <header><span class="eyebrow">Thorax · Great vessels</span><h2>Aorta and great vessels</h2><p>Tap a vessel for its branches and clinical importance.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Aorta and its thoracic branches</h3><span class="cap">Scroll sideways on a phone.</span></div><div class="tree" data-tree="thAorta"></div></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Vessel wall layer</th><th>Contents</th><th>Biggest in</th></tr></thead><tbody>
+      <tr><th>Tunica intima</th><td>Endothelium, basement membrane, internal elastic lamina</td><td>All vessels (capillaries have only this)</td></tr>
+      <tr><th>Tunica media</th><td>Smooth muscle, elastin, collagen</td><td>Arteries and arterioles (control resistance)</td></tr>
+      <tr><th>Tunica adventitia</th><td>Connective tissue, vasa vasorum, sympathetic nerves</td><td>Veins (thin walls, valves in the limbs)</td></tr>
+    </tbody></table></div>
+    <div class="note clin"><span class="tag">Clinical link · subclavian steal</span><p>Stenosis of the subclavian artery before the vertebral origin: when the arm works, blood is drawn backwards down the vertebral artery from the circle of Willis. Arm claudication, dizziness or syncope with arm use, and a blood pressure difference between the arms.</p></div>
+  </section>
+
+  <section class="sec" id="th-quiz">
+    <header><span class="eyebrow">Thorax · Quiz</span><h2>Quick quiz: thorax</h2><p>Saved with the rest of the <a href="#quiz">Quick quiz</a>.</p></header>
+    <div class="qz"><div class="qz-bar"><span class="small muted">Answer before you look.</span><div class="qz-score" id="qzs-thorax">0 answered</div></div><div id="qz-thorax" class="qz" data-quiz-cat="thorax" data-score="#qzs-thorax"></div></div>
+  </section>
+</section>
+
+<!-- ======================================================= ABDOMEN ======================================================= -->
+<section class="panel" id="panel-abdomen" data-panel="abdomen" hidden>
+  <div class="opener">
+    <span class="eyebrow">Chapter 5 · Abdomen</span>
+    <h1>Abdomen: gut, liver, kidneys and urinary tract</h1>
+    <p class="lede">Learn the abdomen in three passes: the map on the surface (regions and planes), the plumbing (peritoneum, gut tube and its three arteries, portal vein), and the organs one by one. The same embryological foregut, midgut and hindgut explain the blood supply, the nerve supply and where pain is felt.</p>
+    <div class="twocol">
+      <div class="card"><h4>The whole region on one card</h4><ul>
+        <li><b>Map:</b> nine regions (subcostal L3 and transtubercular L5 planes, mid-clavicular lines) or four quadrants; transpyloric plane at L1.</li>
+        <li><b>Wall:</b> skin, fat, three flat muscles, transversalis fascia, peritoneum; inguinal canal above the inguinal ligament.</li>
+        <li><b>Gut arteries:</b> coeliac (T12, foregut), SMA (L1, midgut), IMA (L3, hindgut).</li>
+        <li><b>Veins:</b> gut blood → portal vein → liver → hepatic veins → IVC.</li>
+        <li><b>Retroperitoneum:</b> kidneys, ureters, aorta, IVC, pancreas, most of the duodenum, ascending and descending colon.</li>
+      </ul></div>
+      <div class="note think"><span class="tag">Think of it as</span><p>A factory floor. The gut is a conveyor belt hung from the back wall on curtains (mesenteries), fed by three supply lines (coeliac, SMA, IMA). Everything it absorbs goes through one checkpoint, the liver, before entering the main circulation. The kidneys sit outside the curtains against the back wall, filtering the blood.</p></div>
+    </div>
+  </div>
+
+  <section class="sec" id="ab-regions">
+    <header><span class="eyebrow">Abdomen · Surface</span><h2>Regions and planes</h2><p>Turn a site of pain or a mass into a list of organs. Tap a region.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Nine regions</h3><span class="cap">Subcostal and transtubercular planes, mid-clavicular lines.</span></div><div data-widget="regions"></div></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Plane</th><th>Level</th><th>Landmarks</th></tr></thead><tbody>
+      <tr><th>Transpyloric</th><td><span class="rt">L1</span></td><td>Halfway from jugular notch to pubic symphysis; 9th costal cartilages. Pylorus, pancreatic neck, SMA origin, renal hila, gallbladder fundus, duodenojejunal flexure nearby, end of the spinal cord</td></tr>
+      <tr><th>Subcostal</th><td><span class="rt">L3</span></td><td>Lowest point of the costal margin (10th costal cartilage); IMA origin</td></tr>
+      <tr><th>Supracristal</th><td><span class="rt">L4</span></td><td>Tops of the iliac crests; aortic bifurcation; lumbar puncture landmark</td></tr>
+      <tr><th>Transtubercular</th><td><span class="rt">L5</span></td><td>Iliac tubercles; IVC begins</td></tr>
+    </tbody></table></div>
+    <div class="note exam"><span class="tag">Visceral pain follows the gut tube</span><p>Foregut (to the major papilla) → epigastric pain; midgut (to two-thirds along the transverse colon) → periumbilical; hindgut → suprapubic. Once the parietal peritoneum is involved, pain moves to the organ's actual site (appendicitis: umbilicus then right iliac fossa). See the diagram in <a href="#ab-vessels">Blood supply</a>.</p></div>
+  </section>
+
+  <section class="sec" id="ab-wall">
+    <header><span class="eyebrow">Abdomen · Wall</span><h2>Abdominal wall, inguinal canal and hernias</h2><p>Layers you cut at laparotomy and the weak spots where hernias come through.</p></header>
+    <ol class="nchain" aria-label="Layers of the abdominal wall">
+      <li><span class="nk"><b>Skin</b></span></li><li><span class="nk"><b>Camper's fascia</b><small>fatty</small></span></li><li><span class="nk"><b>Scarpa's fascia</b><small>membranous</small></span></li>
+      <li class="m"><span class="nk"><b>External oblique</b><small>"hands in pockets"</small></span></li><li class="m"><span class="nk"><b>Internal oblique</b></span></li><li class="m"><span class="nk"><b>Transversus abdominis</b></span></li>
+      <li><span class="nk"><b>Transversalis fascia</b><small>deep ring is a hole in it</small></span></li><li><span class="nk"><b>Extraperitoneal fat</b></span></li><li class="c"><span class="nk"><b>Parietal peritoneum</b></span></li>
+    </ol>
+    <div class="bone-plate" data-bone="inguinal"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Inguinal canal (MALT)</th><th>Formed by</th></tr></thead><tbody>
+        <tr><th>Roof (Muscles)</th><td>Internal oblique and transversus abdominis arching over</td></tr>
+        <tr><th>Anterior wall (Aponeuroses)</th><td>External oblique aponeurosis, reinforced laterally by internal oblique</td></tr>
+        <tr><th>Floor (Ligaments)</th><td>Inguinal and lacunar ligaments</td></tr>
+        <tr><th>Posterior wall (Tendons, Transversalis)</th><td>Transversalis fascia, conjoint tendon medially</td></tr>
+        <tr><th>Contents</th><td>Spermatic cord (males) or round ligament (females), ilioinguinal nerve</td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Hernia</th><th>Route</th><th>Key point</th></tr></thead><tbody>
+        <tr><th>Indirect inguinal</th><td>Deep ring, lateral to the inferior epigastric vessels, down the canal</td><td>Commonest; congenital patent processus vaginalis; can reach the scrotum</td></tr>
+        <tr><th>Direct inguinal</th><td>Through Hesselbach's triangle, medial to the vessels</td><td>Older men, weak posterior wall; rarely strangulates</td></tr>
+        <tr><th>Femoral</th><td>Femoral canal, below the inguinal ligament</td><td>Below and lateral to the pubic tubercle; more common in women; high strangulation risk</td></tr>
+        <tr><th>Umbilical, incisional</th><td>Umbilicus; surgical scars</td><td>Paraumbilical in adults; congenital umbilical hernias in infants usually close</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="tbl-wrap"><table><thead><tr><th>Rectus sheath</th><th>Above the arcuate line</th><th>Below the arcuate line (lower quarter)</th></tr></thead><tbody>
+      <tr><th>Anterior layer</th><td>External oblique + anterior half of internal oblique</td><td>All three aponeuroses</td></tr>
+      <tr><th>Posterior layer</th><td>Posterior half of internal oblique + transversus</td><td>None: rectus lies on transversalis fascia (inferior epigastric vessels enter the sheath here)</td></tr>
+    </tbody></table></div>
+    <div class="note clin"><span class="tag">Clinical link · abdominal wall defects</span><p>Exomphalos (omphalocele): gut herniates into the umbilical cord, covered by a membrane; linked to other anomalies. Gastroschisis: gut protrudes through a defect beside the umbilicus with no covering.</p></div>
+  </section>
+
+  <section class="sec" id="ab-peritoneum">
+    <header><span class="eyebrow">Abdomen · Peritoneum</span><h2>Peritoneum</h2><p>Which organs hang free and which are stuck to the back wall decides how they move, where fluid collects, and where pain is felt.</p></header>
+    <div class="bone-plate" data-bone="peritoneum"></div>
+    <div class="twocol">
+      <div class="card"><h4>Retroperitoneal organs: SAD PUCKER</h4><p><b>S</b>uprarenal glands, <b>A</b>orta and IVC, <b>D</b>uodenum (2nd–4th parts), <b>P</b>ancreas (not the tail), <b>U</b>reters, <b>C</b>olon (ascending and descending), <b>K</b>idneys, <b>E</b>sophagus (abdominal), <b>R</b>ectum (lower two-thirds).</p></div>
+      <div class="card"><h4>Epiploic foramen (of Winslow)</h4><ul><li>Anterior: free edge of the lesser omentum (bile duct, hepatic artery proper, portal vein).</li><li>Posterior: IVC.</li><li>Superior: caudate lobe of the liver.</li><li>Inferior: first part of the duodenum.</li></ul></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ab-gut">
+    <header><span class="eyebrow">Abdomen · Gut tube</span><h2>The gut, from oesophagus to anal canal</h2><p>One wall plan, four layers, modified along the way.</p></header>
+    <div class="bone-plate" data-bone="gutwall"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Part</th><th>Epithelium</th></tr></thead><tbody>
+      <tr><th>Oesophagus</th><td>Non-keratinised stratified squamous (columnar change = Barrett's)</td></tr><tr><th>Stomach</th><td>Simple columnar, gastric pits and glands</td></tr>
+      <tr><th>Small intestine</th><td>Simple columnar with villi and microvilli</td></tr><tr><th>Colon</th><td>Simple columnar, crypts, many goblet cells, no villi</td></tr>
+      <tr><th>Anal canal below pectinate line</th><td>Non-keratinised then keratinised stratified squamous</td></tr>
+    </tbody></table></div>
+    <div class="bone-plate" data-bone="viscera"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Organ</th><th>Key anatomy</th><th>Clinical</th></tr></thead><tbody>
+      <tr><th>Oesophagus</th><td>About 25 cm, C6–T11. Upper third skeletal, lower third smooth muscle. Narrowings: cricopharyngeus (C6), aortic arch and left main bronchus (T4–5), diaphragm (T10). Supply: inferior thyroid, aortic branches, left gastric.</td><td>Varices at the lower end in portal hypertension; reflux and Barrett's</td></tr>
+      <tr><th>Stomach</th><td>Cardia, fundus, body, antrum, pylorus (L1); lesser and greater curvatures. Fundus/body glands: parietal (HCl, intrinsic factor) and chief cells; antrum: G cells (gastrin), D cells (somatostatin). Lymph: coeliac nodes → thoracic duct.</td><td>Posterior ulcers erode into the lesser sac or pancreas</td></tr>
+      <tr><th>Duodenum</th><td>C-shaped round the pancreatic head, mostly in the epigastrium and right upper abdomen. 1st part (superior, partly intraperitoneal), 2nd (descending: major papilla), 3rd (horizontal, under the SMA), 4th (ascending to the duodenojejunal flexure).</td><td>Posterior 1st-part ulcer erodes the gastroduodenal artery</td></tr>
+      <tr><th>Jejunum vs ileum</th><td>Jejunum: upper left, thicker wall, redder, prominent folds, long vasa recta, few arcades. Ileum: lower right, thinner, more fat, short vasa recta, many arcades, Peyer's patches, B12 and bile salt absorption.</td><td>Meckel's diverticulum (ileum, "rule of 2s"); intussusception</td></tr>
+      <tr><th>Large intestine</th><td>Taeniae coli, haustra, appendices epiploicae. Ascending and descending retroperitoneal; transverse and sigmoid on mesenteries. Caecum to two-thirds of transverse colon: SMA; rest: IMA.</td><td>Diverticular disease (sigmoid), volvulus, colorectal cancer</td></tr>
+      <tr><th>Appendix</th><td>Base at McBurney's point where the taeniae meet; appendicular artery is an end artery.</td><td>Appendicitis: periumbilical then RIF pain, Rovsing's sign</td></tr>
+    </tbody></table></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Anal canal</th><th>Above the pectinate line</th><th>Below the pectinate line</th></tr></thead><tbody>
+      <tr><th>Origin</th><td>Endoderm (hindgut)</td><td>Ectoderm (proctodeum)</td></tr><tr><th>Artery</th><td>Superior rectal (IMA)</td><td>Inferior rectal (internal pudendal)</td></tr>
+      <tr><th>Vein</th><td>Superior rectal → portal</td><td>Inferior rectal → systemic</td></tr><tr><th>Lymph</th><td>Internal iliac / inferior mesenteric nodes</td><td>Superficial inguinal nodes</td></tr>
+      <tr><th>Nerves</th><td>Visceral: painless (internal haemorrhoids)</td><td>Somatic (inferior rectal from pudendal): painful (external haemorrhoids, fissures)</td></tr>
+      <tr><th>Cancer</th><td>Adenocarcinoma</td><td>Squamous cell carcinoma</td></tr>
+    </tbody></table></div>
+    <div class="note exam"><span class="tag">Defecation</span><p>Rectal stretch → internal anal sphincter relaxes (involuntary) → we choose to relax the external anal sphincter and puborectalis (pudendal, S2–4: "S2, 3, 4 keeps the poo off the floor") → abdominal pressure helps.</p></div>
+  </section>
+
+  <section class="sec" id="ab-liver">
+    <header><span class="eyebrow">Abdomen · Accessory organs</span><h2>Liver, biliary tree, pancreas and spleen</h2><p>The glands that empty into the duodenum, and the spleen that shares their blood supply.</p></header>
+    <div class="twocol">
+      <div class="card"><h4>Liver</h4><ul><li>Right upper quadrant under ribs 7–11 (to the left upper quadrant); moves down on inspiration.</li><li>Falciform ligament to the anterior wall (round ligament = remnant of the umbilical vein in its free edge); coronary and triangular ligaments to the diaphragm, enclosing the bare area.</li><li>Porta hepatis: portal vein, hepatic artery proper and bile ducts, with nerves and lymphatics.</li><li>Lobule: blood flows from portal triads through sinusoids to the central vein; bile flows the opposite way. Zone 3 (round the central vein) is hit first by ischaemia and paracetamol.</li></ul></div>
+      <div class="card"><h4>Pancreas and spleen</h4><ul><li><b>Pancreas:</b> head (in the duodenal C, with the uncinate process behind the SMV), neck (over the portal vein), body, tail (in the splenic hilum, intraperitoneal). Head: pancreaticoduodenal arteries; body and tail: splenic artery. Veins to the portal system.</li><li><b>Spleen:</b> left upper quadrant under ribs 9–11; "1, 3, 5, 7, 9, 11" (1 × 3 × 5 inches, 7 oz, ribs 9–11). Splenic artery from the coeliac trunk; splenic vein joins the SMV. Red pulp filters old cells; white pulp is lymphoid.</li></ul></div>
+    </div>
+    <h3>Bile flow</h3>
+    <ol class="nchain" aria-label="Flow of bile">
+      <li class="s"><span class="nk"><b>Hepatocytes</b><small>make bile</small></span></li><li class="s"><span class="nk"><b>Right and left hepatic ducts</b></span></li><li class="s"><span class="nk"><b>Common hepatic duct</b></span></li>
+      <li class="s"><span class="nk"><b>Cystic duct ⇄ gallbladder</b><small>stores and concentrates</small></span></li><li class="s"><span class="nk"><b>Common bile duct</b><small>behind duodenum, through pancreatic head</small></span></li>
+      <li class="s"><span class="nk"><b>Hepatopancreatic ampulla</b><small>joins the main pancreatic duct</small></span></li><li class="s"><span class="nk"><b>Major duodenal papilla</b><small>2nd part; sphincter of Oddi opens with CCK</small></span></li>
+    </ol>
+    <div class="tbl-wrap"><table><thead><tr><th>Liver test</th><th>Comes from</th><th>Raised in</th></tr></thead><tbody>
+      <tr><th>ALT, AST</th><td>Hepatocytes</td><td>Hepatocellular injury (AST &gt; ALT suggests alcohol)</td></tr><tr><th>ALP</th><td>Bile duct cells and bone</td><td>Cholestasis; bone disease, growth, pregnancy</td></tr>
+      <tr><th>GGT</th><td>Hepatocytes and bile ducts</td><td>Cholestasis, alcohol; confirms a liver source of raised ALP</td></tr><tr><th>Albumin, INR</th><td>Made by the liver</td><td>Low albumin and high INR = poor synthetic function</td></tr>
+    </tbody></table></div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Clinical link · Calot's triangle and Pringle</span><p>Calot's (cystohepatic) triangle: cystic duct, common hepatic duct and inferior liver edge; contains the cystic artery, which is clipped in cholecystectomy. Pringle manoeuvre: clamping the hepatoduodenal ligament (in the free edge of the lesser omentum) stops inflow to the liver in trauma or surgery.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · gallstones and pancreatitis</span><p>A stone in the cystic duct: biliary colic or cholecystitis (Murphy's sign; pain can refer to the right shoulder). In the common bile duct: obstructive jaundice (dark urine, pale stools). At the ampulla: gallstone pancreatitis. Painless jaundice with a palpable gallbladder suggests a pancreatic head cancer (Courvoisier).</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ab-vessels">
+    <header><span class="eyebrow">Abdomen · Blood supply</span><h2>Gut arteries, portal system and lymph</h2><p>Three unpaired arteries for three parts of the gut, one portal vein back to the liver.</p></header>
+    <div class="plate"><div class="plate-head"><h3>Foregut, midgut, hindgut</h3><span class="cap">Arteries, vertebral levels and where visceral pain is felt.</span></div><div data-dg="gutsupply"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Coeliac trunk</h3><span class="cap">Tap a branch.</span></div><div class="tree" data-tree="abCoeliac"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Superior mesenteric artery</h3></div><div class="tree" data-tree="abSMA"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Inferior mesenteric artery</h3></div><div class="tree" data-tree="abIMA"></div></div>
+    <div class="plate"><div class="plate-head"><h3>Hepatic portal system</h3><span class="cap">Blood flows right to left into the liver.</span></div><div class="tree" data-tree="abPortal"></div></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Portosystemic anastomosis</th><th>Portal side</th><th>Systemic side</th><th>In portal hypertension</th></tr></thead><tbody>
+      <tr><th>Lower oesophagus</th><td>Left gastric vein</td><td>Oesophageal veins → azygos</td><td>Oesophageal varices (can bleed massively)</td></tr>
+      <tr><th>Umbilicus</th><td>Paraumbilical veins</td><td>Superficial epigastric veins</td><td>Caput medusae</td></tr>
+      <tr><th>Anorectal junction</th><td>Superior rectal vein</td><td>Middle and inferior rectal veins</td><td>Rectal varices</td></tr>
+      <tr><th>Retroperitoneum</th><td>Colic veins</td><td>Retroperitoneal (lumbar, renal) veins</td><td>Retroperitoneal varices</td></tr>
+    </tbody></table></div>
+    <div class="plate"><div class="plate-head"><h3>Lymph trunks and the thoracic duct</h3><span class="cap">Lymph flows right to left into the left venous angle.</span></div><div class="tree" data-tree="abLymph"></div></div>
+  </section>
+
+  <section class="sec" id="ab-urinary">
+    <header><span class="eyebrow">Abdomen · Urinary tract</span><h2>Kidneys, ureters, bladder and urethra</h2><p>Retroperitoneal kidneys on the posterior wall, ureters down to the pelvis, and a bladder controlled by three sets of nerves.</p></header>
+    <div class="bone-plate" data-bone="kidney"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Kidney relations</th><th>Right kidney</th><th>Left kidney</th></tr></thead><tbody>
+      <tr><th>Anterior</th><td>Liver, 2nd part of duodenum, hepatic flexure, adrenal</td><td>Stomach, spleen, pancreatic tail, jejunum, descending colon, adrenal</td></tr>
+      <tr><th>Posterior (both)</th><td colspan="2">Diaphragm, 11th (left only) and 12th ribs, psoas major, quadratus lumborum, transversus abdominis; subcostal, iliohypogastric and ilioinguinal nerves</td></tr>
+      <tr><th>Level</th><td>Slightly lower (liver)</td><td>T12–L3, hilum L1</td></tr>
+    </tbody></table></div>
+    <div class="plate"><div class="plate-head"><h3>The nephron</h3><span class="cap">What each segment does; drug targets.</span></div><div data-dg="nephron"></div></div>
+    <div class="twocol">
+      <div class="card"><h4>Ureters and bladder</h4><ul><li>Ureters: 25–30 cm, on psoas, cross the pelvic brim at the common iliac bifurcation, run under the uterine artery or vas deferens, enter the bladder obliquely (a valve against reflux).</li><li>Stones lodge at the pelviureteric junction, pelvic brim and vesicoureteric junction. Pain T11–L2: loin to groin.</li><li>Bladder: apex (to the umbilicus via the median umbilical ligament), body, fundus with the smooth trigone, neck. Holds about 400–600 mL. Detrusor smooth muscle hypertrophies (trabeculation) with outflow obstruction.</li><li>Blood: superior vesical (both sexes), inferior vesical (males) or vaginal (females) arteries, from the internal iliac.</li></ul></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Male urethra (about 20 cm)</th><th>Features</th></tr></thead><tbody>
+        <tr><th>Preprostatic</th><td>Bladder neck; internal sphincter (smooth, prevents retrograde ejaculation)</td></tr>
+        <tr><th>Prostatic</th><td>Through the prostate; ejaculatory and prostatic ducts open</td></tr>
+        <tr><th>Membranous</th><td>Through the external sphincter; narrowest; injured in pelvic fractures</td></tr>
+        <tr><th>Spongy</th><td>In the corpus spongiosum; bulbourethral glands open proximally</td></tr>
+        <tr><th>Female (about 4 cm)</th><td>Opens in the vestibule in front of the vagina; external sphincter only</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="tbl-wrap"><table><thead><tr><th>Micturition</th><th>Nerve</th><th>Receptor</th><th>Effect</th></tr></thead><tbody>
+      <tr><th>Parasympathetic</th><td>Pelvic splanchnics (S2–4)</td><td>M3 (ACh)</td><td>Contracts the detrusor: <b>voiding</b></td></tr>
+      <tr><th>Sympathetic</th><td>Hypogastric (T11/12–L2)</td><td>β3 (bladder wall), α1 (bladder neck)</td><td>Relaxes the detrusor and closes the internal sphincter: <b>storage</b></td></tr>
+      <tr><th>Somatic</th><td>Pudendal (S2–4)</td><td>Nicotinic (ACh)</td><td>Contracts the external sphincter; voluntary relaxation lets urine pass</td></tr>
+    </tbody></table></div>
+    <ol class="nchain" aria-label="Micturition reflex">
+      <li class="s"><span class="nk"><b>Bladder fills</b><small>sympathetic + pudendal tone keep it closed</small></span></li><li class="s"><span class="nk"><b>Stretch receptors</b><small>pelvic afferents to S2–4 and brain</small></span></li>
+      <li class="c"><span class="nk"><b>Pontine micturition centre</b><small>decides when; cortex allows it</small></span></li><li class="m"><span class="nk"><b>Parasympathetic on</b><small>detrusor contracts</small></span></li>
+      <li class="m"><span class="nk"><b>Sphincters relax</b><small>sympathetic and pudendal off</small></span></li><li class="m"><span class="nk"><b>Voiding</b><small>abdominal wall helps</small></span></li>
+    </ol>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Clinical link · development and anomalies</span><p>Three kidney systems appear in turn: pronephros, mesonephros, metanephros (the definitive kidney, from the ureteric bud meeting metanephric mesoderm). Kidneys ascend from the pelvis: a horseshoe kidney (fused lower poles) is trapped under the IMA. A split ureteric bud gives a duplex system. The trigone forms from the mesonephric ducts.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · imaging</span><p>Ultrasound for hydronephrosis and bladder volume; non-contrast CT KUB to find stones; CT urogram for haematuria; MRI for the prostate. Left renal vein compression between the aorta and SMA (nutcracker) and left renal tumours can cause a left varicocele because the left gonadal vein drains into it.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="ab-quiz">
+    <header><span class="eyebrow">Abdomen · Quiz</span><h2>Quick quiz: abdomen</h2><p>Saved with the rest of the <a href="#quiz">Quick quiz</a>.</p></header>
+    <div class="qz"><div class="qz-bar"><span class="small muted">Answer before you look.</span><div class="qz-score" id="qzs-abdomen">0 answered</div></div><div id="qz-abdomen" class="qz" data-quiz-cat="abdomen" data-score="#qzs-abdomen"></div></div>
+  </section>
+</section>
+
+<!-- ======================================================= PELVIS ======================================================= -->
+<section class="panel" id="panel-pelvis" data-panel="pelvis" hidden>
+  <div class="opener">
+    <span class="eyebrow">Chapter 6 · Pelvis and perineum</span>
+    <h1>Pelvis, perineum, reproductive organs and breast</h1>
+    <p class="lede">A bony ring that carries the body's weight, a muscular floor that holds the pelvic organs up and keeps us continent, and the reproductive organs packed between bladder and rectum. Most clinical anatomy here is about relations (ureter under the uterine artery, prostate in front of the rectum) and lymph drainage.</p>
+    <div class="twocol">
+      <div class="card"><h4>The whole region on one card</h4><ul>
+        <li><b>Bones:</b> two hip bones (ilium, ischium, pubis), sacrum, coccyx; pelvic brim divides false from true pelvis.</li>
+        <li><b>Floor:</b> levator ani (puborectalis, pubococcygeus, iliococcygeus) and coccygeus; S2–4 and pudendal nerve.</li>
+        <li><b>Arteries:</b> internal iliac (anterior division to organs, posterior to walls); gonads from the aorta.</li>
+        <li><b>Nerves:</b> pudendal (S2–4) for the perineum; pelvic splanchnics (S2–4) for bladder, bowel and erection; sympathetic for storage and emission.</li>
+        <li><b>Lymph:</b> pelvic organs → iliac nodes; perineal skin → superficial inguinal; gonads → para-aortic.</li>
+      </ul></div>
+      <div class="note think"><span class="tag">Think of it as</span><p>A bowl with a hammock across its outlet. The bowl (bony pelvis) takes the weight; the hammock (pelvic floor) holds up the bladder, uterus and rectum, with gaps for each to pass through. Damage the hammock and things sag (prolapse) or leak (incontinence).</p></div>
+    </div>
+  </div>
+
+  <section class="sec" id="pv-bones">
+    <header><span class="eyebrow">Pelvis · Bones</span><h2>Bony pelvis and its foramina</h2><p>Landmarks you will palpate (ASIS, iliac crest, pubic tubercle, ischial tuberosity) and the holes the nerves pass through.</p></header>
+    <div class="bone-plate" data-bone="bonypelvis"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th></th><th>Female</th><th>Male</th></tr></thead><tbody>
+        <tr><th>Pelvic inlet</th><td>Oval, wide</td><td>Heart-shaped, narrow</td></tr><tr><th>Subpubic angle</th><td>Wide (about 80–90°)</td><td>Narrow (about 50–60°)</td></tr>
+        <tr><th>Pelvic cavity</th><td>Shallow, cylindrical</td><td>Deep, funnel-shaped</td></tr><tr><th>Ischial spines</th><td>Everted, further apart</td><td>Inverted, closer</td></tr>
+        <tr><th>Obturator foramen</th><td>Oval or triangular</td><td>Round</td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Foramen</th><th>Contents</th></tr></thead><tbody>
+        <tr><th>Greater sciatic</th><td>Piriformis; above it superior gluteal vessels and nerve; below it sciatic nerve, inferior gluteal vessels and nerve, pudendal nerve and internal pudendal vessels, posterior cutaneous nerve of the thigh</td></tr>
+        <tr><th>Lesser sciatic</th><td>Obturator internus tendon; pudendal nerve and internal pudendal vessels re-entering towards the perineum</td></tr>
+        <tr><th>Obturator canal</th><td>Obturator nerve and vessels to the medial thigh</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="note clin"><span class="tag">Emergency · pelvic fracture</span><p>A disrupted pelvic ring can hide litres of blood from the internal iliac venous plexus. Apply a pelvic binder centred over the greater trochanters, don't "spring" the pelvis, and look for urethral injury (blood at the meatus) before catheterising.</p></div>
+    <div class="plate"><div class="plate-head"><h3>Internal iliac artery</h3><span class="cap">Tap a branch.</span></div><div class="tree" data-tree="pvIliac"></div></div>
+  </section>
+
+  <section class="sec" id="pv-floor">
+    <header><span class="eyebrow">Pelvis · Floor</span><h2>Pelvic floor and perineum</h2><p>"Could I Peek Please": coccygeus, iliococcygeus, puborectalis, pubococcygeus.</p></header>
+    <div class="bone-plate" data-bone="pelvicfloor"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Muscle</th><th>Nerve</th></tr></thead><tbody>
+        <tr><th>Levator ani (puborectalis, pubococcygeus, iliococcygeus)</th><td>Nerve to levator ani (S4) and pudendal nerve (S2–4)</td></tr>
+        <tr><th>Coccygeus</th><td>Anterior rami S4–S5</td></tr>
+        <tr><th>External anal and urethral sphincters</th><td>Pudendal nerve (S2–4)</td></tr>
+      </tbody></table></div>
+      <div class="card"><h4>Perineum</h4><ul><li>Diamond-shaped region below the pelvic floor: pubic symphysis, ischial tuberosities, coccyx.</li><li>A line between the ischial tuberosities divides the <b>urogenital triangle</b> (front) from the <b>anal triangle</b> (back, with the ischioanal fossae either side of the anal canal).</li><li>The perineal body in the middle anchors the pelvic floor; it is cut in an episiotomy.</li></ul></div>
+    </div>
+    <h3>Course of the pudendal nerve</h3>
+    <ol class="nchain" aria-label="Pudendal nerve course">
+      <li class="s"><span class="nk"><b>Sacral plexus</b><small>S2, S3, S4</small></span></li><li class="s"><span class="nk"><b>Out of the pelvis</b><small>greater sciatic foramen, below piriformis</small></span></li>
+      <li class="s"><span class="nk"><b>Around the ischial spine</b><small>pudendal block site</small></span></li><li class="s"><span class="nk"><b>Into the perineum</b><small>lesser sciatic foramen</small></span></li>
+      <li class="s"><span class="nk"><b>Pudendal (Alcock's) canal</b><small>on obturator internus</small></span></li><li class="s"><span class="nk"><b>Branches</b><small>inferior rectal, perineal, dorsal nerve of penis or clitoris</small></span></li>
+    </ol>
+    <div class="note clin"><span class="tag">Clinical link · childbirth and the pelvic floor</span><p>Vaginal delivery stretches levator ani and the pudendal nerve: stress incontinence and prolapse later in life. Pelvic floor exercises strengthen it. A pudendal nerve block near the ischial spine anaesthetises the perineum for instrumental delivery.</p></div>
+  </section>
+
+  <section class="sec" id="pv-female">
+    <header><span class="eyebrow">Pelvis · Female</span><h2>Female reproductive organs</h2><p>Uterus, tubes and ovaries in the broad ligament, between bladder and rectum.</p></header>
+    <div class="bone-plate" data-bone="femcoronal"></div>
+    <div class="bone-plate" data-bone="femsagittal"></div>
+    <div class="twocol">
+      <div class="tbl-wrap"><table><thead><tr><th>Ligament</th><th>Runs</th><th>Role</th></tr></thead><tbody>
+        <tr><th>Broad</th><td>Peritoneal fold from the uterus to the pelvic side wall</td><td>Carries vessels; little support</td></tr>
+        <tr><th>Round</th><td>Uterine horn → deep ring → labium majus</td><td>Keeps anteversion; can cause groin pain in pregnancy</td></tr>
+        <tr><th>Cardinal (transverse cervical)</th><td>Cervix → lateral pelvic wall, with the uterine vessels</td><td>Main support of the cervix</td></tr>
+        <tr><th>Uterosacral</th><td>Cervix → sacrum</td><td>Supports the cervix, pulls it back</td></tr>
+        <tr><th>Ovarian / suspensory</th><td>Ovary → uterus / ovary → pelvic wall (ovarian vessels)</td><td>Holds the ovary</td></tr>
+      </tbody></table></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Organ</th><th>Artery</th><th>Vein</th><th>Lymph</th></tr></thead><tbody>
+        <tr><th>Ovary</th><td>Ovarian (aorta, L2)</td><td>Right → IVC; left → left renal vein</td><td>Para-aortic</td></tr>
+        <tr><th>Uterus</th><td>Uterine (internal iliac)</td><td>Uterine → internal iliac</td><td>Iliac, sacral, para-aortic; round ligament route to inguinal</td></tr>
+        <tr><th>Cervix, upper vagina</th><td>Uterine, vaginal</td><td>Internal iliac</td><td>Internal and external iliac, sacral</td></tr>
+        <tr><th>Lower vagina, vulva</th><td>Internal pudendal</td><td>Pudendal</td><td>Superficial inguinal</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="notes">
+      <div class="note fix"><span class="tag">Get the layers right</span><p>Uterine wall: <b>endometrium</b> (glandular mucosa, functional layer shed each month, basal layer regenerates), <b>myometrium</b> (thick interlacing smooth muscle containing the main vessels), <b>perimetrium</b> (peritoneum). The urethra lies <b>in front of</b> the vagina, not behind.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · vulva and cervix</span><p>Vulval skin: ilioinguinal and genital branch of the genitofemoral nerve in front, pudendal and posterior cutaneous nerve of the thigh behind. Cervix: squamous ectocervix meets columnar endocervix at the transformation zone, where HPV-related changes start; screening samples it.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="pv-male">
+    <header><span class="eyebrow">Pelvis · Male</span><h2>Male reproductive organs</h2><p>Testes in the scrotum, ducts through the inguinal canal, glands around the urethra.</p></header>
+    <div class="bone-plate" data-bone="malesagittal"></div>
+    <div class="twocol">
+      <div class="card"><h4>Spermatic cord: "3 coverings, 3 arteries, 3 nerves, 3 others"</h4><ul><li><b>Coverings:</b> external spermatic fascia (external oblique), cremasteric muscle and fascia (internal oblique), internal spermatic fascia (transversalis fascia).</li><li><b>Arteries:</b> testicular (aorta), cremasteric, artery to the vas.</li><li><b>Nerves:</b> genital branch of genitofemoral (cremaster), sympathetic fibres, ilioinguinal (outside the cord, on it).</li><li><b>Others:</b> vas deferens, pampiniform plexus, lymphatics.</li></ul></div>
+      <div class="tbl-wrap"><table><thead><tr><th>Structure</th><th>Lymph drains to</th></tr></thead><tbody>
+        <tr><th>Penis and scrotal skin</th><td>Superficial inguinal ("men are superficial about their penis and scrotum")</td></tr>
+        <tr><th>Testes, epididymis, spermatic cord</th><td>Para-aortic (lumbar)</td></tr>
+        <tr><th>Prostate</th><td>Internal iliac, sacral</td></tr>
+        <tr><th>Seminal vesicles, bulbourethral glands</th><td>Internal and external iliac</td></tr>
+      </tbody></table></div>
+    </div>
+    <div class="tbl-wrap"><table><thead><tr><th>Gland</th><th>Contribution</th><th>Clinical</th></tr></thead><tbody>
+      <tr><th>Seminal vesicles</th><td>About 70% of semen: alkaline, fructose</td><td>Felt above the prostate on DRE only if enlarged</td></tr>
+      <tr><th>Prostate</th><td>About 25%: PSA (liquefies the clot), citrate, zinc</td><td>Transition zone: BPH (outflow obstruction). Peripheral zone: cancer (felt on DRE)</td></tr>
+      <tr><th>Bulbourethral glands</th><td>Pre-ejaculate mucus</td><td>Beside the membranous urethra</td></tr>
+    </tbody></table></div>
+    <div class="notes">
+      <div class="note clin"><span class="tag">Emergency · testicular torsion</span><p>Sudden severe testicular pain, high-riding horizontal testis, absent cremasteric reflex (genitofemoral L1–L2). Surgical exploration within about 6 hours to save the testis. The "bell-clapper" deformity (testis not fixed inside the tunica vaginalis) predisposes; both sides are fixed at surgery.</p></div>
+      <div class="note clin"><span class="tag">Clinical link · varicocele and hypospadias</span><p>Varicocele ("bag of worms") is commoner on the left because the left testicular vein drains at a right angle into the left renal vein; a new left varicocele in an older man warrants imaging for a renal tumour. Hypospadias (about 3 in 1,000 boys): the urethra opens on the underside of the penis; repair is usually around 12 months, and the baby should not be circumcised because the foreskin is used in the repair.</p></div>
+      <div class="note exam"><span class="tag">Point and shoot</span><p>Erection: <b>P</b>arasympathetic (pelvic splanchnics S2–4, nitric oxide). Emission: <b>S</b>ympathetic (T12–L2). Ejaculation: somatic pudendal (bulbospongiosus) with sympathetic closure of the bladder neck.</p></div>
+    </div>
+  </section>
+
+  <section class="sec" id="pv-breast">
+    <header><span class="eyebrow">Pelvis · Breast</span><h2>Breast</h2><p>A modified sweat gland on the chest wall, grouped with the reproductive system in your teaching.</p></header>
+    <div class="bone-plate" data-bone="breast"></div>
+    <div class="tbl-wrap"><table><thead><tr><th>Supply</th><th>Details</th></tr></thead><tbody>
+      <tr><th>Arteries</th><td>Internal thoracic (perforating branches, spaces 2–6, medial breast); lateral thoracic and thoracoacromial (from the axillary artery); posterior intercostal arteries</td></tr>
+      <tr><th>Veins</th><td>Follow the arteries to the axillary and internal thoracic veins; posterior intercostal veins link to the vertebral plexus (route for spine metastases)</td></tr>
+      <tr><th>Nerves</th><td>Anterior and lateral cutaneous branches of intercostal nerves T4–T6; nipple at T4</td></tr>
+      <tr><th>Lymph</th><td>About 75% axillary (pectoral, central, apical groups), 20% parasternal, 5% posterior intercostal; can cross to the other breast or abdomen</td></tr>
+    </tbody></table></div>
+  </section>
+
+  <section class="sec" id="pv-quiz">
+    <header><span class="eyebrow">Pelvis · Quiz</span><h2>Quick quiz: pelvis and perineum</h2><p>Saved with the rest of the <a href="#quiz">Quick quiz</a>.</p></header>
+    <div class="qz"><div class="qz-bar"><span class="small muted">Answer before you look.</span><div class="qz-score" id="qzs-pelvis">0 answered</div></div><div id="qz-pelvis" class="qz" data-quiz-cat="pelvis" data-score="#qzs-pelvis"></div></div>
+  </section>
+</section>
+
+
 <!-- ======================================================= SELF-TEST ======================================================= -->
 <section class="panel" id="panel-test" data-panel="test" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 6 · Quick quiz</span>
+    <span class="eyebrow">Chapter 10 · Quick quiz</span>
     <h1>Quick quiz</h1>
     <p class="lede">Short, untimed questions in the two formats of the Mid-Year and End of Year 1 exams: single best answer with a clinical vignette, and very short answer (one to three words). Type your answer before you look; retrieval is what makes it stick.</p>
     <div class="note exam"><span class="tag">Ready for a full paper?</span><p>Two timed 100-question mock exams covering every system are in <a href="#exams">Mock exams</a>. Choose to be marked at the end or to see the answer after every question.</p></div>
@@ -2671,6 +3438,10 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
           <button class="pbtn" data-f="upper" aria-pressed="false">Upper limb</button>
           <button class="pbtn" data-f="lower" aria-pressed="false">Lower limb</button>
           <button class="pbtn" data-f="systems" aria-pressed="false">Body systems</button>
+          <button class="pbtn" data-f="headneck" aria-pressed="false">Head &amp; neck</button>
+          <button class="pbtn" data-f="thorax" aria-pressed="false">Thorax</button>
+          <button class="pbtn" data-f="abdomen" aria-pressed="false">Abdomen</button>
+          <button class="pbtn" data-f="pelvis" aria-pressed="false">Pelvis</button>
           <button class="pbtn" data-f="neuro" aria-pressed="false">Nervous system</button>
           <button class="pbtn" data-f="wrong" aria-pressed="false">Got wrong</button>
         </div>
@@ -2694,7 +3465,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= MOCK EXAMS ======================================================= -->
 <section class="panel" id="panel-exams" data-panel="exams" hidden>
   <div class="opener mx-opener">
-    <span class="eyebrow">Chapter 7 · Mock exams</span>
+    <span class="eyebrow">Chapter 11 · Mock exams</span>
     <h1>Timed mock exams</h1>
     <p class="lede">Two full papers of 100 questions each, written at end-of-Year-1 standard in the AMK style: 75 single best answer questions built on clinical vignettes and 25 very short answer questions (type one to three words). Every system is covered, with the emphasis on applying anatomy and physiology to a patient.</p>
   </div>
@@ -2723,7 +3494,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <!-- ======================================================= SOURCES ======================================================= -->
 <section class="panel" id="panel-sources" data-panel="sources" hidden>
   <div class="opener">
-    <span class="eyebrow">Chapter 8 · Sources and slide checks</span>
+    <span class="eyebrow">Chapter 12 · Sources and slide checks</span>
     <h1>Sources and slide checks</h1>
     <p class="lede">Built from your peer-teaching slides and BMBS handbooks, checked against standard anatomy references, and extended with current UK guidance. Where a slide disagreed with the references, the correction is listed below so you can fix your notes.</p>
   </div>
@@ -2754,6 +3525,13 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
       <div class="note fix"><span class="tag">Lower limb deck · venepuncture</span><p>The great saphenous vein in front of the medial malleolus is used for <b>emergency cut-down cannulation</b> and coronary bypass grafts, not routine venepuncture. The "houseman's vein" of junior doctor folklore is the <b>cephalic vein at the wrist</b>.</p></div>
       <div class="note fix"><span class="tag">Lower limb deck · ankle and knee wording</span><p>The ankle mortise is formed by the <b>malleoli</b>, not condyles. The "unhappy triad" causes pain, swelling and instability; loss of feeling in the knee is not a feature.</p></div>
       <div class="note fix"><span class="tag">Lower limb deck · superior gluteal nerve</span><p>Its roots are <b>L4–S1</b> (one slide says L5–S1).</p></div>
+      <div class="note fix"><span class="tag">GI deck · blood supply of the large intestine</span><p>The large intestine is not all supplied by the IMA. The caecum, appendix, ascending colon and proximal two-thirds of the transverse colon are <b>midgut (SMA)</b>; the distal third of the transverse colon to the upper rectum is hindgut (IMA). The duodenum sits in the epigastrium and right upper abdomen round the pancreatic head, not mostly in the right lower quadrant.</p></div>
+      <div class="note fix"><span class="tag">GI deck · enteric plexuses</span><p>The submucosal (Meissner's) and myenteric (Auerbach's) plexuses are both parts of the <b>enteric</b> nervous system. They are not "sympathetic" and "parasympathetic"; both receive input from both autonomic divisions.</p></div>
+      <div class="note fix"><span class="tag">Renal decks · micturition receptors</span><p>Sympathetic fibres (T11/12–L2) relax the detrusor through <b>β3</b> receptors and close the internal sphincter through <b>α1</b>. The pudendal nerve acts on the external sphincter through <b>nicotinic</b> receptors; "A1" is not a receptor there.</p></div>
+      <div class="note fix"><span class="tag">Reproductive anatomy deck · uterus and vagina</span><p>The endometrium is the glandular lining (functional and basal layers); the smooth muscle layers belong to the <b>myometrium</b>. The urethra lies <b>anterior</b> to the vagina, not the other way round.</p></div>
+      <div class="note fix"><span class="tag">Resp anatomy deck · thoracic inlet</span><p>The thoracic inlet is bounded by <b>T1, the first ribs and their cartilages, and the manubrium</b>. The borders given on the slide (scalenus anterior, scalenus medius, first rib) are those of the scalene triangle, where thoracic outlet syndrome usually arises.</p></div>
+      <div class="note fix"><span class="tag">Resp deck · tension pneumothorax</span><p>The slide gives only the 2nd intercostal space, mid-clavicular line. Current adult trauma teaching (ATLS 10th edition) prefers the <b>4th or 5th intercostal space just anterior to the mid-axillary line</b> because the chest wall is thinner there; the 2nd space is still used in children.</p></div>
+      <div class="note fix"><span class="tag">Cardio anatomy deck · SA node supply</span><p>The SA nodal artery arises from the <b>right coronary artery in about 60%</b> of people and the left circumflex in about 40%. "The circumflex branches into the SAN" is only true for the minority.</p></div>
     </div>
   </section>
 
@@ -2793,6 +3571,16 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
         </ul>
       </div>
       <div class="card">
+        <h4>Regional anatomy references</h4>
+        <ul class="srcs">
+          <li>TeachMeAnatomy: <a href="https://teachmeanatomy.info/neck/" target="_blank" rel="noopener">neck</a>, <a href="https://teachmeanatomy.info/thorax/" target="_blank" rel="noopener">thorax</a>, <a href="https://teachmeanatomy.info/abdomen/" target="_blank" rel="noopener">abdomen</a>, <a href="https://teachmeanatomy.info/pelvis/" target="_blank" rel="noopener">pelvis</a>, <a href="https://teachmeanatomy.info/back/" target="_blank" rel="noopener">back</a>.</li>
+          <li>Moore, Dalley and Agur, <i>Clinically Oriented Anatomy</i>: Thorax, Abdomen, Pelvis and Perineum, Back, and Neck chapters.</li>
+          <li>Drake, Vogl and Mitchell, <i>Gray's Anatomy for Students</i>: surface anatomy boxes for vertebral levels and planes.</li>
+          <li><a href="https://geekymedics.com/cardiovascular-examination/" target="_blank" rel="noopener">Geeky Medics: Cardiovascular examination</a>; <a href="https://geekymedics.com/abdominal-examination/" target="_blank" rel="noopener">abdominal examination</a>; <a href="https://geekymedics.com/neck-lump-examination/" target="_blank" rel="noopener">neck lump examination</a>.</li>
+          <li>Peer decks used for these chapters: All Anatomy; Resp, Cardio, Renal, GI and Reproductive anatomy and biomed decks; Repro and Endo question bank.</li>
+        </ul>
+      </div>
+      <div class="card">
         <h4>Clinical skills</h4>
         <ul class="srcs">
           <li><a href="https://geekymedics.com/upper-limb-neurological-examination/" target="_blank" rel="noopener">Geeky Medics: Upper limb neurological examination</a></li>
@@ -2827,6 +3615,14 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <script src="assets/exam-paper2.js"></script>
 <script src="assets/mock-exam.js"></script>
 <script src="assets/neuro.js"></script>
+<script src="assets/regions-core.js"></script>
+<script src="assets/headneck.js"></script>
+<script src="assets/thorax.js"></script>
+<script src="assets/abdomen.js"></script>
+<script src="assets/pelvis.js"></script>
+<script src="assets/spine.js"></script>
+<script src="assets/spec.js"></script>
+<script src="assets/nav.js"></script>
 <script>
 /* ================= DATA ================= */
 const MUSCLES = {
@@ -3118,6 +3914,7 @@ llLymph: {kind:'lymph', dir:'rtl', root:
  ]}}
 };
 if(window.NEURO_TREES) Object.assign(TREES, window.NEURO_TREES);
+if(window.ATLAS_EXT) Object.assign(TREES, window.ATLAS_EXT.trees);
 
 const PLEXUS_INFO = {
  mc:{t:'Musculocutaneous nerve', r:'C5–7 · lateral cord', m:'Coracobrachialis, biceps brachii, brachialis.', s:'Lateral forearm (lateral cutaneous nerve of the forearm).', i:'Rarely injured alone. Weak elbow flexion and supination.'},
@@ -3169,6 +3966,7 @@ const QUIZ = [
  {id:'s5',c:'systems',type:'sba',q:'Which lower limb bone is the developmental equivalent of the radius?',o:['Femur','Fibula','Patella','Talus','Tibia'],a:4,e:'Radius and tibia are both preaxial bones, on the thumb and big-toe side.'}
 ];
 if(window.NEURO_QUIZ) QUIZ.push(...window.NEURO_QUIZ);
+if(window.ATLAS_EXT) QUIZ.push(...window.ATLAS_EXT.quiz);
 /* ================= GEOMETRY HELPERS ================= */
 const f1 = n => Math.round(n*10)/10;
 function capsule(x1,y1,x2,y2,r){
@@ -3570,6 +4368,7 @@ const BONES = {
 };
 BONES.hand.svg.Palmar.s = handSVG();
 BONES.foot.svg.Dorsal.s = footSVG();
+if(window.ATLAS_EXT) Object.assign(BONES, window.ATLAS_EXT.plates);
 
 /* ================= FIGURES: hand sensory map, dermatomes ================= */
 function handShapes(){
@@ -3661,8 +4460,8 @@ const esc=s=>String(s==null?'':s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;',
 const LS={get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v);}catch(e){return d;}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v));}catch(e){}}};
 
 /* ---------- tabs, rail, routing ---------- */
-const PANELS=['systems','organs','upper','lower','neuro','test','exams','sources'];
-const NAMES={systems:'Big picture',organs:'Organ systems',upper:'Upper limb',lower:'Lower limb',neuro:'Nervous system',test:'Quick quiz',exams:'Mock exams',sources:'Sources'};
+const PANELS=['spec','systems','organs','headneck','thorax','abdomen','pelvis','upper','lower','neuro','test','exams','sources'];
+const NAMES={spec:'Unofficial spec',headneck:'Head and neck',thorax:'Thorax',abdomen:'Abdomen',pelvis:'Pelvis and perineum',systems:'Big picture',organs:'Organ systems',upper:'Upper limb',lower:'Lower limb',neuro:'Nervous system',test:'Quick quiz',exams:'Mock exams',sources:'Sources'};
 let io=null, current=null;
 function buildRail(tab){
   const panel=$('#panel-'+tab), secs=$$('.sec',panel).filter(s=>s.id);
@@ -3862,11 +4661,12 @@ function renderBones(){
 const MODEL={u3:'Radial nerve',u5:'Long thoracic nerve',u7:'Median cubital vein',u10:'Supraspinatus',u12:'C5–C6',u13:'Profunda brachii artery',u14:'Erb\'s palsy',
   l3:'Anterior talofibular ligament (ATFL)',l5:'Femoral nerve',l7:'L3–L4',l8:'ACL, MCL and medial meniscus',l9:'Anterior to the medial malleolus',l12:'Achilles (calcaneal) tendon',l14:'Popliteal nodes',l15:'Saphenous nerve',s1:'Thymus',s4:'Pronation'};
 if(window.NEURO_MODEL) Object.assign(MODEL, window.NEURO_MODEL);
+if(window.ATLAS_EXT) Object.assign(MODEL, window.ATLAS_EXT.model);
 const norm=s=>String(s).toLowerCase().replace(/[^a-z0-9]/g,'');
 function checkV(q,ans){const n=norm(ans); if(!n) return false; if(q.req) return q.req.every(g=>g.split('|').some(a=>n.includes(norm(a)))); return q.a.some(a=>n===norm(a));}
 function renderQuiz(){
   let st=LS.get('atlas-quiz',{});
-  const L='ABCDE', CAT={upper:'Upper limb',lower:'Lower limb',systems:'Body systems',neuro:'Nervous system'}, insts=[];
+  const L='ABCDE', CAT={upper:'Upper limb',lower:'Lower limb',systems:'Body systems',neuro:'Nervous system',headneck:'Head and neck',thorax:'Thorax',abdomen:'Abdomen',pelvis:'Pelvis'}, insts=[];
   function expl(q,ok){const ans=q.type==='sba'?`${L[q.a]}. ${q.o[q.a]}`:MODEL[q.id]||'';
     return `<div class="expl"><span class="verdict ${ok?'ok':'no'}">${ok?'Correct.':'Not quite.'}</span><span><b>Answer:</b> ${esc(ans)}</span><span>${esc(q.e)}</span></div>`;}
   function card(q){
@@ -3908,6 +4708,7 @@ function renderQuiz(){
   }
   make({list:'#qz-list',score:'#qz-score',filters:'#qz-filter'});
   make({list:'#nqz-list',score:'#nqz-score',only:'neuro'});
+  $$('[data-quiz-cat]').forEach(h=>make({list:'#'+h.id,score:h.dataset.score,only:h.dataset.quizCat}));
   const rb=$('#qz-reset'), rm=$('#qz-reset-msg'); let armed=false;
   if(rb) rb.addEventListener('click',()=>{ if(!armed){armed=true; rb.textContent='Click again to clear'; rm.textContent=''; setTimeout(()=>{armed=false; rb.textContent='Clear my answers';},4000); return;}
     armed=false; st={}; LS.set('atlas-quiz',st); rb.textContent='Clear my answers'; rm.textContent='Answers cleared.'; insts.forEach(o=>o.draw()); });
@@ -3935,6 +4736,8 @@ function renderFigures(){
   const hs=$('#hand-sensory'); if(hs) hs.innerHTML=handSensorySVG();
   const ud=$('#ul-derm'); if(ud) ud.innerHTML=ulDermSVG();
   const ld=$('#ll-derm'); if(ld) ld.innerHTML=llDermSVG();
+  const D=window.ATLAS_DIAGRAMS;
+  if(D) $$('[data-dg]').forEach(h=>{const k=h.dataset.dg; if(D[k]){h.classList.add('dg-host'); h.innerHTML=`<div class="scroll-x"><div class="dg-wrap">${D[k]()}</div></div>`;}});
 }
 
 /* ---------- Year 1 timeline: mark the current block from today's date ---------- */

@@ -622,6 +622,28 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 .chap-card:hover,.chap-card:focus-visible{border-color:var(--accent);border-top-color:var(--c)}
 .chap-card small{color:var(--muted)}
 .dg-host .dg-wrap{min-width:640px}
+/* recall mode */
+#recall-toggle[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--paper)}
+#recall-toggle[aria-pressed="false"] .rc-slash{display:none}
+@media (max-width:640px){#recall-toggle .rc-l{display:none}}
+body.recall .rc-item:not(.rc-open) .rc-ans,body.recall .rc-item:not(.rc-open) .rc-ans *{color:transparent!important;text-shadow:0 0 8px color-mix(in srgb,var(--ink) 70%,transparent);user-select:none}
+body.recall .rc-item:not(.rc-open) .rc-ans{cursor:pointer;border-radius:6px;background:color-mix(in srgb,var(--accent-tint) 55%,transparent)}
+body.recall .rc-item:not(.rc-open) .rc-ans img,body.recall .rc-item:not(.rc-open) .rc-ans svg{opacity:0}
+body.recall .rc-item{cursor:pointer}
+body.recall .rc-ans:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+body.recall .rc-item.rc-open .rc-ans{animation:rc-in .25s ease-out}
+@keyframes rc-in{from{background:var(--nerve-tint)}to{background:transparent}}
+@media (prefers-reduced-motion:reduce){body.recall .rc-item.rc-open .rc-ans{animation:none}}
+body.recall td.rc-item{min-width:7em}
+.rc-bar{display:flex;flex-wrap:wrap;gap:6px 8px;align-items:center;margin:0 0 6px}
+.rc-bar .pbtn{min-height:44px;padding:8px 14px}
+.rc-in{display:block;width:100%;min-height:44px;margin:0 0 6px;font:inherit;font-size:.86rem;padding:6px 8px;border:1px dashed var(--accent);border-radius:8px;background:var(--paper);color:var(--ink);resize:vertical}
+#rc-pill{position:fixed;left:50%;bottom:14px;transform:translateX(-50%);z-index:60;display:flex;flex-wrap:wrap;align-items:center;justify-content:center;gap:6px 8px;padding:8px 10px 8px 16px;max-width:calc(100vw - 32px);background:var(--paper);color:var(--ink);border:1px solid var(--accent);border-radius:16px;box-shadow:var(--shadow)}
+#rc-pill .pbtn{min-height:44px;padding:8px 12px}
+#rc-pill .rc-pt{display:grid;line-height:1.2}
+@media (max-width:640px){#rc-pill .rc-pt .small{display:none}#rc-pill{bottom:8px;padding:6px}}
+body.recall main{padding-bottom:96px}
+@media print{#rc-pill,.rc-bar{display:none!important}}
 @media print{
   .topbar,.rail,.mobile-toc,.chap-nav,.foot,#spec-map,#spec-flow,.fig-tools,#spec-filter,.spec-rag,.spec-go{display:none!important}
   .layout{display:block!important}
@@ -658,6 +680,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
       <button class="tab" role="tab" data-tab="exams" aria-selected="false">Mock exams</button>
       <button class="tab" role="tab" data-tab="sources" aria-selected="false">Sources</button>
     </nav>
+    <button class="srch-btn" id="recall-toggle" type="button" aria-pressed="false" title="Recall mode: blur the answers in tables and lists (R)"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 12 C5 6 9 4 12 4 C15 4 19 6 22 12 C19 18 15 20 12 20 C9 20 5 18 2 12 Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="3.2" fill="currentColor"/><path d="M4 21 L20 3" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" class="rc-slash"/></svg><span class="rc-l">Recall</span></button>
     <button class="srch-btn" id="srch-open" type="button" aria-label="Contents and search"><svg width="16" height="16" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M15.5 15.5 L21 21" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/></svg><span class="srch-l">Search</span><kbd>/</kbd></button>
   </div>
 </div>
@@ -691,6 +714,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
         <li><b>Nervous system:</b> brain, cranial nerves, spinal cord and <a href="#neuro-spine">vertebral column</a>.</li>
         <li><b>Testing:</b> a quiz at the end of every chapter, the <a href="#test">Quick quiz</a> bank and two timed <a href="#exams">mock exams</a>.</li>
         <li><b>Search:</b> press <kbd>/</kbd> or the search button to find any structure.</li>
+        <li><b>Recall mode:</b> press <kbd>R</kbd> or the Recall button to blur every table, list and flow chain so only the headings show. Say or write the answers, then tap to check, like flashcards.</li>
       </ul></div>
       <div class="note think"><span class="tag">Think of it as</span><p>A checklist you mark yourself against, not a textbook. Read an objective, try to answer it out loud without looking, then press <b>Study →</b> to check. Green means you could teach it to a friend.</p></div>
     </div>
@@ -3623,6 +3647,7 @@ body.exam-on #mock{border-top:0;margin-top:0;padding-top:0}
 <script src="assets/spine.js"></script>
 <script src="assets/spec.js"></script>
 <script src="assets/nav.js"></script>
+<script src="assets/recall.js"></script>
 <script>
 /* ================= DATA ================= */
 const MUSCLES = {

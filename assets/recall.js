@@ -72,7 +72,14 @@ function disable(){
 function sync(){
   const b=$('#recall-toggle'); if(b){ b.setAttribute('aria-pressed',String(on)); $('.rc-l',b).textContent=on?'Recall on':'Recall'; }
   try{ localStorage.setItem(KEY,on?'1':'0'); }catch(e){}
+  try{ document.dispatchEvent(new CustomEvent('atlas-recall',{detail:{on}})); }catch(e){}
 }
+/* for widgets that render their own .rc-item / .rc-ans markup after recall mode is switched on */
+window.ATLAS_RECALL={
+  isOn:()=>on,
+  apply(root){ if(!on||!root) return;
+    $$('.rc-item',root).forEach(it=>{ it.dataset.rc='1'; const a=$('.rc-ans',it); if(!a) return; a.setAttribute('role','button'); a.setAttribute('tabindex','0'); setOpen(it,it.classList.contains('rc-open')); }); }
+};
 function toggle(){ on?disable():enable(); }
 
 /* floating control while recall mode is on */
